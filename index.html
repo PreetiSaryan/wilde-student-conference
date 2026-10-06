@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <title>WILDE-Student Conference · 15–16 November 2026</title>
     <meta
       name="description"
@@ -54,32 +54,35 @@
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
 
-    <header class="site-header" id="top">
+    <header class="site-header">
       <div class="container bar">
-        <a class="brand" href="#top">
+        <a class="brand" href="#home">
           <span class="brand-mark">WILDE</span>
           <span class="brand-rest">Student Conference</span>
         </a>
+
+        <a class="nav-cta" href="#registration">Register Now</a>
+
         <input class="nav-toggle" type="checkbox" id="nav-toggle" />
-        <label class="nav-button" for="nav-toggle">
+        <label class="nav-button" for="nav-toggle" aria-controls="site-nav">
           <span class="open-label">Menu</span>
           <span class="close-label">Close</span>
         </label>
-        <nav class="site-nav" aria-label="Sections">
+
+        <nav class="site-nav" id="site-nav" aria-label="Sections">
+          <a href="#home">Home</a>
           <a href="#about">About</a>
-          <a href="#timeline">Timeline</a>
           <a href="#schedule">Schedule</a>
-          <a href="#people">People</a>
-          <a href="#register">Register</a>
-          <a href="#abstracts">Abstracts</a>
-          <a href="#organisers">Organisers</a>
-          <a href="#venue">Venue</a>
+          <a href="#workshops">Workshops</a>
+          <a href="#registration">Registration</a>
+          <a href="#faqs">FAQs</a>
+          <a href="#contact">Contact</a>
         </nav>
       </div>
     </header>
 
     <main id="main">
-      <section class="hero" aria-labelledby="conference-title">
+      <section class="hero" id="home" aria-labelledby="conference-title">
         <div class="container hero-inner">
           <div class="hero-copy">
             <p class="eyebrow eyebrow-light">Interdisciplinary tools for students</p>
@@ -102,9 +105,8 @@
               </li>
             </ul>
             <div class="hero-actions">
-              <a class="button button-light" href="#register">Register to attend</a>
-              <a class="button button-ghost" href="#abstracts">Submit an abstract</a>
-              <a class="button button-ghost" href="#schedule">View the schedule</a>
+              <a class="button button-register" href="#registration">Register Now</a>
+              <a class="button button-ghost" href="#schedule">View schedule</a>
             </div>
             <p class="access-line">
               <strong>Talks</strong> are open to any student.
@@ -191,44 +193,34 @@
             </ol>
           </div>
         </div>
-      </section>
 
-      <section class="section" id="timeline">
-        <div class="container">
+        <div class="container timeline-wrap">
           <div class="section-heading">
-            <p class="eyebrow">Timeline</p>
-            <h2>Key dates</h2>
-            <p class="intro">
-              Keep these deadlines in mind before the conference on
-              15–16 November 2026.
-            </p>
+            <p class="eyebrow">Key dates</p>
+            <h2>Before you arrive</h2>
           </div>
           <ol class="timeline">
             <li class="timeline-item">
-              <time datetime="2026-10-15">15 October 2026</time>
+              <time datetime="2026-10-15">15 Oct 2026</time>
               <h3>Talk abstract submission</h3>
               <p>Deadline to submit talk abstracts.</p>
             </li>
             <li class="timeline-item">
-              <time datetime="2026-10-25">25 October 2026</time>
+              <time datetime="2026-10-25">25 Oct 2026</time>
               <h3>Final confirmation for talks</h3>
               <p>Selected speakers receive final confirmation.</p>
             </li>
             <li class="timeline-item">
-              <time datetime="2026-10-30">30 October 2026</time>
+              <time datetime="2026-10-30">30 Oct 2026</time>
               <h3>Participant registration</h3>
-              <p>Last date to register as a conference participant.</p>
+              <p>Last date to register as a participant.</p>
             </li>
             <li class="timeline-item">
-              <time datetime="2026-11-15">15–16 November 2026</time>
+              <time datetime="2026-11-15">15–16 Nov 2026</time>
               <h3>Conference</h3>
-              <p>WILDE-Student Conference at Rampur College.</p>
+              <p>Two days at Rampur College.</p>
             </li>
           </ol>
-          <p class="query-note">
-            Any query regarding the conference can be sent to
-            <a href="mailto:saryanfoundation@gmail.com">saryanfoundation@gmail.com</a>.
-          </p>
         </div>
       </section>
 
@@ -236,74 +228,95 @@
         <div class="container">
           <div class="section-heading">
             <p class="eyebrow">Schedule</p>
-            <h2>Talks and workshops across two days</h2>
+            <h2>Two-day programme</h2>
             <p class="intro">
-              Official two-day programme. Sort by date, workshop, people, or
-              track. Talks are open to any student. Workshops and activities are
-              for registered participants only. Parallel sessions run at the same
-              time on Main, Parallel 1, and Parallel 2 tracks.
+              Switch between Day 1 and Day 2. Parallel sessions run at the same
+              time on Main, Parallel 1, and Parallel 2 tracks. Talks are open to
+              any student; workshops need registration.
             </p>
           </div>
 
-          <div class="schedule-toolbar">
-            <p class="sort-label" id="sort-label">Sort by</p>
-            <div
-              class="sort-group"
-              id="schedule-sort"
-              role="group"
-              aria-labelledby="sort-label"
+          <div
+            class="day-tabs"
+            id="day-tabs"
+            role="tablist"
+            aria-label="Conference day"
+          >
+            <button
+              type="button"
+              class="day-tab is-active"
+              role="tab"
+              id="tab-day-1"
+              aria-selected="true"
+              aria-controls="schedule-board"
+              data-day="2026-11-15"
             >
-              <button type="button" class="sort-button is-active" data-sort="date" aria-pressed="true">
-                Date
-              </button>
-              <button type="button" class="sort-button" data-sort="workshop" aria-pressed="false">
-                Workshop
-              </button>
-              <button type="button" class="sort-button" data-sort="people" aria-pressed="false">
-                People
-              </button>
-              <button type="button" class="sort-button" data-sort="room" aria-pressed="false">
-                Track
-              </button>
-            </div>
+              <span class="day-tab-kicker">Day 1</span>
+              <span class="day-tab-label">Sunday 15 Nov</span>
+            </button>
+            <button
+              type="button"
+              class="day-tab"
+              role="tab"
+              id="tab-day-2"
+              aria-selected="false"
+              aria-controls="schedule-board"
+              data-day="2026-11-16"
+            >
+              <span class="day-tab-kicker">Day 2</span>
+              <span class="day-tab-label">Monday 16 Nov</span>
+            </button>
           </div>
 
           <p class="programme-note" id="programme-note"></p>
-          <div id="schedule-board" class="schedule-board" aria-live="polite"></div>
+          <div
+            id="schedule-board"
+            class="schedule-board"
+            role="tabpanel"
+            aria-labelledby="tab-day-1"
+            aria-live="polite"
+          ></div>
         </div>
       </section>
 
-      <section class="section" id="people">
+      <section class="section" id="workshops">
         <div class="container">
           <div class="section-heading">
-            <p class="eyebrow">People</p>
-            <h2>Resource people making WILDE possible</h2>
+            <p class="eyebrow">Workshops</p>
+            <h2>Hands-on sessions for registered students</h2>
             <p class="intro">
-              Profiles and photographs of resource people will appear here once
-              the organisers confirm who is leading each session. Each person
-              will be linked to their workshops and talks in the schedule.
+              Workshops and activities are limited to registered participants.
+              Tap a workshop to jump to its place in the schedule.
             </p>
           </div>
-          <div id="people-board" class="people-board"></div>
+          <div id="workshops-board" class="workshops-board"></div>
+
+          <div class="people-block">
+            <div class="section-heading">
+              <p class="eyebrow">People</p>
+              <h2>Resource people</h2>
+              <p class="intro">
+                Profiles and photographs will appear here once session leads are
+                confirmed.
+              </p>
+            </div>
+            <div id="people-board" class="people-board"></div>
+          </div>
         </div>
       </section>
 
       <!--
         Form links: replace the href on each button below with a full https URL.
-        Talk and workshop can share one URL if there is a single abstract form.
-        The note under the buttons hides once both abstract links, or the
-        attendee link, point to a real web address.
       -->
-      <section class="section" id="take-part">
+      <section class="section" id="registration">
         <div class="container">
           <div class="section-heading">
-            <p class="eyebrow">Take part</p>
+            <p class="eyebrow">Registration</p>
             <h2>Register, or propose a session</h2>
             <p class="intro">
-              These are separate steps. Register if you want a workshop place.
-              Submit an abstract if you want to give a talk or lead a workshop.
-              Talk abstracts close on 15 October; participant registration closes
-              on 30 October.
+              Register if you want a workshop place. Submit an abstract if you
+              want to give a talk or lead a workshop. Talk abstracts close on
+              15 October; participant registration closes on 30 October.
             </p>
           </div>
           <div class="take-grid">
@@ -311,21 +324,22 @@
               <h3>Attendee registration</h3>
               <p class="lede">
                 Registration reserves a place in the workshops. It is not required
-                for the talks. The fee is small so that a place goes to a student
-                who means to attend.
+                for the talks. Fee ₹150 · 200 places.
               </p>
               <dl class="facts">
                 <dt>Fee</dt>
                 <dd>₹150</dd>
                 <dt>Places</dt>
                 <dd>200 students</dd>
-                <dt>Includes</dt>
-                <dd>Workshop participation</dd>
+                <dt>Closes</dt>
+                <dd>30 October 2026</dd>
                 <dt>Talks</dt>
                 <dd>Open without registration</dd>
               </dl>
               <div class="stack">
-                <a class="button button-pine" id="attendee-registration" href="#register">Register to attend</a>
+                <a class="button button-register" id="attendee-registration" href="#registration"
+                  >Register Now</a
+                >
               </div>
               <p class="pending" id="attendee-note">The registration form will be linked on this button.</p>
             </article>
@@ -333,64 +347,117 @@
             <article class="card" id="abstracts">
               <h3>Talk and workshop abstracts</h3>
               <p class="lede">
-                Propose a talk, which any student may attend, or a workshop for
-                the registered group. If you are proposing a workshop, register
-                as a participant as well.
+                Propose a talk or a workshop. Talk abstract deadline:
+                15 October 2026.
               </p>
               <div class="stack">
                 <a class="button button-pine" id="talk-abstract" href="#abstracts">Submit a talk abstract</a>
-                <a class="button button-pine" id="workshop-abstract" href="#abstracts">Submit a workshop abstract</a>
+                <a class="button button-pine" id="workshop-abstract" href="#abstracts"
+                  >Submit a workshop abstract</a
+                >
               </div>
               <p class="pending" id="abstract-note">The submission forms will be linked on these buttons.</p>
             </article>
           </div>
-          <p class="query-note">
-            Any query regarding the conference can be sent to
-            <a href="mailto:saryanfoundation@gmail.com">saryanfoundation@gmail.com</a>.
-          </p>
         </div>
       </section>
 
-      <section class="section" id="organisers">
+      <section class="section" id="faqs">
         <div class="container">
           <div class="section-heading">
-            <p class="eyebrow">Organisers</p>
-            <h2>Who is making WILDE possible</h2>
-            <p class="intro">
-              The conference is organised by Saryan Vigyan Foundation with
-              G.B. Pant Memorial Govt. College, Rampur as the host campus.
-            </p>
+            <p class="eyebrow">FAQs</p>
+            <h2>Common questions</h2>
           </div>
-          <div id="organizer-board" class="organizer-board"></div>
+          <div class="faq-list">
+            <details class="faq-item" open>
+              <summary>Do I need to register for talks?</summary>
+              <p>No. Talks are open to any student, with or without registration.</p>
+            </details>
+            <details class="faq-item">
+              <summary>Who can join the workshops?</summary>
+              <p>
+                Only registered participants. Places are limited to 200 students
+                so workshop groups stay small.
+              </p>
+            </details>
+            <details class="faq-item">
+              <summary>What is the registration fee?</summary>
+              <p>
+                ₹150. It is a small fee so that students who register intend to
+                attend.
+              </p>
+            </details>
+            <details class="faq-item">
+              <summary>When do abstracts and registration close?</summary>
+              <p>
+                Talk abstracts: 15 October 2026. Final talk confirmation:
+                25 October 2026. Participant registration: 30 October 2026.
+              </p>
+            </details>
+            <details class="faq-item">
+              <summary>Where is the conference?</summary>
+              <p>
+                G.B. Pant Memorial Govt. College, Rampur Bushahr, District Shimla,
+                Himachal Pradesh.
+              </p>
+            </details>
+            <details class="faq-item">
+              <summary>Who should I email with a query?</summary>
+              <p>
+                Write to
+                <a href="mailto:saryanfoundation@gmail.com">saryanfoundation@gmail.com</a>.
+              </p>
+            </details>
+          </div>
         </div>
       </section>
 
-      <section class="section" id="venue">
+      <section class="section" id="contact">
         <div class="container">
           <div class="section-heading">
-            <p class="eyebrow">Venue</p>
-            <h2>Rampur College</h2>
+            <p class="eyebrow">Contact</p>
+            <h2>Ask us anything</h2>
             <p class="intro">
-              Talks and workshops are held on the campus of G.B. Pant Memorial
-              Govt. College, Rampur Bushahr.
+              Any query regarding the conference can be sent to
+              <a href="mailto:saryanfoundation@gmail.com">saryanfoundation@gmail.com</a>.
             </p>
           </div>
-          <div class="venue-grid">
-            <div class="venue-panel">
+
+          <div class="contact-grid">
+            <article class="card contact-card">
+              <p class="day-kicker">Conference queries</p>
+              <h3>Saryan Vigyan Foundation</h3>
+              <ul class="contact-list">
+                <li>
+                  <a href="mailto:saryanfoundation@gmail.com">saryanfoundation@gmail.com</a>
+                </li>
+                <li>
+                  <a href="https://www.saryanfoundation.org/" rel="noopener noreferrer"
+                    >saryanfoundation.org</a
+                  >
+                </li>
+              </ul>
+              <p class="lede">
+                Organiser for WILDE-Student Conference.
+              </p>
+            </article>
+
+            <article class="card contact-card">
+              <p class="day-kicker">Venue</p>
               <h3>G.B. Pant Memorial Govt. College</h3>
               <address>
                 Rampur Bushahr<br />
                 District Shimla<br />
                 Himachal Pradesh 172001
               </address>
-              <p>
-                The college is on the left bank of the Satluj, along National
-                Highway 5, about 130 km from Shimla.
-              </p>
               <ul class="contact-list">
-                <li>College office: <a href="tel:+911782233021">+91 1782 233021</a></li>
+                <li><a href="tel:+911782233021">+91 1782 233021</a></li>
                 <li><a href="mailto:gcrampur59@gmail.com">gcrampur59@gmail.com</a></li>
-                <li><a href="https://gbpmgcrampur.edu.in/" rel="noopener noreferrer">gbpmgcrampur.edu.in</a></li>
+                <li>
+                  <a href="https://gbpmgcrampur.edu.in/" rel="noopener noreferrer"
+                    >gbpmgcrampur.edu.in</a
+                  >
+                </li>
               </ul>
               <p class="map-links">
                 <a
@@ -399,14 +466,21 @@
                   >Open in Google Maps</a
                 >
               </p>
-            </div>
-            <div class="map-frame">
-              <iframe
-                title="Map of G.B. Pant Memorial Govt. College, Rampur Bushahr"
-                src="https://www.openstreetmap.org/export/embed.html?bbox=77.625%2C31.448%2C77.657%2C31.462&amp;layer=mapnik&amp;marker=31.45504%2C77.64094"
-                loading="lazy"
-              ></iframe>
-            </div>
+            </article>
+          </div>
+
+          <div class="section-heading organisers-heading">
+            <p class="eyebrow">Organisers</p>
+            <h2>Who is making WILDE possible</h2>
+          </div>
+          <div id="organizer-board" class="organizer-board"></div>
+
+          <div class="map-frame contact-map">
+            <iframe
+              title="Map of G.B. Pant Memorial Govt. College, Rampur Bushahr"
+              src="https://www.openstreetmap.org/export/embed.html?bbox=77.625%2C31.448%2C77.657%2C31.462&amp;layer=mapnik&amp;marker=31.45504%2C77.64094"
+              loading="lazy"
+            ></iframe>
           </div>
         </div>
       </section>
@@ -446,14 +520,13 @@
           </div>
         </div>
         <nav class="footer-nav" aria-label="Footer">
+          <a href="#home">Home</a>
           <a href="#about">About</a>
-          <a href="#timeline">Timeline</a>
           <a href="#schedule">Schedule</a>
-          <a href="#people">People</a>
-          <a href="#register">Register</a>
-          <a href="#abstracts">Abstracts</a>
-          <a href="#organisers">Organisers</a>
-          <a href="#venue">Venue</a>
+          <a href="#workshops">Workshops</a>
+          <a href="#registration">Registration</a>
+          <a href="#faqs">FAQs</a>
+          <a href="#contact">Contact</a>
         </nav>
       </div>
     </footer>
