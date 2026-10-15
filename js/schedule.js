@@ -13,7 +13,7 @@
     peopleById[person.id] = person;
   });
 
-  var currentDay = "2026-11-15";
+  var currentDay = "2026-11-17";
   var weekdayNames = [
     "Sunday",
     "Monday",
@@ -38,9 +38,10 @@
     "December",
   ];
   var trackOrder = {
-    Main: 0,
-    "Parallel 1": 1,
-    "Parallel 2": 2,
+    "Parallel 1": 0,
+    "Parallel 2": 1,
+    Talks: 2,
+    Main: 3,
   };
   var typeLabels = {
     workshop: "Workshop",
@@ -320,7 +321,7 @@
           escapeHtml(person.photo) +
           '" alt="Portrait of ' +
           escapeHtml(person.name) +
-          '" width="220" height="275" loading="lazy" />' +
+          '" width="280" height="280" loading="lazy" />' +
           "</div>" +
           '<div class="person-copy">' +
           "<h3>" +
@@ -328,8 +329,6 @@
           "</h3>" +
           '<p class="person-role">' +
           escapeHtml(person.role) +
-          " · " +
-          escapeHtml(person.affiliation) +
           "</p>" +
           "<p>" +
           escapeHtml(person.bio) +
