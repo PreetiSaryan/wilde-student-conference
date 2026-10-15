@@ -2,11 +2,23 @@
   var navToggle = document.querySelector("#nav-toggle");
   var siteNav = document.querySelector("#site-nav");
 
-  function closeNav() {
-    if (navToggle) navToggle.checked = false;
+  function setNavOpen(open) {
+    document.body.classList.toggle("nav-open", Boolean(open));
   }
 
-  document.querySelectorAll('.site-nav a, .nav-cta, a[href^="#"]').forEach(function (link) {
+  function closeNav() {
+    if (!navToggle) return;
+    navToggle.checked = false;
+    setNavOpen(false);
+  }
+
+  if (navToggle) {
+    navToggle.addEventListener("change", function () {
+      setNavOpen(navToggle.checked);
+    });
+  }
+
+  document.querySelectorAll('.site-nav a, .nav-cta').forEach(function (link) {
     link.addEventListener("click", function () {
       closeNav();
     });
@@ -14,6 +26,10 @@
 
   document.addEventListener("keydown", function (event) {
     if (event.key === "Escape") closeNav();
+  });
+
+  window.addEventListener("resize", function () {
+    if (window.matchMedia("(min-width: 901px)").matches) closeNav();
   });
 
   if (siteNav) {
