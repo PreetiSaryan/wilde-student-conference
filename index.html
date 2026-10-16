@@ -29,7 +29,7 @@
         "@type": "EducationEvent",
         "name": "WILDE Student Conference 2026",
         "alternateName": "Western Himalayan Initiative for Landscapes, Diversity & Ecologies",
-        "description": "Interdisciplinary Research for Himalayan Landscapes, Ecologies, and Communities. Talks are open to any student. Workshops are limited to 200 registered participants. Registration fee ₹150.",
+        "description": "Interdisciplinary Research for Himalayan Landscapes, Ecologies, and Communities. Open to registered participants only. Places limited to 200. Registration fee ₹150.",
         "startDate": "2026-11-17",
         "endDate": "2026-11-18",
         "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
@@ -66,7 +66,13 @@
           />
         </a>
 
-        <a class="nav-cta" href="#registration">Register Now</a>
+        <a
+          class="nav-cta"
+          href="https://forms.gle/gas8qYfwYioyhc6D8"
+          rel="noopener noreferrer"
+          target="_blank"
+          >Register Now</a
+        >
 
         <input class="nav-toggle" type="checkbox" id="nav-toggle" />
         <label class="nav-button" for="nav-toggle" aria-controls="site-nav">
@@ -99,7 +105,13 @@
             G.B. Pant Memorial Govt. College, Rampur Bushahr
           </p>
           <div class="hero-actions">
-            <a class="button button-register" href="#registration">Register Now</a>
+            <a
+              class="button button-register"
+              href="https://forms.gle/gas8qYfwYioyhc6D8"
+              rel="noopener noreferrer"
+              target="_blank"
+              >Register Now</a
+            >
             <a class="button button-ghost" href="#schedule">View schedule</a>
           </div>
           <p class="access-line">Registration fee ₹150 · 200 places</p>
@@ -235,12 +247,13 @@
             <p class="eyebrow">Schedule</p>
             <h2>Two-day programme</h2>
             <p class="intro">
-              Switch between Day 1 and Day 2. Parallel workshops run alongside
-              talk sessions.
+              Switch between Day 1, Day 2, and Workshops. The conference is for
+              registered participants only.
             </p>
           </div>
 
-          <div class="day-tabs" id="day-tabs" role="tablist" aria-label="Conference day">
+          <div id="workshops" class="programme-views">
+          <div class="day-tabs" id="day-tabs" role="tablist" aria-label="Programme view">
             <button
               type="button"
               class="day-tab is-active"
@@ -248,7 +261,7 @@
               id="tab-day-1"
               aria-selected="true"
               aria-controls="schedule-board"
-              data-day="2026-11-17"
+              data-view="2026-11-17"
             >
               <span class="day-tab-kicker">Day 1</span>
               <span class="day-tab-label">Tuesday 17 Nov</span>
@@ -260,11 +273,24 @@
               id="tab-day-2"
               aria-selected="false"
               aria-controls="schedule-board"
-              data-day="2026-11-18"
+              data-view="2026-11-18"
             >
               <span class="day-tab-kicker">Day 2</span>
               <span class="day-tab-label">Wednesday 18 Nov</span>
             </button>
+            <button
+              type="button"
+              class="day-tab"
+              role="tab"
+              id="tab-workshops"
+              aria-selected="false"
+              aria-controls="schedule-board"
+              data-view="workshops"
+            >
+              <span class="day-tab-kicker">Workshops</span>
+              <span class="day-tab-label">All sessions</span>
+            </button>
+          </div>
           </div>
 
           <p class="programme-note" id="programme-note"></p>
@@ -278,27 +304,17 @@
         </div>
       </section>
 
-      <section class="section" id="workshops">
+      <section class="section" id="people">
         <div class="container">
           <div class="section-heading">
-            <p class="eyebrow">Workshops</p>
-            <h2>For registered participants</h2>
+            <p class="eyebrow">People</p>
+            <h2>Resource people</h2>
             <p class="intro">
-              Tap a workshop to jump to its place in the schedule.
+              Workshop leads for WILDE Student Conference 2026. Photos can be
+              replaced when official portraits are ready.
             </p>
           </div>
-          <div id="workshops-board" class="workshops-board"></div>
-          <div class="people-block">
-            <div class="section-heading">
-              <p class="eyebrow">People</p>
-              <h2>Resource people</h2>
-              <p class="intro">
-                Workshop leads for WILDE Student Conference 2026. Photos can be
-                replaced when official portraits are ready.
-              </p>
-            </div>
-            <div id="people-board" class="people-board"></div>
-          </div>
+          <div id="people-board" class="people-board"></div>
         </div>
       </section>
 
@@ -308,42 +324,80 @@
             <p class="eyebrow">Registration</p>
             <h2>Take part</h2>
             <p class="intro">
-              Register for workshops by 30 October. Talk abstracts close on
-              15 October.
+              One form covers attendance and talk, poster, or workshop
+              submissions. Talk abstracts close 15 October; registration closes
+              30 October.
             </p>
           </div>
-          <div class="take-grid">
-            <article class="card" id="register">
-              <h3>Attendee registration</h3>
-              <p class="lede">
-                Needed for workshops. Not required for talks. Fee ₹150 · 200 places.
-              </p>
-              <div class="stack">
-                <a class="button button-register" id="attendee-registration" href="#registration"
-                  >Register Now</a
-                >
-              </div>
-              <p class="pending" id="attendee-note">The registration form will be linked on this button.</p>
-            </article>
-
-            <article class="card" id="abstracts">
-              <h3>Talk and workshop abstracts</h3>
-              <p class="lede">Propose a talk or workshop. Talk abstracts due 15 October 2026.</p>
-              <div class="stack">
-                <a class="button button-pine" id="talk-abstract" href="#abstracts">Submit a talk abstract</a>
-                <a class="button button-pine" id="workshop-abstract" href="#abstracts"
-                  >Submit a workshop abstract</a
-                >
-              </div>
-              <p class="pending" id="abstract-note">The submission forms will be linked on these buttons.</p>
-            </article>
+          <div class="register-panel" id="register">
+            <p class="lede">
+              Required for all participants. Choose your role in the form. Fee
+              ₹150 · 200 places.
+            </p>
+            <div class="stack">
+              <a
+                class="button button-register"
+                id="conference-registration"
+                href="https://forms.gle/gas8qYfwYioyhc6D8"
+                rel="noopener noreferrer"
+                target="_blank"
+                >Register Now</a
+              >
+            </div>
+            <p class="pending" id="registration-note">
+              The registration form will be linked on this button.
+            </p>
           </div>
 
           <div class="guidelines" id="guidelines">
             <div class="section-heading">
               <p class="eyebrow">Guidelines</p>
-              <h2>Talks and posters</h2>
+              <h2>Guidelines for submission</h2>
             </div>
+
+            <article class="card guideline-card themes-card">
+              <h3>Conference theme</h3>
+              <p class="theme-statement">
+                Interdisciplinary Research for Himalayan Landscapes, Ecologies,
+                and Communities
+              </p>
+              <h3>Themes for talks and posters</h3>
+              <ol class="theme-list">
+                <li>
+                  <strong>Theme 1: Himalayan Ecology &amp; Biodiversity</strong>
+                  — Flora, fauna, high-altitude species, insect diversity
+                </li>
+                <li>
+                  <strong>Theme 2: Climate Change &amp; Landscape Dynamics</strong>
+                  — Glacial retreat, treeline shifts, forest ecosystems
+                </li>
+                <li>
+                  <strong
+                    >Theme 3: Art, Illustration &amp; Creative Science
+                    Communication</strong
+                  >
+                  — Eco-zines, drawing, photography, creative storytelling for
+                  community outreach
+                </li>
+                <li>
+                  <strong
+                    >Theme 4: Community Conservation &amp; Traditional
+                    Knowledge</strong
+                  >
+                  — Human-wildlife coexistence, local stewardship
+                </li>
+                <li>
+                  <strong>Theme 5: AI, Data Science &amp; Tech in Ecology</strong>
+                  — Machine learning, camera traps, bioacoustics, bio-GIS
+                </li>
+                <li>
+                  <strong>Open Track / Other Research</strong> — If your research
+                  does not fit the themes above but is relevant to the ecology of
+                  the Himalayan landscape, choose this.
+                </li>
+              </ol>
+            </article>
+
             <div class="guidelines-grid">
               <article class="card guideline-card">
                 <h3>Talk guidelines</h3>
@@ -392,8 +446,11 @@
           </div>
           <div class="faq-list">
             <details class="faq-item" open>
-              <summary>Do I need to register for talks?</summary>
-              <p>No. Talks are open to any student, with or without registration.</p>
+              <summary>Do I need to register?</summary>
+              <p>
+                Yes. The conference is for registered participants only. Places
+                are limited to 200 students. Fee ₹150.
+              </p>
             </details>
             <details class="faq-item">
               <summary>Who can join the workshops?</summary>

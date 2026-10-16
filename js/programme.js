@@ -103,6 +103,14 @@ window.WILDE_PROGRAMME = {
       bio: "Leads the workshop on hypothesis testing and experiment design.",
       photo: "assets/people/preeti-saryan.svg",
     },
+    {
+      id: "arpit-singh",
+      name: "Mr Arpit Singh",
+      role: "Workshop lead",
+      affiliation: "WILDE Student Conference 2026",
+      bio: "Leads the workshop on 3D printing for making science accessible to all.",
+      photo: "assets/people/arpit-singh.svg",
+    },
   ],
   sessions: [
     {
@@ -116,7 +124,7 @@ window.WILDE_PROGRAMME = {
       room: "Parallel 1",
       people: [],
       summary: "Arrive, register, and collect conference information.",
-      access: "open",
+      access: "registered",
     },
     {
       id: "d1-inauguration",
@@ -129,7 +137,7 @@ window.WILDE_PROGRAMME = {
       room: "Parallel 1",
       people: [],
       summary: "Opening of the WILDE Student Conference.",
-      access: "open",
+      access: "registered",
     },
     {
       id: "d1-ws-zine",
@@ -156,7 +164,7 @@ window.WILDE_PROGRAMME = {
       room: "Talks",
       people: [],
       summary: "Open talk session. Four talks, about 20 minutes each.",
-      access: "open",
+      access: "registered",
     },
     {
       id: "d1-ws-ai-cost",
@@ -197,7 +205,7 @@ window.WILDE_PROGRAMME = {
       room: "Talks",
       people: [],
       summary: "Open talk session with four talks.",
-      access: "open",
+      access: "registered",
     },
     {
       id: "d1-lunch",
@@ -210,7 +218,7 @@ window.WILDE_PROGRAMME = {
       room: "Parallel 1",
       people: [],
       summary: "Lunch break.",
-      access: "open",
+      access: "registered",
     },
     {
       id: "d1-ws-gis",
@@ -237,7 +245,7 @@ window.WILDE_PROGRAMME = {
       room: "Talks",
       people: [],
       summary: "Open talk session with four talks.",
-      access: "open",
+      access: "registered",
     },
     {
       id: "d1-networking",
@@ -250,7 +258,7 @@ window.WILDE_PROGRAMME = {
       room: "Parallel 1",
       people: [],
       summary: "Informal networking and tea.",
-      access: "open",
+      access: "registered",
     },
     {
       id: "d2-registration",
@@ -263,7 +271,7 @@ window.WILDE_PROGRAMME = {
       room: "Parallel 1",
       people: [],
       summary: "Day 2 registration and arrival.",
-      access: "open",
+      access: "registered",
     },
     {
       id: "d2-ws-r",
@@ -280,6 +288,20 @@ window.WILDE_PROGRAMME = {
       access: "registered",
     },
     {
+      id: "d2-ws-3d-printing",
+      title: "WS-8 · 3D Printing for Making Science Accessible to All",
+      code: "WS-8",
+      type: "workshop",
+      workshop: "3D Printing for Making Science Accessible to All",
+      date: "2026-11-18",
+      start: "10:00",
+      end: "12:00",
+      room: "Parallel 2",
+      people: ["arpit-singh"],
+      summary: "Workshop led by Mr Arpit Singh.",
+      access: "registered",
+    },
+    {
       id: "d2-talks-morning",
       title: "Talks · 6 talks",
       type: "talk",
@@ -290,7 +312,7 @@ window.WILDE_PROGRAMME = {
       room: "Talks",
       people: [],
       summary: "Open talk session with six talks.",
-      access: "open",
+      access: "registered",
     },
     {
       id: "d2-ws-ai-plagiarism",
@@ -330,7 +352,7 @@ window.WILDE_PROGRAMME = {
       room: "Parallel 1",
       people: [],
       summary: "Lunch break.",
-      access: "open",
+      access: "registered",
     },
     {
       id: "d2-ws-writing",
@@ -384,7 +406,7 @@ window.WILDE_PROGRAMME = {
       room: "Parallel 1",
       people: [],
       summary: "Closing of the conference and prize announcement.",
-      access: "open",
+      access: "registered",
     },
   ],
 };

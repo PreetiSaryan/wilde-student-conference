@@ -49,10 +49,7 @@
     if (note) note.hidden = true;
   }
 
-  if (isLiveLink("attendee-registration")) hideNote("attendee-note");
-  if (isLiveLink("talk-abstract") && isLiveLink("workshop-abstract")) {
-    hideNote("abstract-note");
-  }
+  if (isLiveLink("conference-registration")) hideNote("registration-note");
 
   var programmeNote = document.getElementById("programme-note");
   if (programmeNote && window.WILDE_PROGRAMME && window.WILDE_PROGRAMME.note) {
@@ -66,7 +63,9 @@
     .call(navLinks, function (link) {
       return document.querySelector(link.getAttribute("href"));
     })
-    .filter(Boolean);
+    .filter(function (el) {
+      return el && el.tagName === "SECTION";
+    });
 
   var observer = new IntersectionObserver(
     function (entries) {

@@ -3,7 +3,6 @@
   if (!data) return;
 
   var scheduleRoot = document.getElementById("schedule-board");
-  var workshopsRoot = document.getElementById("workshops-board");
   var peopleRoot = document.getElementById("people-board");
   var dayTabs = document.getElementById("day-tabs");
   if (!scheduleRoot || !dayTabs) return;
@@ -13,7 +12,7 @@
     peopleById[person.id] = person;
   });
 
-  var currentDay = "2026-11-17";
+  var currentView = "2026-11-17";
   var weekdayNames = [
     "Sunday",
     "Monday",
@@ -96,10 +95,8 @@
     return hour12 + ":" + String(minutes).padStart(2, "0") + " " + suffix;
   }
 
-  function accessLabel(session) {
-    if (session.access === "registered") return "Registered participants";
-    if (session.type === "talk") return "Open to any student";
-    return "Open session";
+  function accessLabel() {
+    return "Registered participants";
   }
 
   function typeLabel(session) {
@@ -199,17 +196,17 @@
       escapeHtml(session.title) +
       "</h4>" +
       '<p class="session-summary">' +
-      escapeHtml(accessLabel(session)) +
+      escapeHtml(accessLabel()) +
       "</p>" +
       chips +
       "</article>"
     );
   }
 
-  function renderSchedule() {
-    var sessions = daySessions(currentDay);
+  function renderDaySchedule(day) {
+    var sessions = daySessions(day);
     var slots = groupBySlot(sessions);
-    var dayLabel = formatDate(currentDay);
+    var dayLabel = formatDate(day);
 
     if (!slots.length) {
       scheduleRoot.innerHTML = '<p class="pending">No sessions for this day yet.</p>';
@@ -243,47 +240,59 @@
       "</ol>";
   }
 
-  function renderWorkshops() {
-    if (!workshopsRoot) return;
+  function renderWorkshopsView() {
     var workshops = data.sessions
       .filter(isWorkshopLike)
       .slice()
       .sort(compareSessions);
 
     if (!workshops.length) {
-      workshopsRoot.innerHTML = '<p class="pending">Workshops will appear here.</p>';
+      scheduleRoot.innerHTML = '<p class="pending">Workshops will appear here.</p>';
       return;
     }
 
-    workshopsRoot.innerHTML = workshops
-      .map(function (session) {
-        return (
-          '<a class="workshop-card session-' +
-          escapeHtml(session.type) +
-          '" href="#session-' +
-          escapeHtml(session.id) +
-          '">' +
-          '<p class="day-kicker">' +
-          escapeHtml(typeLabel(session)) +
-          (session.code ? " · " + escapeHtml(session.code) : "") +
-          "</p>" +
-          "<h3>" +
-          escapeHtml(session.workshop || session.title) +
-          "</h3>" +
-          "<p>" +
-          escapeHtml(formatDate(session.date).split(" ").slice(0, 3).join(" ")) +
-          " · " +
-          escapeHtml(formatTime(session.start)) +
-          " – " +
-          escapeHtml(formatTime(session.end)) +
-          "</p>" +
-          '<p class="workshop-meta">' +
-          escapeHtml(session.room) +
-          " track · Registered participants</p>" +
-          "</a>"
-        );
-      })
-      .join("");
+    scheduleRoot.innerHTML =
+      '<p class="schedule-day-label">Workshops</p>' +
+      '<p class="programme-note">Tap a workshop to jump to its place in the day schedule.</p>' +
+      '<div class="workshops-board">' +
+      workshops
+        .map(function (session) {
+          return (
+            '<a class="workshop-card session-' +
+            escapeHtml(session.type) +
+            '" href="#session-' +
+            escapeHtml(session.id) +
+            '">' +
+            '<p class="day-kicker">' +
+            escapeHtml(typeLabel(session)) +
+            (session.code ? " · " + escapeHtml(session.code) : "") +
+            "</p>" +
+            "<h3>" +
+            escapeHtml(session.workshop || session.title) +
+            "</h3>" +
+            "<p>" +
+            escapeHtml(formatDate(session.date).split(" ").slice(0, 3).join(" ")) +
+            " · " +
+            escapeHtml(formatTime(session.start)) +
+            " – " +
+            escapeHtml(formatTime(session.end)) +
+            "</p>" +
+            '<p class="workshop-meta">' +
+            escapeHtml(session.room) +
+            " track · Registered participants</p>" +
+            "</a>"
+          );
+        })
+        .join("") +
+      "</div>";
+  }
+
+  function renderCurrentView() {
+    if (currentView === "workshops") {
+      renderWorkshopsView();
+      return;
+    }
+    renderDaySchedule(currentView);
   }
 
   function renderPeople() {
@@ -415,36 +424,45 @@
       .join("");
   }
 
-  function setActiveDay(day, tab) {
-    currentDay = day;
-    dayTabs.querySelectorAll("[data-day]").forEach(function (node) {
+  function setActiveView(view, tab) {
+    currentView = view;
+    dayTabs.querySelectorAll("[data-view]").forEach(function (node) {
       var active = node === tab;
       node.classList.toggle("is-active", active);
       node.setAttribute("aria-selected", active ? "true" : "false");
     });
     scheduleRoot.setAttribute("aria-labelledby", tab.id);
-    renderSchedule();
+    renderCurrentView();
+  }
+
+  function activateView(view) {
+    var tab = dayTabs.querySelector('[data-view="' + view + '"]');
+    if (!tab) return;
+    setActiveView(view, tab);
   }
 
   dayTabs.addEventListener("click", function (event) {
-    var tab = event.target.closest("[data-day]");
+    var tab = event.target.closest("[data-view]");
     if (!tab) return;
-    setActiveDay(tab.getAttribute("data-day"), tab);
+    setActiveView(tab.getAttribute("data-view"), tab);
   });
 
   dayTabs.addEventListener("keydown", function (event) {
-    var tabs = Array.prototype.slice.call(dayTabs.querySelectorAll("[data-day]"));
+    var tabs = Array.prototype.slice.call(
+      dayTabs.querySelectorAll("[data-view]")
+    );
     var current = document.activeElement;
     var index = tabs.indexOf(current);
     if (index < 0) return;
     var next = -1;
-    if (event.key === "ArrowRight" || event.key === "ArrowDown") next = (index + 1) % tabs.length;
+    if (event.key === "ArrowRight" || event.key === "ArrowDown")
+      next = (index + 1) % tabs.length;
     if (event.key === "ArrowLeft" || event.key === "ArrowUp")
       next = (index - 1 + tabs.length) % tabs.length;
     if (next < 0) return;
     event.preventDefault();
     tabs[next].focus();
-    setActiveDay(tabs[next].getAttribute("data-day"), tabs[next]);
+    setActiveView(tabs[next].getAttribute("data-view"), tabs[next]);
   });
 
   document.addEventListener("click", function (event) {
@@ -457,9 +475,8 @@
     var session = data.sessions.find(function (item) {
       return item.id === sessionId;
     });
-    if (session && session.date !== currentDay) {
-      var tab = dayTabs.querySelector('[data-day="' + session.date + '"]');
-      if (tab) setActiveDay(session.date, tab);
+    if (session && currentView !== session.date) {
+      activateView(session.date);
     }
     window.setTimeout(function () {
       var target = document.querySelector(href);
@@ -471,8 +488,28 @@
     }, 50);
   });
 
-  renderSchedule();
-  renderWorkshops();
+  function maybeOpenWorkshopsFromHash() {
+    if (window.location.hash === "#workshops") {
+      activateView("workshops");
+      return true;
+    }
+    return false;
+  }
+
+  if (!maybeOpenWorkshopsFromHash()) {
+    renderCurrentView();
+  }
+
+  window.addEventListener("hashchange", function () {
+    maybeOpenWorkshopsFromHash();
+  });
+
+  document.querySelectorAll('a[href="#workshops"]').forEach(function (link) {
+    link.addEventListener("click", function () {
+      activateView("workshops");
+    });
+  });
+
   renderPeople();
   renderOrganizers();
 })();

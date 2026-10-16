@@ -515,9 +515,13 @@ a {
   line-height: 1.25;
 }
 
+.programme-views {
+  scroll-margin-top: 6rem;
+}
+
 .day-tabs {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 0.55rem;
   margin-bottom: 1.25rem;
 }
@@ -671,12 +675,6 @@ a {
   color: var(--pine) !important;
 }
 
-.people-block {
-  margin-top: 2.5rem;
-  padding-top: 1.5rem;
-  border-top: 1px solid var(--line);
-}
-
 .people-board {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -761,10 +759,57 @@ a {
   text-underline-offset: 0.15em;
 }
 
+.register-panel {
+  max-width: 36rem;
+  padding: 1.35rem 1.4rem;
+  background: var(--paper-raised);
+  border: 1px solid var(--line);
+}
+
+.register-panel .lede {
+  margin: 0 0 1rem;
+  color: var(--ink-soft);
+}
+
+.register-panel .stack {
+  max-width: 16rem;
+}
+
 .guidelines {
   margin-top: 2.5rem;
   padding-top: 1.75rem;
   border-top: 1px solid var(--line);
+}
+
+.themes-card {
+  margin-bottom: 1rem;
+}
+
+.themes-card h3 + h3 {
+  margin-top: 1.35rem;
+}
+
+.theme-statement {
+  margin-top: 0.65rem;
+  font-family: Fraunces, Georgia, serif;
+  font-size: 1.2rem;
+  font-weight: 560;
+  line-height: 1.35;
+  color: var(--ink);
+}
+
+.theme-list {
+  display: grid;
+  gap: 0.85rem;
+  margin-top: 0.9rem;
+  padding-left: 1.25rem;
+  list-style: decimal;
+  color: var(--ink-soft);
+}
+
+.theme-list strong {
+  color: var(--ink);
+  font-weight: 600;
 }
 
 .guideline-list {
@@ -774,6 +819,10 @@ a {
   padding-left: 1.15rem;
   list-style: disc;
   color: var(--ink-soft);
+}
+
+.guidelines-grid {
+  margin-top: 0;
 }
 
 .faq-list {
@@ -1195,8 +1244,18 @@ article[id] {
     grid-template-columns: minmax(0, 1fr);
   }
 
-  .day-tabs {
-    grid-template-columns: minmax(0, 1fr);
+  .day-tab {
+    min-height: 52px;
+    padding: 0.55rem 0.45rem;
+  }
+
+  .day-tab-kicker {
+    font-size: 0.64rem;
+    letter-spacing: 0.08em;
+  }
+
+  .day-tab-label {
+    font-size: 0.88rem;
   }
 
   .nav-cta {
