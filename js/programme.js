@@ -8,7 +8,7 @@
  */
 window.WILDE_PROGRAMME = {
   note:
-    "Official programme for WILDE Student Conference 2026. Room numbers will be added when confirmed.",
+    "Official programme for WILDE Student Conference 2026. Room numbers TBD",
   organizers: [
     {
       id: "saryan",
@@ -92,7 +92,7 @@ window.WILDE_PROGRAMME = {
       name: "Ms Pramiti Negi",
       role: "Workshop lead",
       affiliation: "WILDE Student Conference 2026",
-      bio: "Leads the writing workshop.",
+      bio: "Leads the workshop on science communication and popular science writing.",
       photo: "assets/people/pramiti-negi.svg",
     },
     {
@@ -356,10 +356,10 @@ window.WILDE_PROGRAMME = {
     },
     {
       id: "d2-ws-writing",
-      title: "Workshop 8 · Writing",
+      title: "Workshop 8 · Science communication and popular science writing",
       code: "Workshop 8",
       type: "workshop",
-      workshop: "Writing",
+      workshop: "Science communication and popular science writing",
       date: "2026-11-18",
       start: "14:00",
       end: "15:30",
