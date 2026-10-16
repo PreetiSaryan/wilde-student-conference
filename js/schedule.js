@@ -264,8 +264,7 @@
             escapeHtml(session.id) +
             '">' +
             '<p class="day-kicker">' +
-            escapeHtml(typeLabel(session)) +
-            (session.code ? " · " + escapeHtml(session.code) : "") +
+            escapeHtml(session.code || typeLabel(session)) +
             "</p>" +
             "<h3>" +
             escapeHtml(session.workshop || session.title) +

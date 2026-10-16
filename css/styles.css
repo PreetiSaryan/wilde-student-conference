@@ -435,11 +435,36 @@ a {
 .goals-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1.25rem 1.75rem;
+  gap: 1rem;
+}
+
+.goal {
+  border: 1px solid var(--line);
+  border-top: 3px solid var(--pine);
+  background: var(--paper-raised);
+  padding: 1.15rem 1.35rem 1.35rem;
+}
+
+.goal-kicker {
+  margin: 0;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
 }
 
 .goal h3 {
-  font-size: 1.3rem;
+  margin-top: 0.35rem;
+  font-size: 1.35rem;
+  line-height: 1.25;
+}
+
+.goal p {
+  margin-top: 0.55rem;
+  max-width: none;
+  font-size: 1.02rem;
+  line-height: 1.65;
 }
 
 .take-grid,
@@ -453,7 +478,6 @@ a {
 }
 
 .card,
-.goal,
 .timeline-item,
 .faq-item,
 .workshop-card,
@@ -489,8 +513,14 @@ a {
 
 .timeline {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 0.85rem;
+}
+
+@media (max-width: 1100px) {
+  .timeline {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 }
 
 .timeline-item {
