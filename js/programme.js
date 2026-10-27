@@ -4,7 +4,7 @@
  * Tracks: Parallel 1, Parallel 2, and Talks (when a third parallel column is used).
  * Room numbers are blank in the source schedule.
  *
- * Add photos in assets/people/ and update the photo paths below when ready.
+ * Resource-person photos live in assets/people/.
  */
 window.WILDE_PROGRAMME = {
   note:
@@ -45,47 +45,47 @@ window.WILDE_PROGRAMME = {
       role: "Workshop lead",
       affiliation: "WILDE Student Conference 2026",
       bio: "Leads the workshop on zine making for communication.",
-      photo: "assets/people/tanisha-negi.svg",
+      photo: "assets/people/tanisha-negi.jpg",
     },
     {
       id: "poruri-sai-rahul",
       name: "Mr Poruri Sai Rahul",
       role: "Workshop lead",
-      affiliation: "WILDE Student Conference 2026",
-      bio: "Leads the workshop on the environmental cost of artificial intelligence.",
-      photo: "assets/people/poruri-sai-rahul.svg",
+      affiliation: "FOSS United Foundation",
+      bio: "Rahul is the CEO of the FOSS United Foundation, which works to support and promote the Free & Open Source Software ecosystem in India. He has been contributing to the FOSS ecosystem for more than eight years, both through code contributions and by giving talks about various FOSS technologies.",
+      photo: "assets/people/poruri-sai-rahul.jpg",
     },
     {
       id: "akshay-bhardwaj",
       name: "Mr Akshay Bhardwaj",
       role: "Workshop lead",
-      affiliation: "WILDE Student Conference 2026",
-      bio: "Leads the workshop on photography for landscapes and wildlife.",
-      photo: "assets/people/akshay-bhardwaj.svg",
+      affiliation: "Lippa Asrang Wildlife Sanctuary",
+      bio: "My self Akshay Bhardwaj, working as a forest Guard in Lippa Asrang wildlife sanctuary in kinnaur district. Apart from my professional duties, I am passionate about wildlife and nature photography, especially birds and mammals. Over the past 4 to 5 years, I developed an interest in observing and studying birds and their behaviours , habitats. I had documented more than 400 bird species all over Himachal Pradesh.",
+      photo: "assets/people/akshay-bhardwaj.jpg",
     },
     {
       id: "aleena-xavier",
       name: "Dr Aleena Xavier",
       role: "Workshop lead",
-      affiliation: "WILDE Student Conference 2026",
-      bio: "Leads the GIS–QGIS workshop.",
-      photo: "assets/people/aleena-xavier.svg",
+      affiliation: "Delhi University South Campus",
+      bio: "I am a biologist with a PhD from IISER Bhopal who is fascinated by how plants diversify and adapt across different landscapes, especially through processes like hybridization and genome evolution. I currently works at the University of Delhi South Campus. My research combies field studies with bioinformatics, genomics, and mapping tools like QGIS to better understand how plants evolve. I enjoy sharing these approaches with students and researchers, making complex tools more accessible and fun to use.",
+      photo: "assets/people/aleena-xavier.jpg",
     },
     {
       id: "amal-k-vyas",
       name: "Mr Amal K Vyas",
       role: "Workshop lead",
-      affiliation: "WILDE Student Conference 2026",
-      bio: "Leads the R and statistics workshop.",
-      photo: "assets/people/amal-k-vyas.svg",
+      affiliation: "IISER Thiruvananthapuram",
+      bio: "I am a PhD student at IISER Thiruvananthapuram, working with Prof. Hema Somanathan to study native honey bees across India. My passion for honey bees began during my BS-MS at IISER Bhopal. I’ve always had a habit of looking for patterns in everything around me, which naturally drew me into the world of data analysis. In my current research, I look at both physical traits (morphological data) and genetic information (molecular data) to find clear patterns in native bee populations. By combining biological science with data analysis, I hope to better understand how India's native honey bees are structured across different regions and support efforts to protect these vital pollinators.",
+      photo: "assets/people/amal-k-vyas.jpg",
     },
     {
       id: "poonam-chauhan",
       name: "Ms Poonam Chauhan",
       role: "Workshop lead",
       affiliation: "WILDE Student Conference 2026",
-      bio: "Leads the workshop on use of AI and plagiarism.",
-      photo: "assets/people/poonam-chauhan.svg",
+      bio: "Poonam Chauhan is a Life Sciences graduate with a B.Sc. (Honours) degree, majoring in Botany. Driven by a deep curiosity about the natural world, her core academic interests lie in plant taxonomy, ecological dynamics, and biodiversity conservation. She gained extensive hands-on field research experience through an internship with Saryan Vigyan Foundation in Kinnaur, Himachal Pradesh, where she conducted plant identification, vegetation surveys, herbarium preparation, biodiversity documentation, and ethnobotanical studies in the Western Himalayas. She further expanded her scientific foundation through a laboratory internship at The University of Trans-Disciplinary Health Sciences and Technology (TDU), Bengaluru. Proficient in R for ecological data analysis and QGIS for spatial mapping, she combines field methodology, analytical tools, and scientific inquiry to understand species relationships. She aims to dedicate her career to research-driven conservation strategies and environmental stewardship to protect fragile ecosystems and safeguard biodiversity.",
+      photo: "assets/people/poonam-chauhan.jpg",
     },
     {
       id: "pramiti-negi",
@@ -93,15 +93,15 @@ window.WILDE_PROGRAMME = {
       role: "Workshop lead",
       affiliation: "WILDE Student Conference 2026",
       bio: "Leads the workshop on science communication and popular science writing.",
-      photo: "assets/people/pramiti-negi.svg",
+      photo: "assets/people/pramiti-negi.jpg",
     },
     {
       id: "preeti-saryan",
       name: "Dr Preeti",
       role: "Workshop lead",
       affiliation: "Saryan Vigyan Foundation",
-      bio: "Leads the workshop on hypothesis testing and experiment design.",
-      photo: "assets/people/preeti-saryan.svg",
+      bio: "Dr. Preeti is a trained field ecologist and the Founder of Saryan Vigyan Foundation. She has a B.S. & M.S. in Biology from IISER Trivandrum and a Ph.D. in plant ecology from IISER Bhopal. She pursues fundamental scientific research to enable sustainable living in Himachal Pradesh. She also works to preserve and spread the Kinnauri culture through her collaboration with Zed.tells.",
+      photo: "assets/people/preeti-saryan.jpg",
     },
     {
       id: "arpit-singh",
@@ -109,7 +109,7 @@ window.WILDE_PROGRAMME = {
       role: "Workshop lead",
       affiliation: "WILDE Student Conference 2026",
       bio: "Leads the workshop on 3D printing for making science accessible to all.",
-      photo: "assets/people/arpit-singh.svg",
+      photo: "assets/people/arpit-singh.jpg",
     },
   ],
   sessions: [
@@ -168,30 +168,32 @@ window.WILDE_PROGRAMME = {
     },
     {
       id: "d1-ws-ai-cost",
-      title: "Workshop 2 · Environmental cost of artificial intelligence",
+      title: "Workshop 2 · Environmental costs of Artificial Intelligence",
       code: "Workshop 2",
       type: "workshop",
-      workshop: "Environmental cost of artificial intelligence",
+      workshop: "Environmental costs of Artificial Intelligence",
       date: "2026-11-17",
       start: "12:10",
       end: "13:40",
       room: "Parallel 1",
       people: ["poruri-sai-rahul"],
-      summary: "Workshop led by Mr Poruri Sai Rahul.",
+      summary:
+        "Join this workshop to understand how the internet works, how Artificial Intelligence is powered, who runs the technology that powers the internet, and how the internet can be more environmentally sustainable.",
       access: "registered",
     },
     {
       id: "d1-ws-photo",
-      title: "Workshop 3 · Photography for landscapes and wildlife",
+      title: "Workshop 3 · Basic knowledge about nature and wildlife photography",
       code: "Workshop 3",
       type: "workshop",
-      workshop: "Photography for landscapes and wildlife",
+      workshop: "Basic knowledge about nature and wildlife photography",
       date: "2026-11-17",
       start: "12:10",
       end: "13:40",
       room: "Parallel 2",
       people: ["akshay-bhardwaj"],
-      summary: "Workshop led by Mr Akshay Bhardwaj.",
+      summary:
+        "Learning about basic knowledge about landscape and wildlife photography.",
       access: "registered",
     },
     {
@@ -222,16 +224,17 @@ window.WILDE_PROGRAMME = {
     },
     {
       id: "d1-ws-gis",
-      title: "Workshop 4 · GIS–QGIS",
+      title: "Workshop 4 · GIS 101: Maps Made Easy",
       code: "Workshop 4",
       type: "workshop",
-      workshop: "GIS–QGIS",
+      workshop: "GIS 101: Maps Made Easy",
       date: "2026-11-17",
       start: "14:30",
       end: "16:30",
       room: "Parallel 1",
       people: ["aleena-xavier"],
-      summary: "Workshop led by Dr Aleena Xavier.",
+      summary:
+        "Learn to visualize, analyze, and create maps with QGIS — from handling spatial data to exploring satellite imagery. Geographic Information Systems (GIS) are versatile tools for exploring spatial data, from maps to satellite images and remote sensing datasets, and QGIS provides an accessible, open source platform to learn them. This two hour workshop introduces students to the QGIS platform. Participants will learn the basics of image analysis, how to work with different types of data (vector and raster files), understand coordinate reference systems and map projections, and practice exporting maps for reports or projects. The session will also explore satellite imagery, showing how remote sensing data can be used to extract useful information by using vegetation index as an example. By the end of the workshop, students will be able to manage diverse geospatial data formats, apply simple spatial analyses, and produce clear maps that connect data to real world ecological and environmental questions.",
       access: "registered",
     },
     {
@@ -275,16 +278,17 @@ window.WILDE_PROGRAMME = {
     },
     {
       id: "d2-ws-r",
-      title: "Workshop 5 · R and stats",
+      title: "Workshop 5 · Basics in R",
       code: "Workshop 5",
       type: "workshop",
-      workshop: "R and stats",
+      workshop: "Basics in R",
       date: "2026-11-18",
       start: "10:00",
       end: "12:00",
       room: "Parallel 1",
       people: ["amal-k-vyas"],
-      summary: "Workshop led by Mr Amal K Vyas.",
+      summary:
+        "Designed for absolute beginners from any field, the session begins by exploring why statistics is fundamental to research. Participants will navigate the computing environment, clarifying the distinct roles of R software and the RStudio interface. Core topics include understanding fundamental data types, navigating essential data structures, and importing external datasets. Students will then gain practical experience in data cleaning and manipulation to organise raw data efficiently, followed by generating clear, informative data visualisations. By the end of this workshop, attendees will possess the foundational skills needed to independently import, clean, transform, analyse, and plot their own datasets.",
       access: "registered",
     },
     {
@@ -316,16 +320,19 @@ window.WILDE_PROGRAMME = {
     },
     {
       id: "d2-ws-ai-plagiarism",
-      title: "Workshop 7 · Use of AI and plagiarism",
+      title:
+        "Workshop 7 · Intentional AI Usage: Understanding, Testing, and Using AI as a Student",
       code: "Workshop 7",
       type: "workshop",
-      workshop: "Use of AI and plagiarism",
+      workshop:
+        "Intentional AI Usage: Understanding, Testing, and Using AI as a Student",
       date: "2026-11-18",
       start: "12:00",
       end: "13:00",
       room: "Parallel 1",
       people: ["poonam-chauhan"],
-      summary: "Workshop led by Ms Poonam Chauhan.",
+      summary:
+        "Artificial Intelligence is reshaping higher education but leveraging its true potential requires active experimentation and critical evaluation. This interactive hands-on workshop engages students to use various AI chatbots (such as ChatGPT, Claude, and Gemini) as study mentors that assist you instead of study assistants that think for you. Participants will understand real-time outputs, identify response limitations, and discover how to go from vague AI answers to deep reliable study tools. Students will walk away with long-term skills in understanding AI systems and how they work, computational thinking, critical thinking and analysis, and breaking complex problems down for effective problem-solving.",
       access: "registered",
     },
     {
@@ -383,16 +390,19 @@ window.WILDE_PROGRAMME = {
     },
     {
       id: "d2-ws-hypothesis",
-      title: "Workshop 9 · Hypothesis testing and experiment design",
+      title:
+        "Workshop 9 · Design, Test, Discover: Designing Your First Scientific Experiment and Testing Hypothesis",
       code: "Workshop 9",
       type: "workshop",
-      workshop: "Hypothesis testing and experiment design",
+      workshop:
+        "Design, Test, Discover: Designing Your First Scientific Experiment and Testing Hypothesis",
       date: "2026-11-18",
       start: "15:30",
       end: "17:00",
       room: "Parallel 1",
       people: ["preeti-saryan"],
-      summary: "Workshop led by Dr Preeti.",
+      summary:
+        "This workshop is for beginners to intermediate level students. Through hands on activities, one would learn about the difference between an observation and a hypothesis, what makes a hypothesis testable?, and the link between data tools (like stats/GIS they learned earlier) and experimental design in testing the hypothesis.",
       access: "registered",
     },
     {

@@ -687,6 +687,17 @@ a {
   font-size: 0.95rem;
 }
 
+.slot-card.session-workshop .session-summary,
+.workshop-abstract {
+  margin-top: 0.55rem;
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+
+.workshop-abstract {
+  color: var(--ink-soft);
+}
+
 .workshop-card {
   display: block;
   padding: 1.1rem 1.15rem;

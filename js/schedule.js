@@ -181,6 +181,11 @@
         "</ul>"
       : "";
 
+    var detail =
+      session.type === "workshop" && session.summary
+        ? session.summary
+        : accessLabel();
+
     return (
       '<article class="slot-card session-' +
       escapeHtml(session.type) +
@@ -196,7 +201,7 @@
       escapeHtml(session.title) +
       "</h4>" +
       '<p class="session-summary">' +
-      escapeHtml(accessLabel()) +
+      escapeHtml(detail) +
       "</p>" +
       chips +
       "</article>"
@@ -276,6 +281,11 @@
             " – " +
             escapeHtml(formatTime(session.end)) +
             "</p>" +
+            (session.summary
+              ? '<p class="workshop-abstract">' +
+                escapeHtml(session.summary) +
+                "</p>"
+              : "") +
             '<p class="workshop-meta">' +
             escapeHtml(session.room) +
             " track · Registered participants</p>" +
