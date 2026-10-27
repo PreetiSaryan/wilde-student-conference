@@ -38,19 +38,6 @@
     });
   }
 
-  function isLiveLink(id) {
-    var link = document.getElementById(id);
-    if (!link) return false;
-    return /^https?:\/\//i.test(link.getAttribute("href") || "");
-  }
-
-  function hideNote(id) {
-    var note = document.getElementById(id);
-    if (note) note.hidden = true;
-  }
-
-  if (isLiveLink("conference-registration")) hideNote("registration-note");
-
   var programmeNote = document.getElementById("programme-note");
   if (programmeNote && window.WILDE_PROGRAMME && window.WILDE_PROGRAMME.note) {
     programmeNote.textContent = window.WILDE_PROGRAMME.note;
