@@ -567,6 +567,7 @@ a {
   display: grid;
   gap: 0.15rem;
   min-height: 64px;
+  min-width: 0;
   padding: 0.75rem 0.9rem;
   border: 1px solid var(--line);
   background: var(--paper-raised);
@@ -588,6 +589,8 @@ a {
   font-family: Fraunces, Georgia, serif;
   font-size: 1.15rem;
   font-weight: 560;
+  line-height: 1.2;
+  overflow-wrap: anywhere;
 }
 
 .day-tab.is-active {
@@ -692,6 +695,7 @@ a {
   margin-top: 0.55rem;
   font-size: 0.92rem;
   line-height: 1.55;
+  overflow-wrap: anywhere;
 }
 
 .workshop-abstract {
@@ -854,6 +858,10 @@ a {
 .pathway-card .stack {
   max-width: 18rem;
   gap: 0.65rem;
+}
+
+.pathway-card .stack .button {
+  width: 100%;
 }
 
 .button-ghost-ink {
@@ -1307,21 +1315,37 @@ article[id] {
   }
 
   .day-tabs {
+    grid-template-columns: minmax(0, 1fr);
     gap: 0.5rem;
   }
 
   .day-tab {
-    min-height: 58px;
-    padding: 0.7rem 0.75rem;
+    min-height: 52px;
+    padding: 0.75rem 0.9rem;
   }
 
   .day-tab-label {
-    font-size: 1rem;
+    font-size: 1.05rem;
+    line-height: 1.25;
+  }
+
+  .pathway-card .stack,
+  .expo-note .stack {
+    max-width: none;
   }
 
   .button,
   .faq-item summary {
     min-height: 48px;
+  }
+
+  .slot-card.session-workshop .session-summary,
+  .workshop-abstract {
+    font-size: 0.9rem;
+  }
+
+  .access-line {
+    padding-inline: 0.5rem;
   }
 }
 
@@ -1340,8 +1364,12 @@ article[id] {
   }
 
   .nav-cta {
-    padding: 0.4rem 0.65rem;
-    font-size: 0.84rem;
+    padding: 0.4rem 0.55rem;
+    font-size: 0.78rem;
+    max-width: 9.5rem;
+    white-space: normal;
+    text-align: center;
+    line-height: 1.15;
   }
 
   .organizer-card {
@@ -1399,22 +1427,27 @@ article[id] {
   }
 
   .day-tab {
-    min-height: 52px;
-    padding: 0.55rem 0.45rem;
+    min-height: 48px;
+    padding: 0.7rem 0.8rem;
   }
 
   .day-tab-kicker {
-    font-size: 0.64rem;
+    font-size: 0.68rem;
     letter-spacing: 0.08em;
   }
 
   .day-tab-label {
-    font-size: 0.88rem;
+    font-size: 1rem;
   }
 
   .nav-cta {
-    font-size: 0.8rem;
-    padding: 0.35rem 0.55rem;
+    font-size: 0.74rem;
+    padding: 0.35rem 0.45rem;
+    max-width: 8.75rem;
+  }
+
+  .person-copy > p {
+    font-size: 0.92rem;
   }
 }
 
