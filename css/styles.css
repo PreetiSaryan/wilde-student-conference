@@ -867,6 +867,10 @@ a {
   gap: 0.65rem;
 }
 
+.pathway-card .stack.pre-event-downloads {
+  max-width: 22rem;
+}
+
 .pathway-card .stack .button {
   width: 100%;
 }

@@ -92,7 +92,7 @@ window.WILDE_PROGRAMME = {
       name: "Ms Pramiti Negi",
       role: "Workshop lead",
       affiliation: "WILDE Student Conference 2026",
-      bio: "Leads the science communication and popular science writing workshop, including a pre-event writing competition that selects two co-planners.",
+      bio: "Leads the science communication and popular science writing workshop, linked to a pre-event writing competition whose top entries are used as working templates in the session.",
       photo: "assets/people/pramiti-negi.jpg",
     },
     {
@@ -373,11 +373,11 @@ window.WILDE_PROGRAMME = {
       room: "Parallel 1",
       people: ["pramiti-negi"],
       summary:
-        "Workshop led by Ms Pramiti Negi. Two paths: enter the pre-event writing competition to be considered as one of two co-planners, or join through 20 open seats without competing.",
+        "Workshop led by Ms Pramiti Negi. Enter the pre-event writing competition for prizes and to have your write-up used as a working template, or join through 20 open seats without competing.",
       preEvent: {
         href: "#pre-event",
         label:
-          "Participate in the pre-event writing competition if you want to co-plan this workshop with Pramiti. 20 seats are also open without the competition.",
+          "Participate in the pre-event writing competition for prizes and to have your write-up used as a working template. 20 seats are also open without the competition.",
       },
       access: "registered",
     },
