@@ -43,6 +43,43 @@
     programmeNote.textContent = window.WILDE_PROGRAMME.note;
   }
 
+  function pageBaseUrl() {
+    return window.location.href.split("#")[0].replace(/index\.html$/i, "");
+  }
+
+  function absoluteShareUrl(id) {
+    var base = pageBaseUrl();
+    if (base.slice(-1) !== "/" && base.indexOf("?") === -1) {
+      /* keep as-is for both root and project pages */
+    }
+    return base + "#" + id;
+  }
+
+  document.querySelectorAll(".share-url[data-share-id]").forEach(function (link) {
+    var id = link.getAttribute("data-share-id");
+    if (!id) return;
+    var url = absoluteShareUrl(id);
+    link.setAttribute("href", "#" + id);
+    link.textContent = url;
+    link.title = "Copy or open this direct link";
+  });
+
+  function scrollToHashTarget() {
+    var hash = window.location.hash;
+    if (!hash || hash.indexOf("#session-") === 0 || hash === "#workshops") {
+      return;
+    }
+    var target = document.querySelector(hash);
+    if (!target) return;
+    window.setTimeout(function () {
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
+    }, 60);
+  }
+
+  window.addEventListener("load", scrollToHashTarget);
+  window.addEventListener("hashchange", scrollToHashTarget);
+  scrollToHashTarget();
+
   var navLinks = document.querySelectorAll(".site-nav a");
   if (!("IntersectionObserver" in window)) return;
 

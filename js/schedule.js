@@ -185,6 +185,17 @@
       session.type === "workshop" && session.summary
         ? session.summary
         : accessLabel();
+    var preEvent =
+      session.preEvent && session.preEvent.href
+        ? '<p class="session-pre-event"><a href="' +
+          escapeHtml(session.preEvent.href) +
+          '">' +
+          escapeHtml(
+            session.preEvent.label ||
+              "Participate in the pre-event competition if you want to take part"
+          ) +
+          "</a></p>"
+        : "";
 
     return (
       '<article class="slot-card session-' +
@@ -203,6 +214,7 @@
       '<p class="session-summary">' +
       escapeHtml(detail) +
       "</p>" +
+      preEvent +
       chips +
       "</article>"
     );
@@ -263,9 +275,10 @@
       workshops
         .map(function (session) {
           return (
-            '<a class="workshop-card session-' +
+            '<article class="workshop-card session-' +
             escapeHtml(session.type) +
-            '" href="#session-' +
+            '">' +
+            '<a class="workshop-card-main" href="#session-' +
             escapeHtml(session.id) +
             '">' +
             '<p class="day-kicker">' +
@@ -289,7 +302,18 @@
             '<p class="workshop-meta">' +
             escapeHtml(session.room) +
             " track · Registered participants</p>" +
-            "</a>"
+            "</a>" +
+            (session.preEvent && session.preEvent.href
+              ? '<p class="session-pre-event"><a href="' +
+                escapeHtml(session.preEvent.href) +
+                '">' +
+                escapeHtml(
+                  session.preEvent.label ||
+                    "Participate in the pre-event competition if you want to take part"
+                ) +
+                "</a></p>"
+              : "") +
+            "</article>"
           );
         })
         .join("") +
@@ -475,9 +499,7 @@
   });
 
   document.addEventListener("click", function (event) {
-    var link = event.target.closest(
-      'a[href^="#session-"], a.workshop-card[href^="#session-"]'
-    );
+    var link = event.target.closest('a[href^="#session-"]');
     if (!link) return;
     var href = link.getAttribute("href");
     var sessionId = href.replace("#session-", "");
@@ -487,30 +509,51 @@
     if (session && currentView !== session.date) {
       activateView(session.date);
     }
+    flashSession(href);
+  });
+
+  function flashSession(href) {
     window.setTimeout(function () {
       var target = document.querySelector(href);
       if (!target) return;
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
       target.classList.add("is-flash");
       window.setTimeout(function () {
         target.classList.remove("is-flash");
       }, 1600);
-    }, 50);
-  });
+    }, 80);
+  }
 
-  function maybeOpenWorkshopsFromHash() {
-    if (window.location.hash === "#workshops") {
+  function openFromHash() {
+    var hash = window.location.hash;
+    if (!hash) return false;
+
+    if (hash === "#workshops") {
       activateView("workshops");
       return true;
     }
+
+    if (hash.indexOf("#session-") === 0) {
+      var sessionId = hash.replace("#session-", "");
+      var session = data.sessions.find(function (item) {
+        return item.id === sessionId;
+      });
+      if (session) {
+        activateView(session.date);
+        flashSession(hash);
+        return true;
+      }
+    }
+
     return false;
   }
 
-  if (!maybeOpenWorkshopsFromHash()) {
+  if (!openFromHash()) {
     renderCurrentView();
   }
 
   window.addEventListener("hashchange", function () {
-    maybeOpenWorkshopsFromHash();
+    openFromHash();
   });
 
   document.querySelectorAll('a[href="#workshops"]').forEach(function (link) {
