@@ -1145,8 +1145,9 @@ address {
 
 .partners-grid {
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1rem;
+  max-width: 52rem;
 }
 
 .partner-card {
@@ -1176,6 +1177,20 @@ address {
   aspect-ratio: 2 / 1;
   object-fit: contain;
   background: #fff;
+}
+
+.partner-card-dark {
+  background: #0b0b0b;
+  border-color: rgba(255, 255, 255, 0.18);
+  border-top-color: var(--accent);
+}
+
+.partner-card-dark .partner-logo {
+  background: #0b0b0b;
+}
+
+.partner-card-dark .partner-name {
+  color: var(--cream);
 }
 
 .partner-name {
@@ -1321,9 +1336,6 @@ article[id] {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
-  .partners-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
 }
 
 @media (max-width: 980px) {
@@ -1342,13 +1354,13 @@ article[id] {
   .organizer-board,
   .pathways,
   .expo-ideas,
-  .partners-grid,
   .timeline {
     grid-template-columns: minmax(0, 1fr);
   }
 
   .partners-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.75rem;
   }
 
   .people-board {
@@ -1569,9 +1581,21 @@ article[id] {
 
 @media (max-width: 380px) {
   .people-board,
-  .partners-grid,
   .timeline {
     grid-template-columns: minmax(0, 1fr);
+  }
+
+  .partners-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.55rem;
+  }
+
+  .partner-card {
+    padding: 0.75rem 0.5rem 0.85rem;
+  }
+
+  .partner-name {
+    font-size: 0.82rem;
   }
 
   .day-tab {

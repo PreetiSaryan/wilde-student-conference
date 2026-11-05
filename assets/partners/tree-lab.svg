@@ -1,6 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 160" role="img" aria-label="TREE Lab">
-  <rect width="320" height="160" fill="#ffffff"/>
-  <path d="M56 108v-20M56 88c-14-2-22-14-18-26 8 2 14 8 18 16 4-10 12-18 24-18-2 14-10 24-24 28z" fill="none" stroke="#2f5d3a" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
-  <text x="96" y="78" font-family="Georgia, serif" font-size="32" font-weight="700" fill="#141414">TREE</text>
-  <text x="96" y="110" font-family="Segoe UI, sans-serif" font-size="18" font-weight="600" fill="#4a4a4a">Lab</text>
-</svg>
