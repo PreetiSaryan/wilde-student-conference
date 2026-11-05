@@ -91,7 +91,7 @@ window.WILDE_PROGRAMME = {
       name: "Ms Poonam Chauhan",
       role: "Workshop lead",
       affiliation: "WILDE Student Conference 2026",
-      bio: "Poonam Chauhan is a Life Sciences graduate with a B.Sc. (Honours) degree, majoring in Botany. Driven by a deep curiosity about the natural world, her core academic interests lie in plant taxonomy, ecological dynamics, and biodiversity conservation. She gained extensive hands-on field research experience through an internship with Saryan Vigyan Foundation in Kinnaur, Himachal Pradesh, where she conducted plant identification, vegetation surveys, herbarium preparation, biodiversity documentation, and ethnobotanical studies in the Western Himalayas. She further expanded her scientific foundation through a laboratory internship at The University of Trans-Disciplinary Health Sciences and Technology (TDU), Bengaluru. Proficient in R for ecological data analysis and QGIS for spatial mapping, she combines field methodology, analytical tools, and scientific inquiry to understand species relationships. She aims to dedicate her career to research-driven conservation strategies and environmental stewardship to protect fragile ecosystems and safeguard biodiversity.",
+      bio: "Poonam Chauhan is a Life Sciences graduate with a B.Sc. (Honours) degree and a keen interest in plant biodiversity and ecology. She gained field experience through an internship with Saryan Vigyan Foundation, where she contributed to biodiversity surveys, plant identification, and vegetation sampling in Kinnaur, Himachal Pradesh. Her interests include plant taxonomy, ecological research, conservation, and the emerging applications of Artificial Intelligence in education and research. As an early-career researcher, she is exploring methods and tools used in biodiversity studies and is passionate about understanding plant diversity and its role in ecosystem conservation.",
       photo: "assets/people/poonam-chauhan.jpg",
     },
     {
@@ -124,7 +124,7 @@ window.WILDE_PROGRAMME = {
       role: "Workshop lead",
       affiliation: "Nature Conservation Foundation",
       bio: "I am working as a wildlife researcher with Nature Conservation Foundation. My research revolves around species interactions and population dynamics in the Himalayan landscape. Working in Himalaya has deepened my fascination with how species adapt and coexist in such challenging environments. I am particularly interested in studying species residing in extreme habitats and understanding how climate change and human activities are reshaping these dynamics.",
-      photo: "",
+      photo: "assets/people/manjot-kaur.jpg",
       website: "https://www.linkedin.com/in/manjot-kaur-b60a8420a",
     },
     {

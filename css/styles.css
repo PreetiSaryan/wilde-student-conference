@@ -501,6 +501,34 @@ a {
   padding: 1.25rem 1.3rem;
 }
 
+.reach-block {
+  margin-top: 0.25rem;
+}
+
+.reach-block h3 {
+  font-family: Fraunces, Georgia, serif;
+  font-size: 1.35rem;
+  font-weight: 560;
+  line-height: 1.25;
+}
+
+.reach-block > p {
+  margin-top: 0.65rem;
+  color: var(--ink-soft);
+}
+
+.reach-list {
+  margin: 0.9rem 0 0;
+  padding-left: 1.15rem;
+  display: grid;
+  gap: 0.55rem;
+  color: var(--ink);
+}
+
+.reach-list li::marker {
+  color: var(--pine);
+}
+
 .card .lede {
   margin-top: 0.65rem;
   color: var(--ink-soft);
