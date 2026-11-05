@@ -701,10 +701,6 @@ a {
   pointer-events: none;
 }
 
-.schedule-room-legend {
-  margin: -0.35rem 0 1rem;
-}
-
 .slot-card.session-workshop,
 .slot-card.session-activity,
 .workshop-card {

@@ -44,11 +44,6 @@
     "LH-42": 1,
     "LH-35": 2,
   };
-  var parallelColumnLabels = [
-    "Conference Hall",
-    "BCA Computer Lab / LH-42",
-    "LH-35",
-  ];
   var typeLabels = {
     workshop: "Workshop",
     talk: "Talk",
@@ -447,9 +442,6 @@
       '<p class="schedule-day-label">' +
       escapeHtml(dayLabel) +
       "</p>" +
-      '<p class="programme-note schedule-room-legend">Parallel columns stay fixed by room: ' +
-      escapeHtml(parallelColumnLabels.join(" · ")) +
-      ".</p>" +
       '<ol class="day-timeline">' +
       slots
         .map(function (slot) {
