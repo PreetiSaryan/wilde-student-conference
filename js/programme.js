@@ -183,22 +183,6 @@ window.WILDE_PROGRAMME = {
       },
     },
     {
-      id: "akshita-sharma",
-      name: "Akshita Sharma",
-      role: "Student speaker",
-      affiliation: "Indian Institute of Forest Management, Bhopal / FRI Dehradun",
-      bio: "Ph.D. scholar at IIFM Bhopal (nodal institute FRI Dehradun). Works on Himalayan spring systems and community stewardship.",
-      photo: "",
-      presentation: {
-        kind: "talk",
-        title:
-          "Sacred Springs, Fragile Futures: Protecting Himalayan Spring Systems through Community Stewardship",
-        theme: "Theme 4: Community Conservation & Traditional Knowledge",
-        abstract:
-          "40% of the springs in the Himalayas have dried up while many springs have become seasonal from perennial. The shift from forest dependent livelihoods to agriculture (monoculture) and land use change in rural Shimla is one of the major causes of this poor geohydrological state. Springs, which sustain the region's ecology are mostly snow fed and affected by shifting livelihoods, and climate change. By examining how local and Indigenous communities perceive and adapt to these environmental changes, the study highlights resilience through traditional knowledge systems, community-led conservation efforts, and spiritual practices that intertwine ecological preservation with cultural significance. Drawing on mixed-methods research in Chirgaon (Shimla rural)—water quality monitoring, water flow pattern measurements, and community interviews—the study attempts to explore how traditional water sources are evolving and explores the traditional knowledge systems and its dwindling cultural relevance. By highlighting cultural practices as invisible engines behind rural water security of Shimla (rural) this study positions springs as micro-ecosystems where Social-Ecological Resilience with hydrology merge. It aspires to evoke conversations on transformative change by calling for a shift from isolated water interventions to integrated resource management where community livelihoods, local governance, and community knowledge co-produce longevity of springs.",
-      },
-    },
-    {
       id: "azlan-ahmad-khan",
       name: "Azlan Ahmad Khan",
       role: "Poster presenter",
