@@ -244,29 +244,57 @@ body {
 }
 .sheet:last-child { page-break-after: auto; }
 .banner {
+  display: grid;
+  grid-template-columns: 5.5rem minmax(0, 1fr);
+  gap: 0.9rem 1rem;
+  align-items: center;
   border-bottom: 3px solid #2f5d3a;
-  padding-bottom: 0.75rem;
+  padding-bottom: 0.85rem;
   margin-bottom: 1rem;
 }
-.eyebrow {
-  margin: 0;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  font-size: 0.75rem;
-  font-family: Arial, Helvetica, sans-serif;
-  color: #2f5d3a;
-  font-weight: 700;
+.banner-logo {
+  width: 5.5rem;
+  height: auto;
+  display: block;
 }
-h1 {
-  margin: 0.2rem 0 0;
-  font-size: 1.85rem;
+.banner-copy {
+  min-width: 0;
+}
+.conference-name {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.35rem;
+  font-weight: 700;
   line-height: 1.15;
+  color: #1c2418;
+}
+.theme {
+  margin: 0.3rem 0 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.88rem;
+  line-height: 1.35;
+  color: #2f5d3a;
+  font-weight: 650;
 }
 .meta {
   margin: 0.35rem 0 0;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 0.92rem;
+  font-size: 0.84rem;
   color: #445;
+}
+.room-label {
+  margin: 0.7rem 0 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #2f5d3a;
+  font-weight: 700;
+}
+h1 {
+  margin: 0.15rem 0 0;
+  font-size: 1.75rem;
+  line-height: 1.15;
 }
 .day-heading {
   margin: 1.25rem 0 0.55rem;
@@ -334,10 +362,14 @@ def render_room_html(room: str, rows: list[dict]) -> str:
     parts = [
         f'<section class="sheet" id="{room_slug(room)}">',
         '<div class="banner">',
-        '<p class="eyebrow">WILDE Student Conference 2026 · Room schedule</p>',
+        '<img class="banner-logo" src="wilde-logo.png" alt="WILDE" width="176" height="123" />',
+        '<div class="banner-copy">',
+        '<p class="conference-name">WILDE Student Conference 2026</p>',
+        '<p class="theme">Interdisciplinary Research for Himalayan Landscapes, Ecologies, and Communities</p>',
+        '<p class="meta">17–18 November 2026 · G.B. Pant Memorial Govt. College, Rampur Bushahr</p>',
+        '<p class="room-label">Room schedule</p>',
         f"<h1>{escape(room)}</h1>",
-        '<p class="meta">G.B. Pant Memorial Govt. College, Rampur Bushahr · 17–18 November 2026</p>',
-        "</div>",
+        "</div></div>",
     ]
     for day_label, day_rows in by_day.items():
         parts.append(f'<h2 class="day-heading">{escape(day_label)}</h2>')
@@ -386,6 +418,10 @@ def main() -> None:
         raise SystemExit("No room sessions found")
 
     OUT.mkdir(parents=True, exist_ok=True)
+    logo_src = ROOT / "assets" / "wilde-logo.png"
+    logo_dest = OUT / "wilde-logo.png"
+    if logo_src.exists():
+        logo_dest.write_bytes(logo_src.read_bytes())
     preferred = [
         "Auditorium",
         "Conference Hall",
