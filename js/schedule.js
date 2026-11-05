@@ -541,6 +541,95 @@
     renderDaySchedule(currentView);
   }
 
+  function isWorkshopLead(person) {
+    return /workshop\s*lead/i.test(person.role || "");
+  }
+
+  function isStudentPresenter(person) {
+    return /student speaker|poster presenter/i.test(person.role || "");
+  }
+
+  function renderPersonCard(person) {
+    var sessions = personSessions(person.id);
+    var links = sessions
+      .map(function (session) {
+        return (
+          '<li><a href="#session-' +
+          escapeHtml(session.id) +
+          '">' +
+          escapeHtml(session.title) +
+          "</a></li>"
+        );
+      })
+      .join("");
+
+    var presentation = person.presentation
+      ? renderExpandableTitle({
+          tag: "div",
+          id: "person-presentation-" + person.id,
+          title: person.presentation.title,
+          kind:
+            person.presentation.kind === "poster"
+              ? "Poster"
+              : "Student talk",
+          abstract: person.presentation.abstract,
+        })
+      : "";
+
+    var photo = person.photo
+      ? '<img class="person-photo" src="' +
+        escapeHtml(person.photo) +
+        '" alt="Portrait of ' +
+        escapeHtml(person.name) +
+        '" width="280" height="280" loading="lazy" />'
+      : '<div class="person-photo person-photo-fallback" aria-hidden="true">' +
+        escapeHtml(initialsFor(person.name)) +
+        "</div>";
+
+    return (
+      '<article class="person-card" id="person-' +
+      escapeHtml(person.id) +
+      '">' +
+      '<div class="person-photo-wrap">' +
+      photo +
+      "</div>" +
+      '<div class="person-copy">' +
+      "<h3>" +
+      escapeHtml(person.name) +
+      "</h3>" +
+      '<p class="person-role">' +
+      escapeHtml(person.role) +
+      (person.affiliation ? " · " + escapeHtml(person.affiliation) : "") +
+      "</p>" +
+      (person.bio ? "<p>" + escapeHtml(person.bio) + "</p>" : "") +
+      (presentation
+        ? '<div class="person-presentation">' + presentation + "</div>"
+        : "") +
+      (links
+        ? '<div class="person-sessions"><h4>Sessions</h4><ul>' +
+          links +
+          "</ul></div>"
+        : "") +
+      "</div></article>"
+    );
+  }
+
+  function renderPeopleGroup(title, intro, people, featured) {
+    if (!people.length) return "";
+    return (
+      '<section class="people-group' +
+      (featured ? " people-group-featured" : "") +
+      '">' +
+      "<h3>" +
+      escapeHtml(title) +
+      "</h3>" +
+      (intro ? '<p class="people-group-intro">' + escapeHtml(intro) + "</p>" : "") +
+      '<div class="people-board">' +
+      people.map(renderPersonCard).join("") +
+      "</div></section>"
+    );
+  }
+
   function renderPeople() {
     if (!peopleRoot) return;
     if (!data.people || !data.people.length) {
@@ -552,72 +641,24 @@
       return;
     }
 
-    peopleRoot.innerHTML = data.people
-      .map(function (person) {
-        var sessions = personSessions(person.id);
-        var links = sessions
-          .map(function (session) {
-            return (
-              '<li><a href="#session-' +
-              escapeHtml(session.id) +
-              '">' +
-              escapeHtml(session.title) +
-              "</a></li>"
-            );
-          })
-          .join("");
+    var leads = data.people.filter(isWorkshopLead);
+    var presenters = data.people.filter(function (person) {
+      return isStudentPresenter(person) && !isWorkshopLead(person);
+    });
 
-        var presentation = person.presentation
-          ? renderExpandableTitle({
-              tag: "div",
-              id: "person-presentation-" + person.id,
-              title: person.presentation.title,
-              kind:
-                person.presentation.kind === "poster"
-                  ? "Poster"
-                  : "Student talk",
-              abstract: person.presentation.abstract,
-            })
-          : "";
-
-        var photo = person.photo
-          ? '<img class="person-photo" src="' +
-            escapeHtml(person.photo) +
-            '" alt="Portrait of ' +
-            escapeHtml(person.name) +
-            '" width="280" height="280" loading="lazy" />'
-          : '<div class="person-photo person-photo-fallback" aria-hidden="true">' +
-            escapeHtml(initialsFor(person.name)) +
-            "</div>";
-
-        return (
-          '<article class="person-card" id="person-' +
-          escapeHtml(person.id) +
-          '">' +
-          '<div class="person-photo-wrap">' +
-          photo +
-          "</div>" +
-          '<div class="person-copy">' +
-          "<h3>" +
-          escapeHtml(person.name) +
-          "</h3>" +
-          '<p class="person-role">' +
-          escapeHtml(person.role) +
-          (person.affiliation ? " · " + escapeHtml(person.affiliation) : "") +
-          "</p>" +
-          (person.bio ? "<p>" + escapeHtml(person.bio) + "</p>" : "") +
-          (presentation
-            ? '<div class="person-presentation">' + presentation + "</div>"
-            : "") +
-          (links
-            ? '<div class="person-sessions"><h4>Sessions</h4><ul>' +
-              links +
-              "</ul></div>"
-            : "") +
-          "</div></article>"
-        );
-      })
-      .join("");
+    peopleRoot.innerHTML =
+      renderPeopleGroup(
+        "Workshop leads",
+        "Resource personnel leading the conference workshops.",
+        leads,
+        true
+      ) +
+      renderPeopleGroup(
+        "Student speakers and poster presenters",
+        "Tap a title to read the abstract.",
+        presenters,
+        false
+      );
   }
 
   function renderOrganizers() {

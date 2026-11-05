@@ -73,7 +73,7 @@ window.WILDE_PROGRAMME = {
     {
       id: "amal-k-vyas",
       name: "Mr Amal K Vyas",
-      role: "Workshop lead & student speaker",
+      role: "Workshop lead",
       affiliation: "IISER Thiruvananthapuram",
       bio: "I am a PhD student at IISER Thiruvananthapuram, working with Prof. Hema Somanathan to study native honey bees across India. My passion for honey bees began during my BS-MS at IISER Bhopal. I’ve always had a habit of looking for patterns in everything around me, which naturally drew me into the world of data analysis. In my current research, I look at both physical traits (morphological data) and genetic information (molecular data) to find clear patterns in native bee populations. By combining biological science with data analysis, I hope to better understand how India's native honey bees are structured across different regions and support efforts to protect these vital pollinators.",
       photo: "assets/people/amal-k-vyas.jpg",
@@ -117,6 +117,15 @@ window.WILDE_PROGRAMME = {
       affiliation: "WILDE Student Conference 2026",
       bio: "Leads the workshop on 3D printing for making science accessible to all.",
       photo: "assets/people/arpit-singh.jpg",
+    },
+    {
+      id: "manjot-kaur",
+      name: "Ms Manjot Kaur",
+      role: "Workshop lead",
+      affiliation: "Nature Conservation Foundation",
+      bio: "I am working as a wildlife researcher with Nature Conservation Foundation. My research revolves around species interactions and population dynamics in the Himalayan landscape. Working in Himalaya has deepened my fascination with how species adapt and coexist in such challenging environments. I am particularly interested in studying species residing in extreme habitats and understanding how climate change and human activities are reshaping these dynamics.",
+      photo: "",
+      website: "https://www.linkedin.com/in/manjot-kaur-b60a8420a",
     },
     {
       id: "akshima-dhadwal",
@@ -609,9 +618,9 @@ window.WILDE_PROGRAMME = {
       start: "14:00",
       end: "15:45",
       room: "LH-35",
-      people: [],
+      people: ["manjot-kaur"],
       summary:
-        "Hands-on workshop led by Manjot Kaur and Charu on wildlife monitoring and population estimation techniques.",
+        "Understanding wildlife populations is fundamental to effective biodiversity conservation and management. Several methods have been developed to estimate and monitor the wildlife around the world. Each method serves a different purpose and has a different set of assumptions. Monitoring wildlife populations in montane terrains comes with its own set of challenges, thereby making it important to understand these assumptions and implement those methods well. Estimating the abundance of Himalayan mammals requires specialised survey techniques and analytical approaches. This hands-on workshop aims to introduce early-career and aspiring researchers to the fundamental principles and practical applications of wildlife population estimation methods. Through interactive sessions, demonstrations, and practical exercises, participants will get exposure to methods commonly employed in the mountain landscape.",
       access: "registered",
     },
     {
