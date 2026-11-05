@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 160" role="img" aria-label="FOSS United">
+  <rect width="320" height="160" fill="#ffffff"/>
+  <path d="M40 104V56h22c14 0 24 8 24 24s-10 24-24 24H40zm18-14h6c6 0 10-4 10-10s-4-10-10-10h-6v20z" fill="#2f5d3a"/>
+  <text x="100" y="78" font-family="Georgia, serif" font-size="30" font-weight="700" fill="#141414">FOSS</text>
+  <text x="100" y="110" font-family="Segoe UI, sans-serif" font-size="18" font-weight="600" fill="#4a4a4a">United</text>
+</svg>
