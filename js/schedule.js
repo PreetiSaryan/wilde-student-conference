@@ -137,13 +137,167 @@
       .filter(Boolean);
   }
 
+  function personById(id) {
+    return peopleById[id] || null;
+  }
+
   function personSessions(personId) {
     return data.sessions
       .filter(function (session) {
-        return (session.people || []).indexOf(personId) !== -1;
+        if ((session.people || []).indexOf(personId) !== -1) return true;
+        if (
+          (session.talks || []).some(function (talk) {
+            return (talk.people || []).indexOf(personId) !== -1;
+          })
+        ) {
+          return true;
+        }
+        if ((session.posters || []).indexOf(personId) !== -1) return true;
+        return false;
       })
       .slice()
       .sort(compareSessions);
+  }
+
+  function initialsFor(name) {
+    return String(name || "")
+      .split(/\s+/)
+      .filter(Boolean)
+      .slice(0, 2)
+      .map(function (part) {
+        return part.charAt(0).toUpperCase();
+      })
+      .join("");
+  }
+
+  function personThumb(person) {
+    if (person.photo) {
+      return (
+        '<img src="' +
+        escapeHtml(person.photo) +
+        '" alt="" width="28" height="28" loading="lazy" />'
+      );
+    }
+    return (
+      '<span class="person-chip-fallback" aria-hidden="true">' +
+      escapeHtml(initialsFor(person.name)) +
+      "</span>"
+    );
+  }
+
+  function presentationAbstract(person) {
+    return person && person.presentation && person.presentation.abstract
+      ? person.presentation.abstract
+      : "";
+  }
+
+  function renderExpandableTitle(options) {
+    var tag = options.tag || "li";
+    var timeLabel = options.start
+      ? escapeHtml(formatTime(options.start)) +
+        (options.end
+          ? '<span class="time-sep">–</span>' + escapeHtml(formatTime(options.end))
+          : "")
+      : "";
+    var speaker = options.speaker
+      ? '<a class="talk-speaker" href="#person-' +
+        escapeHtml(options.speaker.id) +
+        '">' +
+        escapeHtml(options.speaker.name) +
+        "</a>"
+      : options.speakerName
+        ? escapeHtml(options.speakerName)
+        : "";
+    var metaBits = [];
+    if (timeLabel) metaBits.push('<span class="talk-time">' + timeLabel + "</span>");
+    if (speaker) metaBits.push(speaker);
+    if (options.kind) metaBits.push(escapeHtml(options.kind));
+
+    var abstract = options.abstract
+      ? '<p class="talk-abstract-body">' + escapeHtml(options.abstract) + "</p>"
+      : "";
+    var open =
+      "<" +
+      tag +
+      ' class="talk-item' +
+      (options.abstract ? "" : " talk-item-plain") +
+      '" id="' +
+      escapeHtml(options.id || "") +
+      '">';
+    var close = "</" + tag + ">";
+
+    if (!options.abstract) {
+      return (
+        open +
+        (metaBits.length
+          ? '<p class="talk-meta">' + metaBits.join(" · ") + "</p>"
+          : "") +
+        '<p class="talk-title">' +
+        escapeHtml(options.title) +
+        "</p>" +
+        close
+      );
+    }
+
+    return (
+      open +
+      '<details class="talk-abstract">' +
+      "<summary>" +
+      (metaBits.length
+        ? '<span class="talk-meta">' + metaBits.join(" · ") + "</span>"
+        : "") +
+      '<span class="talk-title">' +
+      escapeHtml(options.title) +
+      "</span>" +
+      '<span class="talk-hint">Show abstract</span>' +
+      "</summary>" +
+      abstract +
+      "</details>" +
+      close
+    );
+  }
+
+  function renderTalksList(session) {
+    if (!session.talks || !session.talks.length) return "";
+    return (
+      '<ul class="talk-list">' +
+      session.talks
+        .map(function (talk) {
+          var speakerId = (talk.people || [])[0];
+          var speaker = speakerId ? personById(speakerId) : null;
+          return renderExpandableTitle({
+            id: talk.id,
+            title: talk.title,
+            start: talk.start,
+            end: talk.end,
+            speaker: speaker,
+            abstract: presentationAbstract(speaker),
+          });
+        })
+        .join("") +
+      "</ul>"
+    );
+  }
+
+  function renderPostersList(session) {
+    if (!session.posters || !session.posters.length) return "";
+    return (
+      '<ul class="talk-list poster-list">' +
+      session.posters
+        .map(function (personId) {
+          var person = personById(personId);
+          if (!person || !person.presentation) return "";
+          return renderExpandableTitle({
+            id: "poster-" + person.id + "-" + session.id,
+            title: person.presentation.title,
+            speaker: person,
+            kind: "Poster",
+            abstract: person.presentation.abstract,
+          });
+        })
+        .join("") +
+      "</ul>"
+    );
   }
 
   function daySessions(day) {
@@ -175,29 +329,34 @@
   }
 
   function compactCard(session) {
+    var hasTalks = session.talks && session.talks.length;
+    var hasPosters = session.posters && session.posters.length;
     var people = sessionPeople(session);
-    var chips = people.length
-      ? '<ul class="person-chips">' +
-        people
-          .map(function (person) {
-            return (
-              '<li><a class="person-chip" href="#person-' +
-              escapeHtml(person.id) +
-              '"><img src="' +
-              escapeHtml(person.photo) +
-              '" alt="" width="28" height="28" loading="lazy" /><span>' +
-              escapeHtml(person.name) +
-              "</span></a></li>"
-            );
-          })
-          .join("") +
-        "</ul>"
-      : "";
+    var chips =
+      !hasTalks && !hasPosters && people.length
+        ? '<ul class="person-chips">' +
+          people
+            .map(function (person) {
+              return (
+                '<li><a class="person-chip" href="#person-' +
+                escapeHtml(person.id) +
+                '">' +
+                personThumb(person) +
+                "<span>" +
+                escapeHtml(person.name) +
+                "</span></a></li>"
+              );
+            })
+            .join("") +
+          "</ul>"
+        : "";
 
     var detail =
       session.type === "workshop" && session.summary
         ? session.summary
-        : accessLabel();
+        : hasTalks || hasPosters
+          ? session.summary || ""
+          : accessLabel();
     var preEvent =
       session.preEvent && session.preEvent.href
         ? '<p class="session-pre-event"><a href="' +
@@ -227,9 +386,11 @@
       "<h4>" +
       escapeHtml(session.title) +
       "</h4>" +
-      '<p class="session-summary">' +
-      escapeHtml(detail) +
-      "</p>" +
+      (detail
+        ? '<p class="session-summary">' + escapeHtml(detail) + "</p>"
+        : "") +
+      renderTalksList(session) +
+      renderPostersList(session) +
       preEvent +
       chips +
       "</article>"
@@ -406,16 +567,35 @@
           })
           .join("");
 
+        var presentation = person.presentation
+          ? renderExpandableTitle({
+              tag: "div",
+              id: "person-presentation-" + person.id,
+              title: person.presentation.title,
+              kind:
+                person.presentation.kind === "poster"
+                  ? "Poster"
+                  : "Student talk",
+              abstract: person.presentation.abstract,
+            })
+          : "";
+
+        var photo = person.photo
+          ? '<img class="person-photo" src="' +
+            escapeHtml(person.photo) +
+            '" alt="Portrait of ' +
+            escapeHtml(person.name) +
+            '" width="280" height="280" loading="lazy" />'
+          : '<div class="person-photo person-photo-fallback" aria-hidden="true">' +
+            escapeHtml(initialsFor(person.name)) +
+            "</div>";
+
         return (
           '<article class="person-card" id="person-' +
           escapeHtml(person.id) +
           '">' +
           '<div class="person-photo-wrap">' +
-          '<img class="person-photo" src="' +
-          escapeHtml(person.photo) +
-          '" alt="Portrait of ' +
-          escapeHtml(person.name) +
-          '" width="280" height="280" loading="lazy" />' +
+          photo +
           "</div>" +
           '<div class="person-copy">' +
           "<h3>" +
@@ -423,10 +603,12 @@
           "</h3>" +
           '<p class="person-role">' +
           escapeHtml(person.role) +
+          (person.affiliation ? " · " + escapeHtml(person.affiliation) : "") +
           "</p>" +
-          "<p>" +
-          escapeHtml(person.bio) +
-          "</p>" +
+          (person.bio ? "<p>" + escapeHtml(person.bio) + "</p>" : "") +
+          (presentation
+            ? '<div class="person-presentation">' + presentation + "</div>"
+            : "") +
           (links
             ? '<div class="person-sessions"><h4>Sessions</h4><ul>' +
               links +

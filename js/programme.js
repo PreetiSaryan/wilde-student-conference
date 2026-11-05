@@ -73,10 +73,18 @@ window.WILDE_PROGRAMME = {
     {
       id: "amal-k-vyas",
       name: "Mr Amal K Vyas",
-      role: "Workshop lead",
+      role: "Workshop lead & student speaker",
       affiliation: "IISER Thiruvananthapuram",
       bio: "I am a PhD student at IISER Thiruvananthapuram, working with Prof. Hema Somanathan to study native honey bees across India. My passion for honey bees began during my BS-MS at IISER Bhopal. I’ve always had a habit of looking for patterns in everything around me, which naturally drew me into the world of data analysis. In my current research, I look at both physical traits (morphological data) and genetic information (molecular data) to find clear patterns in native bee populations. By combining biological science with data analysis, I hope to better understand how India's native honey bees are structured across different regions and support efforts to protect these vital pollinators.",
       photo: "assets/people/amal-k-vyas.jpg",
+      presentation: {
+        kind: "talk",
+        title:
+          "Genetic and Morphological diversity of native honey bee; Apis cerana in Himalayas",
+        theme: "Theme 1: Himalayan Ecology & Biodiversity",
+        abstract:
+          "Honeybees are important pollinators across different habitats globally. Their declining numbers are a cause of increasing global concern, making studies on their population level critical. This is especially true for the tropical species of honeybees, about which little is known. One among the native is Apis cerana which is an important pollinator that is also widely distributed throughout India. However, despite their value in providing ecosystem services to wild and crop plants, their ecology and population structures remain largely understudied. Objective: To investigate the population structure using morphological variation and genetic diversity of A. cerana populations across different geographical regions of India including the Himalayas. Methods: We use morphological traits and genome-wide single nucleotide polymorphism (SNP) markers. We measured morphological traits from individuals from all the Himalayas including North eastern Himalayas and did multivariate analysis for understanding the morphological variation. Further, we employed ddRAD sequencing on a subset of samples and bioinformatics pipelines to analyze genetic variation and build a maximum likelihood phylogenetic tree for the populations across the distribution. Conclusion: Our findings reveal morphologically as well as genetically distinct population clusters corresponding to geographic gradients. Population structure analysis using NGSadmix revealed the presence of three distinct ancestral population compositions, suggesting population differentiation across sampled regions and existence of gene flow between populations. Additionally, our results provide insights into the evolutionary processes shaping A. cerana populations in India. These findings have significant implications for the conservation and sustainable management of A. cerana.",
+      },
     },
     {
       id: "poonam-chauhan",
@@ -109,6 +117,117 @@ window.WILDE_PROGRAMME = {
       affiliation: "WILDE Student Conference 2026",
       bio: "Leads the workshop on 3D printing for making science accessible to all.",
       photo: "assets/people/arpit-singh.jpg",
+    },
+    {
+      id: "akshima-dhadwal",
+      name: "Akshima Dhadwal",
+      role: "Student speaker",
+      affiliation: "Indian Institute of Technology Mandi",
+      bio: "PhD in Sociology, IIT Mandi. Presents on climatic extremes and their aftermath in Mandi, Himachal Pradesh.",
+      photo: "",
+      presentation: {
+        kind: "talk",
+        title:
+          "Climatic Extremes and its aftermath in Mandi, Himachal Pradesh",
+        theme: "Theme 2: Climate Change & Landscape Dynamics",
+        abstract:
+          "Disasters have far-reaching consequences, whether natural or man-made they affect both the environment and the human communities. Timely and effective reporting is vital for responding to these disasters. The gap between the scale of environmental issues and the effectiveness of government actions results in delaying the recovery and leaving the region vulnerable to future events. The topography and the extent of the disaster caused also reflect the varied response from the state and the media. Considering these issues, this paper looks at how the location of the place and other antecedent issues shaped the response pattern of the state to these events. It aims to document the destruction witnessed by these marginalized communities and critically analyze the lack of media coverage and the state's response to disaster and recovery efforts in the region. By shedding light on unheard narratives from a remote region of Mandi district in Himachal Pradesh, India, this paper will try to address a broader issue of inequality unfolding during the time of disasters and argue for a more equitable and inclusive approach to reporting and addressing the disasters as well as respecting heritage and local identities.",
+      },
+    },
+    {
+      id: "hemant-singh",
+      name: "Hemant Singh",
+      role: "Student speaker",
+      affiliation: "Indian Institute of Science Education and Research Bhopal",
+      bio: "PhD student at IISER Bhopal. Studies pollination and reproductive success in Pedicularis species in the Indian Himalayas.",
+      photo: "",
+      presentation: {
+        kind: "talk",
+        title:
+          "Visitation rates and pollen transfer dynamics influence reproductive success in three abundant syntopic Pedicularis species in the Indian Himalayas",
+        theme: "Theme 1: Himalayan Ecology & Biodiversity",
+        abstract:
+          "Plant communities often contain many species that flower together and share pollinators. Such interactions can promote pollen transfer between unrelated species and affect reproductive success. Thus understanding how species maintain fitness under such conditions is important. Pedicularis, a diverse genus in Orobanchaceae, is well suited for this study because several species occur together in mixed patches and share bumble bee pollinators. We focused on three abundant species: P. siphonantha, P. longiflora, and P. flexuosa, that co occur in the eastern Himalayas and are visited by the same bumble bee species. We quantified visitation rates as visits per flower hour across three plots at each of three sites. To assess pollen transfer, stigmas were collected at late anthesis and scored for conspecific (CP) and heterospecific pollen (HP). Flowers were tagged and followed until seed maturation to evaluate how CP and HP loads related to seed production. Results show that pollen transfer occurs among co occurring Pedicularis species despite high pollinator constancy. HP loads were much lower than CP loads and did not reduce seed production. In contrast, CP load was linked to seed set, with species specific differences: CP positively influenced seed set in P. longiflora and P. flexuosa, but neither CP nor HP affected seed set in P. siphonantha. Overall, reproductive outcomes varied among species, highlighting the importance of conspecific pollen for seed production in some taxa.",
+      },
+    },
+    {
+      id: "sahil-thakur",
+      name: "Sahil Thakur",
+      role: "Student speaker",
+      affiliation: "GB Pant Memorial Govt. College Rampur Bushahr",
+      bio: "M.A. Geography student at GB Pant Memorial Govt. College, Rampur Bushahr.",
+      photo: "",
+      presentation: {
+        kind: "talk",
+        title:
+          "From Hills to Cities: Urbanization of Himachal Pradesh and Its Sustainability Challenges",
+        theme: "Open Track / Other Research",
+        abstract:
+          "Urbanization is an important process of socio-economic and spatial transformation that influences population distribution, settlement patterns, land use, and regional development. Himachal Pradesh, a mountainous state in the north-western Himalayas of India, has experienced gradual urban growth due to tourism, industrialization, rural-to-urban migration, improved transportation, educational development, and the expansion of administrative and commercial activities. Cities and towns such as Shimla, Solan, Dharamshala, Manali, and Baddi have emerged as important centres of administration, tourism, industry, and services. However, urbanization in the state presents unique challenges because of its fragile mountain ecosystem, steep slopes, limited availability of suitable land, and vulnerability to natural hazards. Unplanned construction, landslides, water scarcity, traffic congestion, solid waste generation, sewage pollution, and the loss of green spaces have emerged as major concerns for sustainable urban development.",
+      },
+    },
+    {
+      id: "nivedita-bagga",
+      name: "Nivedita Bagga",
+      role: "Student speaker",
+      affiliation: "CSK HPKV, Palampur",
+      bio: "PhD (Soil Science) student at CSK HPKV, Palampur.",
+      photo: "",
+      presentation: {
+        kind: "talk",
+        title:
+          "Mapping Soil Carbon in the Himalayas: Using GIS, Remote Sensing and Geostatistics to Read the Landscape of Kangra, Himachal Pradesh",
+        theme: "Theme 5: AI, Data Science & Tech in Ecology",
+        abstract:
+          "Soil organic carbon (SOC) is a key indicator of soil health and a major terrestrial carbon pool, yet its spatial distribution in the heterogeneous, high-altitude landscapes of the Western Himalaya remains poorly quantified. Point sampling alone cannot capture this variability. Question/Hypothesis: How do SOC stocks vary among land use systems in high-altitude Kangra, Himachal Pradesh and can they be predicted spatially from remote sensing covariates? We hypothesize that SOC stocks differ among land use systems and are spatially structured, enabling geostatistical prediction. Materials & Methods: Soils were sampled from selected land use systems and analyzed for SOC and physico-chemical properties; stocks were computed from SOC concentration, bulk density and depth. Spectral indices and land cover were derived from Sentinel-2 and Landsat imagery. SOC was interpolated by kriging following semivariogram analysis to produce stock and sequestration-potential maps. Results & Conclusion: Analysis are ongoing and spatial SOC stock maps are being generated. Based on existing literature, higher SOC stocks are expected under forest than cultivated land with vegetation indices and terrain attributes as likely predictors. Integrating field data with open-source GIS-RS tools offers a scalable framework to identify carbon-rich zones and support climate-smart land management.",
+      },
+    },
+    {
+      id: "akshita-sharma",
+      name: "Akshita Sharma",
+      role: "Student speaker",
+      affiliation: "Indian Institute of Forest Management, Bhopal / FRI Dehradun",
+      bio: "Ph.D. scholar at IIFM Bhopal (nodal institute FRI Dehradun). Works on Himalayan spring systems and community stewardship.",
+      photo: "",
+      presentation: {
+        kind: "talk",
+        title:
+          "Sacred Springs, Fragile Futures: Protecting Himalayan Spring Systems through Community Stewardship",
+        theme: "Theme 4: Community Conservation & Traditional Knowledge",
+        abstract:
+          "40% of the springs in the Himalayas have dried up while many springs have become seasonal from perennial. The shift from forest dependent livelihoods to agriculture (monoculture) and land use change in rural Shimla is one of the major causes of this poor geohydrological state. Springs, which sustain the region's ecology are mostly snow fed and affected by shifting livelihoods, and climate change. By examining how local and Indigenous communities perceive and adapt to these environmental changes, the study highlights resilience through traditional knowledge systems, community-led conservation efforts, and spiritual practices that intertwine ecological preservation with cultural significance. Drawing on mixed-methods research in Chirgaon (Shimla rural)—water quality monitoring, water flow pattern measurements, and community interviews—the study attempts to explore how traditional water sources are evolving and explores the traditional knowledge systems and its dwindling cultural relevance. By highlighting cultural practices as invisible engines behind rural water security of Shimla (rural) this study positions springs as micro-ecosystems where Social-Ecological Resilience with hydrology merge. It aspires to evoke conversations on transformative change by calling for a shift from isolated water interventions to integrated resource management where community livelihoods, local governance, and community knowledge co-produce longevity of springs.",
+      },
+    },
+    {
+      id: "azlan-ahmad-khan",
+      name: "Azlan Ahmad Khan",
+      role: "Poster presenter",
+      affiliation: "Aligarh Muslim University",
+      bio: "M.Sc Biodiversity Studies and Management. Poster on the Himalayan Red Fox in Ranikhet Forest, Uttarakhand.",
+      photo: "",
+      presentation: {
+        kind: "poster",
+        title:
+          "Occurrence, Habitat Use, and Dietary Composition of the Himalayan Red Fox (Vulpes vulpes montana) in Ranikhet Forest, Uttarakhand, India",
+        theme: "Theme 1: Himalayan Ecology & Biodiversity",
+        abstract:
+          "The Himalayan Red Fox (Vulpes vulpes montana) is the most widely distributed mesocarnivore in the Indian Himalaya, yet its ecology in the lower temperate zone of Uttarakhand is poorly known. We present baseline data on occurrence, habitat use and diet from Ranikhet Forest, Almora (1,355–2,100 m asl), using non-invasive surveys from January-March 2026. Sign surveys on 30 transects (301.1 km) recorded 66 fox signs (0.219 signs/km). A Royle-Nichols model identified canopy cover as the main predictor of fox abundance, with mean predicted occupancy of 0.877 (0.685-0.984) and per-individual detection probability of 0.215. Sign abundance did not differ across four elevation zones (Kruskal-Wallis H = 3.887, df = 3, p = 0.274), suggesting a uniform distribution. Of 74 scats, mammalian prey dominated the diet (FO = 83.8%), mainly small rodents (Rattus/Mus; 44.6%) and Indian Hare (Lepus nigricollis; 39.2%). Anthropogenic food occurred in 13.5% of scats, rising from January to March. Seeds occurred in 16.2%, indicating frugivory and seed dispersal. Niche breadth was narrow (Levins’ Bsta = 0.25). These results provide the first ecological baseline for V. v. montana in the Central Himalayan temperate zone to guide conservation management.",
+      },
+    },
+    {
+      id: "shardool-sharma",
+      name: "Shardool Sharma",
+      role: "Poster presenter",
+      affiliation: "Genetics and Plant Breeding",
+      bio: "M.Sc / Ph.D. (Genetics and Plant Breeding). Poster on basmati variety assessment for the Himalayan foothills.",
+      photo: "",
+      presentation: {
+        kind: "poster",
+        title: "Which Basmati belongs in the Himalayan foothills",
+        theme: "Open Track / Other Research",
+        abstract:
+          "The present investigation was conducted at the Hill Agricultural Research and Extension Centre, Dhaulakuan during the 2023 kharif season to assess variability for agro-morphological and quality traits in 25 basmati varieties (including traditional checks Type 3, Basmati 370, and Taraori Basmati), study direct and indirect contributions of 16 traits on yield, evaluate natural disease incidence for leaf blast and false smut, and identify promising genotype(s). Evaluated in a Randomized Block Design (RBD) with three replications, analysis of variance revealed significant variability among all genotypes across traits such as days to flowering, tillers per plant, and grain yield per plant. Correlation and path coefficient analyses established that tillers per plant, grains per panicle, and cooked grain length/length-breadth ratio served as the strongest direct drivers of yield. Regarding disease responses under natural field pressure, Vallabh Basmati 23 showed resistance to leaf blast, while 22 out of 25 varieties exhibited high to moderate resistance against false smut. Overall, six varieties (including Pusa Basmati 1609, Vallabh Basmati 21, Pusa Basmati 1509, Vallabh Basmati 23, Pusa Basmati 1121, and Pusa Basmati 1637) stood out for combining favorable yield, early flowering, and strong grain quality traits, serving as valuable candidates for future regional varietal development programs after multi-season testing.",
+      },
     },
   ],
   sessions: [
@@ -206,10 +325,34 @@ window.WILDE_PROGRAMME = {
       start: "11:00",
       end: "13:00",
       room: "LH-35",
-      people: [],
-      summary:
-        "11:00–11:20 Akshima Dhadwal on “Climatic Extremes and its aftermath in Mandi, Himachal Pradesh”. 11:20–11:40 Amal K Vyas on “Apis”. 11:40–12:15 Discussion circle by NCF.",
+      people: ["akshima-dhadwal", "amal-k-vyas"],
+      summary: "Student talks followed by an NCF discussion circle. Tap a title for the abstract.",
       access: "registered",
+      talks: [
+        {
+          id: "d1-talk-akshima",
+          title:
+            "Climatic Extremes and its aftermath in Mandi, Himachal Pradesh",
+          start: "11:00",
+          end: "11:20",
+          people: ["akshima-dhadwal"],
+        },
+        {
+          id: "d1-talk-amal",
+          title:
+            "Genetic and Morphological diversity of native honey bee; Apis cerana in Himalayas",
+          start: "11:20",
+          end: "11:40",
+          people: ["amal-k-vyas"],
+        },
+        {
+          id: "d1-ncf-discussion",
+          title: "Discussion circle by NCF",
+          start: "11:40",
+          end: "12:15",
+          people: [],
+        },
+      ],
     },
     {
       id: "d1-lunch",
@@ -277,8 +420,10 @@ window.WILDE_PROGRAMME = {
       end: "16:15",
       room: "",
       span: "full",
-      people: [],
-      summary: "Tea with expo, networking, and posters.",
+      people: ["azlan-ahmad-khan", "shardool-sharma"],
+      posters: ["azlan-ahmad-khan", "shardool-sharma"],
+      summary:
+        "Tea with expo, networking, and poster presentations. Tap a poster title for the abstract.",
       access: "registered",
     },
     {
@@ -384,10 +529,42 @@ window.WILDE_PROGRAMME = {
       start: "10:00",
       end: "12:00",
       room: "LH-35",
-      people: [],
-      summary:
-        "10:00–10:20 Hemant Singh on “Visitation rates and pollen transfer dynamics influence reproductive success in three abundant syntopic Pedicularis species in the Indian Himalayas”. 10:20–10:40 Sahil Thakur, “From Hills to Cities: Urbanization of Himachal Pradesh and Its Sustainability Challenges”. 10:40–11:00 Nivedita Bagga, “Mapping Soil Carbon in the Himalayas: Using GIS, Remote Sensing and Geostatistics to Read the Landscape of Kangra, Himachal Pradesh”. 11:00–12:00 Unconferencing session.",
+      people: ["hemant-singh", "sahil-thakur", "nivedita-bagga"],
+      summary: "Student talks followed by unconferencing. Tap a title for the abstract.",
       access: "registered",
+      talks: [
+        {
+          id: "d2-talk-hemant",
+          title:
+            "Visitation rates and pollen transfer dynamics influence reproductive success in three abundant syntopic Pedicularis species in the Indian Himalayas",
+          start: "10:00",
+          end: "10:20",
+          people: ["hemant-singh"],
+        },
+        {
+          id: "d2-talk-sahil",
+          title:
+            "From Hills to Cities: Urbanization of Himachal Pradesh and Its Sustainability Challenges",
+          start: "10:20",
+          end: "10:40",
+          people: ["sahil-thakur"],
+        },
+        {
+          id: "d2-talk-nivedita",
+          title:
+            "Mapping Soil Carbon in the Himalayas: Using GIS, Remote Sensing and Geostatistics to Read the Landscape of Kangra, Himachal Pradesh",
+          start: "10:40",
+          end: "11:00",
+          people: ["nivedita-bagga"],
+        },
+        {
+          id: "d2-unconferencing",
+          title: "Unconferencing session",
+          start: "11:00",
+          end: "12:00",
+          people: [],
+        },
+      ],
     },
     {
       id: "d2-networking-am",
@@ -399,8 +576,10 @@ window.WILDE_PROGRAMME = {
       end: "13:00",
       room: "",
       span: "full",
-      people: [],
-      summary: "Expo, networking, and posters with tea.",
+      people: ["azlan-ahmad-khan", "shardool-sharma"],
+      posters: ["azlan-ahmad-khan", "shardool-sharma"],
+      summary:
+        "Expo, networking, and poster presentations with tea. Tap a poster title for the abstract.",
       access: "registered",
     },
     {
@@ -474,8 +653,10 @@ window.WILDE_PROGRAMME = {
       end: "16:15",
       room: "",
       span: "full",
-      people: [],
-      summary: "High tea with networking and posters.",
+      people: ["azlan-ahmad-khan", "shardool-sharma"],
+      posters: ["azlan-ahmad-khan", "shardool-sharma"],
+      summary:
+        "High tea with networking and poster presentations. Tap a poster title for the abstract.",
       access: "registered",
     },
     {

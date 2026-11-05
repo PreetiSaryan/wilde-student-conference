@@ -788,6 +788,114 @@ a {
   object-fit: cover;
 }
 
+.person-photo-fallback {
+  display: grid;
+  place-items: center;
+  background: linear-gradient(145deg, #d9e4d2, #c5d3bc);
+  color: var(--pine);
+  font-family: Fraunces, Georgia, serif;
+  font-size: 2.4rem;
+  font-weight: 560;
+}
+
+.person-chip-fallback {
+  display: inline-grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  background: #d9e4d2;
+  color: var(--pine);
+  font-size: 0.68rem;
+  font-weight: 700;
+}
+
+.talk-list {
+  list-style: none;
+  margin: 0.7rem 0 0;
+  padding: 0;
+  display: grid;
+  gap: 0.55rem;
+}
+
+.talk-item {
+  margin: 0;
+}
+
+.talk-abstract {
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.55);
+}
+
+.talk-abstract summary {
+  cursor: pointer;
+  list-style: none;
+  display: grid;
+  gap: 0.2rem;
+  padding: 0.65rem 0.75rem;
+}
+
+.talk-abstract summary::-webkit-details-marker {
+  display: none;
+}
+
+.talk-abstract summary:hover,
+.talk-abstract summary:focus-visible {
+  background: rgba(255, 253, 247, 0.9);
+}
+
+.talk-meta {
+  margin: 0;
+  font-size: 0.78rem;
+  font-weight: 650;
+  color: var(--pine);
+}
+
+.talk-title {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1.35;
+  color: var(--ink);
+}
+
+.talk-hint {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--ink-soft);
+}
+
+.talk-abstract[open] .talk-hint {
+  display: none;
+}
+
+.talk-abstract-body {
+  margin: 0;
+  padding: 0 0.75rem 0.8rem;
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+.talk-item-plain {
+  padding: 0.55rem 0.75rem;
+  border: 1px dashed var(--line);
+}
+
+.talk-speaker {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 0.12em;
+}
+
+.person-presentation {
+  margin-top: 0.75rem;
+}
+
+.person-presentation .talk-item {
+  margin: 0;
+}
+
 .person-copy h3 {
   font-family: Fraunces, Georgia, serif;
   font-size: 1.15rem;
