@@ -647,6 +647,10 @@ a {
   gap: 0.65rem;
 }
 
+.slot-count-1 {
+  grid-template-columns: minmax(0, 1fr);
+}
+
 .slot-count-2 {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
@@ -659,6 +663,18 @@ a {
   border-left: 3px solid var(--pine);
   padding: 0.85rem 0.9rem;
   scroll-margin-top: 5.5rem;
+}
+
+.slot-card-empty {
+  border-left-color: transparent;
+  background: transparent;
+  min-height: 0;
+  padding: 0;
+  pointer-events: none;
+}
+
+.schedule-room-legend {
+  margin: -0.35rem 0 1rem;
 }
 
 .slot-card.session-workshop,
@@ -1346,6 +1362,10 @@ article[id] {
   .slot-count-2,
   .slot-count-3 {
     grid-template-columns: minmax(0, 1fr);
+  }
+
+  .slot-card-empty {
+    display: none;
   }
 }
 

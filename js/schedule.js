@@ -36,12 +36,19 @@
     "November",
     "December",
   ];
-  var trackOrder = {
-    "Parallel 1": 0,
-    "Parallel 2": 1,
-    Talks: 2,
-    Main: 3,
+  // Fixed parallel columns by room. BCA Computer Lab and LH-42 never overlap,
+  // so they share the middle column; Conference Hall and LH-35 stay left/right.
+  var roomColumns = {
+    "Conference Hall": 0,
+    "BCA Computer Lab": 1,
+    "LH-42": 1,
+    "LH-35": 2,
   };
+  var parallelColumnLabels = [
+    "Conference Hall",
+    "BCA Computer Lab / LH-42",
+    "LH-35",
+  ];
   var typeLabels = {
     workshop: "Workshop",
     talk: "Talk",
@@ -107,11 +114,17 @@
     return session.type === "workshop" || session.type === "activity";
   }
 
+  function roomColumnIndex(room) {
+    return roomColumns.hasOwnProperty(room) ? roomColumns[room] : -1;
+  }
+
   function compareSessions(a, b) {
     if (a.date !== b.date) return a.date < b.date ? -1 : 1;
     if (a.start !== b.start) return a.start < b.start ? -1 : 1;
-    var trackA = trackOrder.hasOwnProperty(a.room) ? trackOrder[a.room] : 99;
-    var trackB = trackOrder.hasOwnProperty(b.room) ? trackOrder[b.room] : 99;
+    var trackA = roomColumnIndex(a.room);
+    var trackB = roomColumnIndex(b.room);
+    trackA = trackA < 0 ? 99 : trackA;
+    trackB = trackB < 0 ? 99 : trackB;
     if (trackA !== trackB) return trackA - trackB;
     return a.title.localeCompare(b.title);
   }
@@ -197,6 +210,10 @@
           "</a></p>"
         : "";
 
+    var roomLine = session.room
+      ? escapeHtml(session.room) + " · "
+      : "";
+
     return (
       '<article class="slot-card session-' +
       escapeHtml(session.type) +
@@ -204,8 +221,7 @@
       escapeHtml(session.id) +
       '">' +
       '<p class="slot-track">' +
-      escapeHtml(session.room) +
-      " · " +
+      roomLine +
       escapeHtml(typeLabel(session)) +
       "</p>" +
       "<h4>" +
@@ -217,6 +233,42 @@
       preEvent +
       chips +
       "</article>"
+    );
+  }
+
+  function emptySlotCard() {
+    return '<div class="slot-card slot-card-empty" aria-hidden="true"></div>';
+  }
+
+  function renderSlotGrid(sessions) {
+    var useParallel =
+      sessions.length > 1 &&
+      sessions.every(function (session) {
+        return roomColumnIndex(session.room) >= 0;
+      });
+
+    if (!useParallel) {
+      return (
+        '<div class="slot-grid slot-count-1">' +
+        sessions.map(compactCard).join("") +
+        "</div>"
+      );
+    }
+
+    var cells = [null, null, null];
+    sessions.forEach(function (session) {
+      var index = roomColumnIndex(session.room);
+      if (index >= 0) cells[index] = session;
+    });
+
+    return (
+      '<div class="slot-grid slot-count-3 slot-grid-rooms">' +
+      cells
+        .map(function (session) {
+          return session ? compactCard(session) : emptySlotCard();
+        })
+        .join("") +
+      "</div>"
     );
   }
 
@@ -234,6 +286,9 @@
       '<p class="schedule-day-label">' +
       escapeHtml(dayLabel) +
       "</p>" +
+      '<p class="programme-note schedule-room-legend">Parallel columns stay fixed by room: ' +
+      escapeHtml(parallelColumnLabels.join(" · ")) +
+      ".</p>" +
       '<ol class="day-timeline">' +
       slots
         .map(function (slot) {
@@ -246,11 +301,8 @@
             escapeHtml(formatTime(slot.end)) +
             "</p>" +
             "</div>" +
-            '<div class="slot-grid slot-count-' +
-            Math.min(slot.sessions.length, 3) +
-            '">' +
-            slot.sessions.map(compactCard).join("") +
-            "</div></li>"
+            renderSlotGrid(slot.sessions) +
+            "</li>"
           );
         })
         .join("") +
@@ -300,8 +352,8 @@
                 "</p>"
               : "") +
             '<p class="workshop-meta">' +
-            escapeHtml(session.room) +
-            " track · Registered participants</p>" +
+            escapeHtml(session.room || "Room TBD") +
+            " · Registered participants</p>" +
             "</a>" +
             (session.preEvent && session.preEvent.href
               ? '<p class="session-pre-event"><a href="' +
