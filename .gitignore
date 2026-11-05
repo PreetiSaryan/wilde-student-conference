@@ -7,3 +7,6 @@ Thumbs.db
 .idea/
 node_modules/
 .netlify/
+
+# Local printouts (not for the public site)
+print/
