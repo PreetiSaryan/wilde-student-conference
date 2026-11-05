@@ -282,8 +282,8 @@ window.WILDE_PROGRAMME = {
     },
     {
       id: "d1-ws-gis",
-      title: "Workshop 4 · GIS 101: Maps Made Easy",
-      code: "Workshop 4",
+      title: "Workshop 1 · GIS 101: Maps Made Easy",
+      code: "Workshop 1",
       type: "workshop",
       workshop: "GIS 101: Maps Made Easy",
       date: "2026-11-17",
@@ -297,8 +297,8 @@ window.WILDE_PROGRAMME = {
     },
     {
       id: "d1-ws-3d-printing",
-      title: "Workshop 6 · 3D Printing for Making Science Accessible to All",
-      code: "Workshop 6",
+      title: "Workshop 2 · 3D Printing for Making Science Accessible to All",
+      code: "Workshop 2",
       type: "workshop",
       workshop: "3D Printing for Making Science Accessible to All",
       date: "2026-11-17",
@@ -363,8 +363,8 @@ window.WILDE_PROGRAMME = {
     },
     {
       id: "d1-ws-zine",
-      title: "Workshop 1 · Zine making for communication",
-      code: "Workshop 1",
+      title: "Workshop 3 · Zine making for communication",
+      code: "Workshop 3",
       type: "workshop",
       workshop: "Zine making for communication",
       date: "2026-11-17",
@@ -377,8 +377,8 @@ window.WILDE_PROGRAMME = {
     },
     {
       id: "d1-ws-ai-cost",
-      title: "Workshop 2 · Environmental cost of Artificial Intelligence",
-      code: "Workshop 2",
+      title: "Workshop 4 · Environmental cost of Artificial Intelligence",
+      code: "Workshop 4",
       type: "workshop",
       workshop: "Environmental cost of Artificial Intelligence",
       date: "2026-11-17",
@@ -422,8 +422,8 @@ window.WILDE_PROGRAMME = {
     {
       id: "d1-ws-ai-plagiarism",
       title:
-        "Workshop 7 · Intentional AI Usage: Understanding, Testing, and Using AI as a Student",
-      code: "Workshop 7",
+        "Workshop 5 · Intentional AI Usage: Understanding, Testing, and Using AI as a Student",
+      code: "Workshop 5",
       type: "workshop",
       workshop:
         "Intentional AI Usage: Understanding, Testing, and Using AI as a Student",
@@ -438,8 +438,8 @@ window.WILDE_PROGRAMME = {
     },
     {
       id: "d1-ws-photo",
-      title: "Workshop 3 · Photography for landscapes and wildlife",
-      code: "Workshop 3",
+      title: "Workshop 6 · Photography for landscapes and wildlife",
+      code: "Workshop 6",
       type: "workshop",
       workshop: "Photography for landscapes and wildlife",
       date: "2026-11-17",
@@ -480,8 +480,8 @@ window.WILDE_PROGRAMME = {
     },
     {
       id: "d2-ws-r",
-      title: "Workshop 5 · Basics in R and Stats",
-      code: "Workshop 5",
+      title: "Workshop 7 · Basics in R and Stats",
+      code: "Workshop 7",
       type: "workshop",
       workshop: "Basics in R and Stats",
       date: "2026-11-18",
