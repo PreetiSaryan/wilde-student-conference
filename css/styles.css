@@ -1144,13 +1144,17 @@ address {
 }
 
 .partners-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 1rem;
-  max-width: 52rem;
+  max-width: 46rem;
+  margin-inline: auto;
 }
 
 .partner-card {
+  flex: 1 1 12rem;
+  max-width: 14rem;
   display: grid;
   gap: 0.75rem;
   justify-items: center;
@@ -1359,8 +1363,11 @@ article[id] {
   }
 
   .partners-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 0.75rem;
+  }
+
+  .partner-card {
+    flex-basis: 10.5rem;
   }
 
   .people-board {
@@ -1586,11 +1593,12 @@ article[id] {
   }
 
   .partners-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 0.55rem;
   }
 
   .partner-card {
+    flex-basis: 9.5rem;
+    max-width: 11.5rem;
     padding: 0.75rem 0.5rem 0.85rem;
   }
 
