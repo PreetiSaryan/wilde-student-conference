@@ -291,6 +291,7 @@ window.WILDE_PROGRAMME = {
       end: "13:00",
       room: "BCA Computer Lab",
       people: ["aleena-xavier"],
+      capacity: "25",
       summary:
         "Learn to visualize, analyze, and create maps with QGIS — from handling spatial data to exploring satellite imagery. Geographic Information Systems (GIS) are versatile tools for exploring spatial data, from maps to satellite images and remote sensing datasets, and QGIS provides an accessible, open source platform to learn them. This two hour workshop introduces students to the QGIS platform. Participants will learn the basics of image analysis, how to work with different types of data (vector and raster files), understand coordinate reference systems and map projections, and practice exporting maps for reports or projects. The session will also explore satellite imagery, showing how remote sensing data can be used to extract useful information by using vegetation index as an example. By the end of the workshop, students will be able to manage diverse geospatial data formats, apply simple spatial analyses, and produce clear maps that connect data to real world ecological and environmental questions.",
       access: "registered",
@@ -372,6 +373,7 @@ window.WILDE_PROGRAMME = {
       end: "15:30",
       room: "Conference Hall",
       people: ["tanisha-negi"],
+      capacity: "8–12",
       summary: "Workshop led by Ms Tanisha Negi.",
       access: "registered",
     },
@@ -386,6 +388,7 @@ window.WILDE_PROGRAMME = {
       end: "15:30",
       room: "LH-42",
       people: ["poruri-sai-rahul"],
+      capacity: "50",
       summary:
         "Join this workshop to understand how the internet works, how Artificial Intelligence is powered, who runs the technology that powers the internet, and how the internet can be more environmentally sustainable.",
       access: "registered",
@@ -432,6 +435,7 @@ window.WILDE_PROGRAMME = {
       end: "17:30",
       room: "LH-42",
       people: ["poonam-chauhan"],
+      capacity: "30–40",
       summary:
         "Artificial Intelligence is reshaping higher education but leveraging its true potential requires active experimentation and critical evaluation. This interactive hands-on workshop engages students to use various AI chatbots (such as ChatGPT, Claude, and Gemini) as study mentors that assist you instead of study assistants that think for you. Participants will understand real-time outputs, identify response limitations, and discover how to go from vague AI answers to deep reliable study tools. Students will walk away with long-term skills in understanding AI systems and how they work, computational thinking, critical thinking and analysis, and breaking complex problems down for effective problem-solving.",
       access: "registered",
@@ -447,6 +451,7 @@ window.WILDE_PROGRAMME = {
       end: "17:30",
       room: "Conference Hall",
       people: ["akshay-bhardwaj"],
+      capacity: "15–20",
       summary:
         "Learning about basic knowledge about landscape and wildlife photography.",
       access: "registered",
@@ -489,6 +494,7 @@ window.WILDE_PROGRAMME = {
       end: "12:00",
       room: "BCA Computer Lab",
       people: ["amal-k-vyas"],
+      capacity: "20–25",
       summary:
         "Designed for absolute beginners from any field, the session begins by exploring why statistics is fundamental to research. Participants will navigate the computing environment, clarifying the distinct roles of R software and the RStudio interface. Core topics include understanding fundamental data types, navigating essential data structures, and importing external datasets. Students will then gain practical experience in data cleaning and manipulation to organise raw data efficiently, followed by generating clear, informative data visualisations. By the end of this workshop, attendees will possess the foundational skills needed to independently import, clean, transform, analyse, and plot their own datasets.",
       access: "registered",
@@ -504,6 +510,7 @@ window.WILDE_PROGRAMME = {
       end: "12:00",
       room: "Conference Hall",
       people: ["pramiti-negi"],
+      capacity: "10–20",
       summary:
         "Workshop led by Ms Pramiti Negi. Enter the pre-event writing competition for prizes and to have your write-up used as a working template, or join through 20 open seats without competing.",
       preEvent: {
@@ -602,6 +609,7 @@ window.WILDE_PROGRAMME = {
       end: "15:45",
       room: "Conference Hall",
       people: ["preeti-saryan"],
+      capacity: "30",
       summary:
         "This workshop is for beginners to intermediate level students. Through hands on activities, one would learn about the difference between an observation and a hypothesis, what makes a hypothesis testable?, and the link between data tools (like stats/GIS they learned earlier) and experimental design in testing the hypothesis.",
       access: "registered",
@@ -619,6 +627,7 @@ window.WILDE_PROGRAMME = {
       end: "15:45",
       room: "LH-35",
       people: ["manjot-kaur"],
+      capacity: "30–35",
       summary:
         "Understanding wildlife populations is fundamental to effective biodiversity conservation and management. Several methods have been developed to estimate and monitor the wildlife around the world. Each method serves a different purpose and has a different set of assumptions. Monitoring wildlife populations in montane terrains comes with its own set of challenges, thereby making it important to understand these assumptions and implement those methods well. Estimating the abundance of Himalayan mammals requires specialised survey techniques and analytical approaches. This hands-on workshop aims to introduce early-career and aspiring researchers to the fundamental principles and practical applications of wildlife population estimation methods. Through interactive sessions, demonstrations, and practical exercises, participants will get exposure to methods commonly employed in the mountain landscape.",
       access: "registered",

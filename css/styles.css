@@ -730,6 +730,13 @@ a {
   font-size: 0.95rem;
 }
 
+.session-capacity {
+  margin-top: 0.4rem;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--pine);
+}
+
 .slot-card.session-workshop .session-summary,
 .workshop-abstract {
   margin-top: 0.55rem;

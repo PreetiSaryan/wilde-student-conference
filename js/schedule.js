@@ -367,6 +367,11 @@
     var roomLine = session.room
       ? escapeHtml(session.room) + " · "
       : "";
+    var capacityLine = session.capacity
+      ? '<p class="session-capacity">Capacity: <strong>' +
+        escapeHtml(session.capacity) +
+        "</strong> students</p>"
+      : "";
 
     return (
       '<article class="slot-card session-' +
@@ -381,6 +386,7 @@
       "<h4>" +
       escapeHtml(session.title) +
       "</h4>" +
+      capacityLine +
       (detail
         ? '<p class="session-summary">' + escapeHtml(detail) + "</p>"
         : "") +
@@ -506,6 +512,9 @@
               : "") +
             '<p class="workshop-meta">' +
             escapeHtml(session.room || "Room TBD") +
+            (session.capacity
+              ? " · Capacity: " + escapeHtml(session.capacity) + " students"
+              : "") +
             " · Registered participants</p>" +
             "</a>" +
             (session.preEvent && session.preEvent.href
