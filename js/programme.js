@@ -73,7 +73,7 @@ window.WILDE_PROGRAMME = {
     {
       id: "amal-k-vyas",
       name: "Mr Amal K Vyas",
-      role: "Workshop lead",
+      role: "Workshop lead & student speaker",
       affiliation: "IISER Thiruvananthapuram",
       bio: "I am a PhD student at IISER Thiruvananthapuram, working with Prof. Hema Somanathan to study native honey bees across India. My passion for honey bees began during my BS-MS at IISER Bhopal. I’ve always had a habit of looking for patterns in everything around me, which naturally drew me into the world of data analysis. In my current research, I look at both physical traits (morphological data) and genetic information (molecular data) to find clear patterns in native bee populations. By combining biological science with data analysis, I hope to better understand how India's native honey bees are structured across different regions and support efforts to protect these vital pollinators.",
       photo: "assets/people/amal-k-vyas.jpg",

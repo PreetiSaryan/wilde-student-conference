@@ -549,7 +549,15 @@
     return /student speaker|poster presenter/i.test(person.role || "");
   }
 
-  function renderPersonCard(person) {
+  function hasStudentTalk(person) {
+    return !!(person.presentation && person.presentation.kind === "talk");
+  }
+
+  function renderPersonCard(person, options) {
+    options = options || {};
+    var cardId = options.cardId || person.id;
+    var roleLabel = options.roleLabel || person.role;
+    var presentationIdPrefix = options.presentationIdPrefix || "person-presentation-";
     var sessions = personSessions(person.id);
     var links = sessions
       .map(function (session) {
@@ -566,7 +574,7 @@
     var presentation = person.presentation
       ? renderExpandableTitle({
           tag: "div",
-          id: "person-presentation-" + person.id,
+          id: presentationIdPrefix + person.id,
           title: person.presentation.title,
           kind:
             person.presentation.kind === "poster"
@@ -588,7 +596,7 @@
 
     return (
       '<article class="person-card" id="person-' +
-      escapeHtml(person.id) +
+      escapeHtml(cardId) +
       '">' +
       '<div class="person-photo-wrap">' +
       photo +
@@ -598,7 +606,7 @@
       escapeHtml(person.name) +
       "</h3>" +
       '<p class="person-role">' +
-      escapeHtml(person.role) +
+      escapeHtml(roleLabel) +
       (person.affiliation ? " · " + escapeHtml(person.affiliation) : "") +
       "</p>" +
       (person.bio ? "<p>" + escapeHtml(person.bio) + "</p>" : "") +
@@ -614,7 +622,7 @@
     );
   }
 
-  function renderPeopleGroup(title, intro, people, featured) {
+  function renderPeopleGroup(title, intro, people, featured, cardOptionsFor) {
     if (!people.length) return "";
     return (
       '<section class="people-group' +
@@ -625,7 +633,14 @@
       "</h3>" +
       (intro ? '<p class="people-group-intro">' + escapeHtml(intro) + "</p>" : "") +
       '<div class="people-board">' +
-      people.map(renderPersonCard).join("") +
+      people
+        .map(function (person) {
+          return renderPersonCard(
+            person,
+            cardOptionsFor ? cardOptionsFor(person) : null
+          );
+        })
+        .join("") +
       "</div></section>"
     );
   }
@@ -643,7 +658,7 @@
 
     var leads = data.people.filter(isWorkshopLead);
     var presenters = data.people.filter(function (person) {
-      return isStudentPresenter(person) && !isWorkshopLead(person);
+      return isStudentPresenter(person) || hasStudentTalk(person);
     });
 
     peopleRoot.innerHTML =
@@ -657,7 +672,15 @@
         "Student speakers and poster presenters",
         "Tap a title to read the abstract.",
         presenters,
-        false
+        false,
+        function (person) {
+          if (!isWorkshopLead(person) || !hasStudentTalk(person)) return null;
+          return {
+            cardId: person.id + "-speaker",
+            roleLabel: "Student speaker",
+            presentationIdPrefix: "person-talk-presentation-",
+          };
+        }
       );
   }
 
