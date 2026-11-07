@@ -160,6 +160,22 @@ window.WILDE_PROGRAMME = {
       },
     },
     {
+      id: "kesang-chunit",
+      name: "Kesang Chunit",
+      role: "Invited speaker",
+      affiliation: "Nature Conservation Foundation",
+      website: "https://www.ncf-india.org/",
+      bio: "Kesang Chunit is with Nature Conservation Foundation and leads the Day 1 NCF discussion circle on Project Khee and dog population management in high-altitude landscapes like Spiti.",
+      photo: "",
+      presentation: {
+        kind: "talk",
+        title: "Project Khee : A Journey in Dog Population Management",
+        theme: "Theme 4: Community Conservation & Traditional Knowledge",
+        abstract:
+          "The growing presence of free-ranging dogs in high-altitude landscapes like Spiti is not just a local issue - it reflects broader ecological, social, and public health challenges. As a species that lives at the intersection of human compassion and conflict, domestic dogs compel us to rethink how we coexist with animals in shared spaces. This project recognises the complex role dogs play and seeks to move beyond reactive measures toward long-term, community-driven solutions. By fostering collaboration among local communities, government departments, and conservation organisations, we hope to build a framework that balances compassion with control, and human needs with ecological integrity. The strength of this approach lies in collective responsibility, sustained engagement, and the belief that even the most complex challenges can be addressed through shared action and empathy.",
+      },
+    },
+    {
       id: "akshima-dhadwal",
       name: "Akshima Dhadwal",
       role: "Student speaker",
@@ -351,9 +367,14 @@ window.WILDE_PROGRAMME = {
       start: "11:00",
       end: "13:00",
       room: "LH-35",
-      people: ["akshima-dhadwal", "amal-k-vyas", "suman-singh-negi"],
+      people: [
+        "akshima-dhadwal",
+        "amal-k-vyas",
+        "kesang-chunit",
+        "suman-singh-negi",
+      ],
       summary:
-        "Student talks, an NCF discussion circle, and an invited talk. Tap a title for the abstract.",
+        "Student talks, an NCF discussion circle with Kesang Chunit, and an invited talk. Tap a title for the abstract.",
       access: "registered",
       talks: [
         {
@@ -374,10 +395,10 @@ window.WILDE_PROGRAMME = {
         },
         {
           id: "d1-ncf-discussion",
-          title: "Discussion circle by NCF",
+          title: "Project Khee : A Journey in Dog Population Management",
           start: "11:40",
           end: "12:15",
-          people: [],
+          people: ["kesang-chunit"],
         },
         {
           id: "d1-talk-suman",
