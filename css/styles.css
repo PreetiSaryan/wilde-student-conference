@@ -801,7 +801,7 @@ a {
 }
 
 .people-group-featured .people-board {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
 .people-group-featured .person-card {
@@ -835,9 +835,11 @@ a {
 }
 
 .person-photo-wrap {
+  width: min(100%, 8.5rem);
   aspect-ratio: 1;
   overflow: hidden;
   background: #e8e2d6;
+  margin-inline: auto;
 }
 
 .person-photo {
@@ -852,7 +854,7 @@ a {
   background: linear-gradient(145deg, #d9e4d2, #c5d3bc);
   color: var(--pine);
   font-family: Fraunces, Georgia, serif;
-  font-size: 2.4rem;
+  font-size: 1.7rem;
   font-weight: 560;
 }
 
