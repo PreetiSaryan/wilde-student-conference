@@ -133,7 +133,7 @@ window.WILDE_PROGRAMME = {
       role: "Workshop lead",
       affiliation: "Kibber village · Women in Conservation Collective",
       bio: "Tanzin Chhoyi is a farmer from Kibber village. She has completed her BSc in Zoology from Netaji Subhash Chander Bose Memorial, Govt. College Hamirpur. Currently she is engaged with women in conservation collective through which she is helping monitor snow leopards and other wildlife through camera traps.",
-      photo: "",
+      photo: "assets/people/tanzin-chhoyi.jpg",
     },
     {
       id: "akshima-dhadwal",
