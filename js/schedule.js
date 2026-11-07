@@ -610,7 +610,14 @@
       escapeHtml(roleLabel) +
       (person.affiliation ? " · " + escapeHtml(person.affiliation) : "") +
       "</p>" +
-      (person.bio ? "<p>" + escapeHtml(person.bio) + "</p>" : "") +
+      (person.bio
+        ? '<div class="person-bio">' +
+          '<p class="person-bio-text">' +
+          escapeHtml(person.bio) +
+          "</p>" +
+          '<button type="button" class="person-bio-toggle" aria-expanded="false">' +
+          "Read more</button></div>"
+        : "") +
       (presentation
         ? '<div class="person-presentation">' + presentation + "</div>"
         : "") +
@@ -621,6 +628,18 @@
         : "") +
       "</div></article>"
     );
+  }
+
+  function enhancePersonBios() {
+    if (!peopleRoot) return;
+    peopleRoot.querySelectorAll(".person-bio").forEach(function (bio) {
+      var text = bio.querySelector(".person-bio-text");
+      var button = bio.querySelector(".person-bio-toggle");
+      if (!text || !button) return;
+      if (text.scrollHeight <= text.clientHeight + 2) {
+        button.hidden = true;
+      }
+    });
   }
 
   function renderPeopleGroup(title, intro, people, featured, cardOptionsFor) {
@@ -683,6 +702,21 @@
           };
         }
       );
+
+    enhancePersonBios();
+  }
+
+  if (peopleRoot && !peopleRoot.dataset.bioToggleBound) {
+    peopleRoot.dataset.bioToggleBound = "true";
+    peopleRoot.addEventListener("click", function (event) {
+      var button = event.target.closest(".person-bio-toggle");
+      if (!button || !peopleRoot.contains(button)) return;
+      var bio = button.closest(".person-bio");
+      if (!bio) return;
+      var expanded = bio.classList.toggle("is-expanded");
+      button.setAttribute("aria-expanded", expanded ? "true" : "false");
+      button.textContent = expanded ? "Show less" : "Read more";
+    });
   }
 
   function renderOrganizers() {
