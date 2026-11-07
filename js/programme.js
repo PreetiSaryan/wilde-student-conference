@@ -165,7 +165,7 @@ window.WILDE_PROGRAMME = {
       role: "Invited speaker",
       affiliation: "Nature Conservation Foundation",
       website: "https://www.ncf-india.org/",
-      bio: "Kesang Chunit is with Nature Conservation Foundation and leads the Day 1 NCF discussion circle on Project Khee and dog population management in high-altitude landscapes like Spiti.",
+      bio: "",
       photo: "",
       presentation: {
         kind: "talk",
