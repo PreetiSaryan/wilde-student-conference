@@ -608,7 +608,16 @@
       "</h3>" +
       '<p class="person-role">' +
       escapeHtml(roleLabel) +
-      (person.affiliation ? " · " + escapeHtml(person.affiliation) : "") +
+      (person.affiliation
+        ? " · " +
+          (person.website
+            ? '<a class="person-org" href="' +
+              escapeHtml(person.website) +
+              '" rel="noopener noreferrer" target="_blank">' +
+              escapeHtml(person.affiliation) +
+              "</a>"
+            : escapeHtml(person.affiliation))
+        : "") +
       "</p>" +
       (person.bio
         ? '<div class="person-bio">' +

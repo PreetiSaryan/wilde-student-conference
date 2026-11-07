@@ -970,6 +970,17 @@ a {
   font-size: 0.88rem;
 }
 
+.person-org {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 0.12em;
+}
+
+.person-org:hover,
+.person-org:focus-visible {
+  color: var(--ink);
+}
+
 .person-copy > p {
   font-size: 0.92rem;
   color: var(--ink-soft);
