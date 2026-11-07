@@ -546,12 +546,27 @@
     return /workshop\s*lead/i.test(person.role || "");
   }
 
+  function isResourcePerson(person) {
+    return /workshop\s*lead|invited speaker|resource person/i.test(
+      person.role || ""
+    );
+  }
+
   function isStudentPresenter(person) {
     return /student speaker|poster presenter/i.test(person.role || "");
   }
 
   function hasStudentTalk(person) {
     return !!(person.presentation && person.presentation.kind === "talk");
+  }
+
+  function presentationKindLabel(person) {
+    if (!person.presentation) return "";
+    if (person.presentation.kind === "poster") return "Poster";
+    if (isStudentPresenter(person) || /student speaker/i.test(person.role || "")) {
+      return "Student talk";
+    }
+    return "Talk";
   }
 
   function renderPersonCard(person, options) {
@@ -577,10 +592,7 @@
           tag: "div",
           id: presentationIdPrefix + person.id,
           title: person.presentation.title,
-          kind:
-            person.presentation.kind === "poster"
-              ? "Poster"
-              : "Student talk",
+          kind: presentationKindLabel(person),
           abstract: person.presentation.abstract,
         })
       : "";
@@ -685,16 +697,19 @@
       return;
     }
 
-    var leads = data.people.filter(isWorkshopLead);
+    var resources = data.people.filter(isResourcePerson);
     var presenters = data.people.filter(function (person) {
-      return isStudentPresenter(person) || hasStudentTalk(person);
+      return (
+        isStudentPresenter(person) ||
+        (hasStudentTalk(person) && isWorkshopLead(person))
+      );
     });
 
     peopleRoot.innerHTML =
       renderPeopleGroup(
-        "Workshop leads",
-        "Resource personnel leading the conference workshops.",
-        leads,
+        "Resource people",
+        "Workshop leads and invited speakers.",
+        resources,
         true
       ) +
       renderPeopleGroup(

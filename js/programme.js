@@ -143,6 +143,23 @@ window.WILDE_PROGRAMME = {
       photo: "assets/people/tanzin-chhoyi.jpg",
     },
     {
+      id: "suman-singh-negi",
+      name: "Mr Suman Singh Negi",
+      role: "Invited speaker",
+      affiliation: "Healing Himalayas Foundation",
+      website: "https://healinghimalayas.org/",
+      bio: "Suman Singh Negi is a Project Manager at Healing Himalayas Foundation, working in the areas of solid waste management, environmental sustainability, and community engagement in the Indian Himalayan region. With over three years of experience, he has been actively involved in implementing waste management initiatives, managing Material Recovery Facilities (MRFs), conducting environmental awareness programmes, and collaborating with local communities and government institutions. He is passionate about sustainable development and protecting the fragile Himalayan ecosystem.",
+      photo: "assets/people/suman-singh-negi.jpg",
+      presentation: {
+        kind: "talk",
+        title:
+          "Impact of Waste on the Ecology of the Western Himalayas: Building Decentralised and Community-Led Waste Management Systems",
+        theme: "Theme 2: Climate Change & Landscape Dynamics",
+        abstract:
+          "The fragile ecosystems of the Western Himalayas are increasingly under pressure from unmanaged solid waste, driven by growing tourism, changing consumption patterns, expanding settlements, and inadequate waste management infrastructure. The accumulation of non-biodegradable waste threatens mountain landscapes, water sources, biodiversity, and ecological balance. These challenges are further intensified by difficult terrain, scattered settlements, and limited waste collection and processing facilities. Drawing on the field experiences of Healing Himalayas Foundation (HHF) across Himachal Pradesh and Uttarakhand, the talk will highlight the ecological implications of waste and explore decentralised approaches to sustainable waste management. It highlights the establishment of decentralised collection systems, Material Recovery Facilities (MRFs), source segregation, resource recovery, and community centered initiatives like Winter healers, Carrymeback. We will focus on the role of community participation, behavioural change, and shared accountability in building sustainable waste management systems in the fragile Himalayan regions. Exploring how collaboration between local communities, administrations, tourism stakeholders, and civil society organisations can move mountain regions beyond periodic clean-up drives towards structured, locally managed solutions.",
+      },
+    },
+    {
       id: "akshima-dhadwal",
       name: "Akshima Dhadwal",
       role: "Student speaker",
@@ -334,8 +351,9 @@ window.WILDE_PROGRAMME = {
       start: "11:00",
       end: "13:00",
       room: "LH-35",
-      people: ["akshima-dhadwal", "amal-k-vyas"],
-      summary: "Student talks followed by an NCF discussion circle. Tap a title for the abstract.",
+      people: ["akshima-dhadwal", "amal-k-vyas", "suman-singh-negi"],
+      summary:
+        "Student talks, an NCF discussion circle, and an invited talk. Tap a title for the abstract.",
       access: "registered",
       talks: [
         {
@@ -360,6 +378,14 @@ window.WILDE_PROGRAMME = {
           start: "11:40",
           end: "12:15",
           people: [],
+        },
+        {
+          id: "d1-talk-suman",
+          title:
+            "Impact of Waste on the Ecology of the Western Himalayas: Building Decentralised and Community-Led Waste Management Systems",
+          start: "12:15",
+          end: "12:45",
+          people: ["suman-singh-negi"],
         },
       ],
     },
