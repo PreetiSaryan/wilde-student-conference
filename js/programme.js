@@ -128,6 +128,14 @@ window.WILDE_PROGRAMME = {
       website: "https://www.linkedin.com/in/manjot-kaur-b60a8420a",
     },
     {
+      id: "tanzin-chhoyi",
+      name: "Ms Tanzin Chhoyi",
+      role: "Workshop lead",
+      affiliation: "Kibber village · Women in Conservation Collective",
+      bio: "Tanzin Chhoyi is a farmer from Kibber village. She has completed her BSc in Zoology from Netaji Subhash Chander Bose Memorial, Govt. College Hamirpur. Currently she is engaged with women in conservation collective through which she is helping monitor snow leopards and other wildlife through camera traps.",
+      photo: "",
+    },
+    {
       id: "akshima-dhadwal",
       name: "Akshima Dhadwal",
       role: "Student speaker",
@@ -626,7 +634,7 @@ window.WILDE_PROGRAMME = {
       start: "14:00",
       end: "15:45",
       room: "LH-35",
-      people: ["manjot-kaur"],
+      people: ["manjot-kaur", "tanzin-chhoyi"],
       capacity: "30–35",
       summary:
         "Understanding wildlife populations is fundamental to effective biodiversity conservation and management. Several methods have been developed to estimate and monitor the wildlife around the world. Each method serves a different purpose and has a different set of assumptions. Monitoring wildlife populations in montane terrains comes with its own set of challenges, thereby making it important to understand these assumptions and implement those methods well. Estimating the abundance of Himalayan mammals requires specialised survey techniques and analytical approaches. This hands-on workshop aims to introduce early-career and aspiring researchers to the fundamental principles and practical applications of wildlife population estimation methods. Through interactive sessions, demonstrations, and practical exercises, participants will get exposure to methods commonly employed in the mountain landscape.",
