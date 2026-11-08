@@ -119,9 +119,9 @@ window.WILDE_PROGRAMME = {
       id: "arpit-singh",
       name: "Mr Arpit Singh",
       role: "Workshop lead",
-      affiliation: "Softcircuits Labs",
+      affiliation: "SoftCircuits Labs",
       website: "https://www.softcircuits.in/",
-      bio: "Leads the workshop on 3D printing for making science accessible to all.",
+      bio: "He is an electronics engineer and product designer who enjoys working on embedded systems, mechatronics and robotics. Currently is the CTO and Co-founder of SoftCircuits Labs and has been building hardware products for more than 10 years.",
       photo: "assets/people/arpit-singh.jpg",
     },
     {
@@ -346,16 +346,17 @@ window.WILDE_PROGRAMME = {
     },
     {
       id: "d1-ws-3d-printing",
-      title: "Workshop 2 · 3D Printing for Making Science Accessible to All",
+      title: "Workshop 2 · 3D printing for making science accessible to all",
       code: "Workshop 2",
       type: "workshop",
-      workshop: "3D Printing for Making Science Accessible to All",
+      workshop: "3D printing for making science accessible to all",
       date: "2026-11-17",
       start: "11:00",
       end: "13:00",
       room: "Conference Hall",
       people: ["arpit-singh"],
-      summary: "Workshop led by Mr Arpit Singh.",
+      summary:
+        "Discover how 3D printing is revolutionizing educational accessibility by turning abstract scientific concepts into tactile, hands-on learning tools. Designed for students of all experience levels, this interactive workshop guides you through the end-to-end digital-to-physical workflow using anatomical models, such as human organs, as practical teaching examples. You will gain foundational skills in Computer-Aided Design (CAD) to model custom 3D geometry, learn how to properly prepare and export your designs into slicer software, and master essential 3D printer techniques. By bridging the gap between computer software and physical fabrication, you will leave with practical expertise in designing, slicing, and 3D printing functional scientific models. Whether you aim to enhance science communication, create inclusive learning aids, or expand your engineering toolkit, this workshop equips you with the core skills to make science tangible and accessible to all.",
       access: "registered",
     },
     {
