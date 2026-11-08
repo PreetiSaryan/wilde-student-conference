@@ -450,10 +450,10 @@ window.WILDE_PROGRAMME = {
     },
     {
       id: "d1-ws-ai-cost",
-      title: "Workshop 4 · Environmental cost of Artificial Intelligence",
+      title: "Workshop 4 · Environmental costs of Artificial Intelligence",
       code: "Workshop 4",
       type: "workshop",
-      workshop: "Environmental cost of Artificial Intelligence",
+      workshop: "Environmental costs of Artificial Intelligence",
       date: "2026-11-17",
       start: "14:00",
       end: "15:30",
@@ -496,11 +496,11 @@ window.WILDE_PROGRAMME = {
     {
       id: "d1-ws-ai-plagiarism",
       title:
-        "Workshop 5 · Intentional AI Usage: Understanding, Testing, and Using AI as a Student",
+        "Workshop 5 · Intentional AI Usage : Understanding, Testing, and Using AI as a Student",
       code: "Workshop 5",
       type: "workshop",
       workshop:
-        "Intentional AI Usage: Understanding, Testing, and Using AI as a Student",
+        "Intentional AI Usage : Understanding, Testing, and Using AI as a Student",
       date: "2026-11-17",
       start: "16:15",
       end: "17:30",
@@ -513,10 +513,10 @@ window.WILDE_PROGRAMME = {
     },
     {
       id: "d1-ws-photo",
-      title: "Workshop 6 · Photography for landscapes and wildlife",
+      title: "Workshop 6 · Basic knowledge about nature and wildlife photography",
       code: "Workshop 6",
       type: "workshop",
-      workshop: "Photography for landscapes and wildlife",
+      workshop: "Basic knowledge about nature and wildlife photography",
       date: "2026-11-17",
       start: "16:15",
       end: "17:30",
@@ -556,10 +556,10 @@ window.WILDE_PROGRAMME = {
     },
     {
       id: "d2-ws-r",
-      title: "Workshop 7 · Basics in R and Stats",
+      title: "Workshop 7 · Basics in R",
       code: "Workshop 7",
       type: "workshop",
-      workshop: "Basics in R and Stats",
+      workshop: "Basics in R",
       date: "2026-11-18",
       start: "10:00",
       end: "12:00",
@@ -572,10 +572,12 @@ window.WILDE_PROGRAMME = {
     },
     {
       id: "d2-ws-writing",
-      title: "Workshop 8 · Science communication and popular science writing",
+      title:
+        "Workshop 8 · Writing the Himalayas: From Research to Public Stories (A Bilingual Research Communication Workshop)",
       code: "Workshop 8",
       type: "workshop",
-      workshop: "Science communication and popular science writing",
+      workshop:
+        "Writing the Himalayas: From Research to Public Stories (A Bilingual Research Communication Workshop)",
       date: "2026-11-18",
       start: "10:00",
       end: "12:00",
@@ -670,11 +672,11 @@ window.WILDE_PROGRAMME = {
     {
       id: "d2-ws-hypothesis",
       title:
-        "Workshop 9 · Hypothesis testing and experiment design",
+        "Workshop 9 · Design, Test, Discover: Designing Your First Scientific Experiment and Testing Hypothesis",
       code: "Workshop 9",
       type: "workshop",
       workshop:
-        "Hypothesis testing and experiment design",
+        "Design, Test, Discover: Designing Your First Scientific Experiment and Testing Hypothesis",
       date: "2026-11-18",
       start: "14:00",
       end: "15:45",
