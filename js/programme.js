@@ -362,6 +362,7 @@ window.WILDE_PROGRAMME = {
       end: "13:00",
       room: "Conference Hall",
       people: ["arpit-singh"],
+      capacity: "20–30",
       summary:
         "Discover how 3D printing is revolutionizing educational accessibility by turning abstract scientific concepts into tactile, hands-on learning tools. Designed for students of all experience levels, this interactive workshop guides you through the end-to-end digital-to-physical workflow using anatomical models, such as human organs, as practical teaching examples. You will gain foundational skills in Computer-Aided Design (CAD) to model custom 3D geometry, learn how to properly prepare and export your designs into slicer software, and master essential 3D printer techniques. By bridging the gap between computer software and physical fabrication, you will leave with practical expertise in designing, slicing, and 3D printing functional scientific models. Whether you aim to enhance science communication, create inclusive learning aids, or expand your engineering toolkit, this workshop equips you with the core skills to make science tangible and accessible to all.",
       access: "registered",
