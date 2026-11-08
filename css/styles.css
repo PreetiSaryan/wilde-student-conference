@@ -842,10 +842,29 @@ a {
   margin-inline: auto;
 }
 
+.person-photo-link {
+  display: block;
+  width: 100%;
+  height: 100%;
+  color: inherit;
+  text-decoration: none;
+}
+
 .person-photo {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.person-name-link {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 0.12em;
+}
+
+.person-name-link:hover,
+.person-name-link:focus-visible {
+  color: var(--pine);
 }
 
 .person-photo-fallback {

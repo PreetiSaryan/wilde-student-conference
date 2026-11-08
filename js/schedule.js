@@ -597,7 +597,7 @@
         })
       : "";
 
-    var photo = person.photo
+    var photoInner = person.photo
       ? '<img class="person-photo" src="' +
         escapeHtml(person.photo) +
         '" alt="Portrait of ' +
@@ -606,6 +606,22 @@
       : '<div class="person-photo person-photo-fallback" aria-hidden="true">' +
         escapeHtml(initialsFor(person.name)) +
         "</div>";
+    var photo = person.profileUrl
+      ? '<a class="person-photo-link" href="' +
+        escapeHtml(person.profileUrl) +
+        '" rel="noopener noreferrer" target="_blank" aria-label="Profile of ' +
+        escapeHtml(person.name) +
+        '">' +
+        photoInner +
+        "</a>"
+      : photoInner;
+    var nameHeading = person.profileUrl
+      ? '<h3><a class="person-name-link" href="' +
+        escapeHtml(person.profileUrl) +
+        '" rel="noopener noreferrer" target="_blank">' +
+        escapeHtml(person.name) +
+        "</a></h3>"
+      : "<h3>" + escapeHtml(person.name) + "</h3>";
 
     return (
       '<article class="person-card" id="person-' +
@@ -615,9 +631,7 @@
       photo +
       "</div>" +
       '<div class="person-copy">' +
-      "<h3>" +
-      escapeHtml(person.name) +
-      "</h3>" +
+      nameHeading +
       '<p class="person-role">' +
       escapeHtml(roleLabel) +
       (person.affiliation
