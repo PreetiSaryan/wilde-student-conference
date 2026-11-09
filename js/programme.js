@@ -231,22 +231,6 @@ window.WILDE_PROGRAMME = {
       },
     },
     {
-      id: "nivedita-bagga",
-      name: "Nivedita Bagga",
-      role: "Student speaker",
-      affiliation: "CSK HPKV, Palampur",
-      bio: "PhD (Soil Science) student at CSK HPKV, Palampur.",
-      photo: "",
-      presentation: {
-        kind: "talk",
-        title:
-          "Mapping Soil Carbon in the Himalayas: Using GIS, Remote Sensing and Geostatistics to Read the Landscape of Kangra, Himachal Pradesh",
-        theme: "Theme 5: AI, Data Science & Tech in Ecology",
-        abstract:
-          "Soil organic carbon (SOC) is a key indicator of soil health and a major terrestrial carbon pool, yet its spatial distribution in the heterogeneous, high-altitude landscapes of the Western Himalaya remains poorly quantified. Point sampling alone cannot capture this variability. Question/Hypothesis: How do SOC stocks vary among land use systems in high-altitude Kangra, Himachal Pradesh and can they be predicted spatially from remote sensing covariates? We hypothesize that SOC stocks differ among land use systems and are spatially structured, enabling geostatistical prediction. Materials & Methods: Soils were sampled from selected land use systems and analyzed for SOC and physico-chemical properties; stocks were computed from SOC concentration, bulk density and depth. Spectral indices and land cover were derived from Sentinel-2 and Landsat imagery. SOC was interpolated by kriging following semivariogram analysis to produce stock and sequestration-potential maps. Results & Conclusion: Analysis are ongoing and spatial SOC stock maps are being generated. Based on existing literature, higher SOC stocks are expected under forest than cultivated land with vegetation indices and terrain attributes as likely predictors. Integrating field data with open-source GIS-RS tools offers a scalable framework to identify carbon-rich zones and support climate-smart land management.",
-      },
-    },
-    {
       id: "azlan-ahmad-khan",
       name: "Azlan Ahmad Khan",
       role: "Poster presenter",
@@ -602,7 +586,7 @@ window.WILDE_PROGRAMME = {
       start: "10:00",
       end: "12:00",
       room: "LH-35",
-      people: ["hemant-singh", "sahil-thakur", "nivedita-bagga"],
+      people: ["hemant-singh", "sahil-thakur"],
       summary: "Student talks followed by unconferencing. Tap a title for the abstract.",
       access: "registered",
       talks: [
@@ -623,17 +607,9 @@ window.WILDE_PROGRAMME = {
           people: ["sahil-thakur"],
         },
         {
-          id: "d2-talk-nivedita",
-          title:
-            "Mapping Soil Carbon in the Himalayas: Using GIS, Remote Sensing and Geostatistics to Read the Landscape of Kangra, Himachal Pradesh",
-          start: "10:40",
-          end: "11:00",
-          people: ["nivedita-bagga"],
-        },
-        {
           id: "d2-unconferencing",
           title: "Unconferencing session",
-          start: "11:00",
+          start: "10:40",
           end: "12:00",
           people: [],
         },
