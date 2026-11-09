@@ -61,19 +61,40 @@
     link.title = "Copy or open this direct link";
   });
 
-  /* Sections open by default: only the active next steps for visitors. */
-  var OPEN_BY_DEFAULT = {
-    registration: true,
-    schedule: true,
+  /* Preview height per section: enough for heading intro + one row/teaser. */
+  var PREVIEW_HEIGHTS = {
+    about: "7.5rem",
+    aims: "14rem",
+    dates: "10.5rem",
+    "pre-event": "13rem",
+    schedule: "16rem",
+    people: "18rem",
+    expo: "14rem",
+    registration: "15rem",
+    partners: "11rem",
+    faqs: "9rem",
+    reach: "11rem",
+    contact: "13rem",
   };
+
+  function setPreviewExpanded(preview, expanded) {
+    if (!preview) return;
+    preview.classList.toggle("is-expanded", Boolean(expanded));
+    var button = preview.querySelector(".section-preview-toggle");
+    if (!button) return;
+    button.setAttribute("aria-expanded", expanded ? "true" : "false");
+    button.textContent = expanded ? "Show less" : "Read more";
+  }
 
   function openFoldAncestors(node) {
     var el = node;
     while (el && el !== document.body) {
+      if (el.classList && el.classList.contains("section-preview")) {
+        setPreviewExpanded(el, true);
+      }
       if (
         el.tagName === "DETAILS" &&
-        (el.classList.contains("section-fold") ||
-          el.classList.contains("read-more-fold") ||
+        (el.classList.contains("read-more-fold") ||
           el.classList.contains("faq-item"))
       ) {
         el.open = true;
@@ -82,7 +103,7 @@
     }
   }
 
-  function enhanceSectionFolds() {
+  function enhanceSectionPreviews() {
     document.querySelectorAll("main > section.section[id]").forEach(function (section) {
       if (section.dataset.foldReady === "true") return;
       var container = section.querySelector(":scope > .container");
@@ -91,31 +112,51 @@
       var kids = Array.prototype.slice.call(container.children);
       if (kids.length < 2) return;
 
-      var summarySource = kids[0];
-      var details = document.createElement("details");
-      details.className = "section-fold";
-      if (OPEN_BY_DEFAULT[section.id]) details.open = true;
+      var preview = document.createElement("div");
+      preview.className = "section-preview";
+      preview.style.setProperty(
+        "--preview-height",
+        PREVIEW_HEIGHTS[section.id] || "12rem"
+      );
 
-      var summary = document.createElement("summary");
-      summary.className = "section-fold-summary";
-      summary.appendChild(summarySource);
+      var head = document.createElement("div");
+      head.className = "section-preview-head";
+      head.appendChild(kids[0]);
 
-      var hint = document.createElement("span");
-      hint.className = "section-fold-hint";
-      hint.setAttribute("aria-hidden", "true");
-      summary.appendChild(hint);
+      var clip = document.createElement("div");
+      clip.className = "section-preview-clip";
 
-      var body = document.createElement("div");
-      body.className = "section-fold-body";
+      var content = document.createElement("div");
+      content.className = "section-preview-content";
       kids.slice(1).forEach(function (child) {
-        body.appendChild(child);
+        content.appendChild(child);
+      });
+      clip.appendChild(content);
+
+      var toggle = document.createElement("button");
+      toggle.type = "button";
+      toggle.className = "section-preview-toggle";
+      toggle.textContent = "Read more";
+      toggle.setAttribute("aria-expanded", "false");
+      toggle.addEventListener("click", function () {
+        setPreviewExpanded(preview, !preview.classList.contains("is-expanded"));
       });
 
-      details.appendChild(summary);
-      details.appendChild(body);
-      container.appendChild(details);
+      preview.appendChild(head);
+      preview.appendChild(clip);
+      preview.appendChild(toggle);
+      container.appendChild(preview);
+
       section.dataset.foldReady = "true";
       section.classList.add("is-collapsible");
+
+      /* If content already fits the preview, hide the toggle. */
+      window.requestAnimationFrame(function () {
+        if (content.scrollHeight <= clip.clientHeight + 8) {
+          preview.dataset.short = "true";
+          setPreviewExpanded(preview, true);
+        }
+      });
     });
 
     document.querySelectorAll(".read-more-fold").forEach(function (fold) {
@@ -167,9 +208,21 @@
     }, 60);
   }
 
-  enhanceSectionFolds();
+  enhanceSectionPreviews();
   openFromHash();
-  window.addEventListener("load", scrollToHashTarget);
+  window.addEventListener("load", function () {
+    /* Re-measure after fonts/images/schedule render. */
+    document.querySelectorAll(".section-preview").forEach(function (preview) {
+      var clip = preview.querySelector(".section-preview-clip");
+      var content = preview.querySelector(".section-preview-content");
+      if (!clip || !content) return;
+      if (content.scrollHeight <= clip.clientHeight + 8) {
+        preview.dataset.short = "true";
+        setPreviewExpanded(preview, true);
+      }
+    });
+    scrollToHashTarget();
+  });
   window.addEventListener("hashchange", scrollToHashTarget);
   scrollToHashTarget();
 
