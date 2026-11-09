@@ -18,7 +18,7 @@
     });
   }
 
-  document.querySelectorAll('.site-nav a, .nav-cta').forEach(function (link) {
+  document.querySelectorAll(".site-nav a, .nav-cta").forEach(function (link) {
     link.addEventListener("click", function () {
       closeNav();
     });
@@ -49,9 +49,6 @@
 
   function absoluteShareUrl(id) {
     var base = pageBaseUrl();
-    if (base.slice(-1) !== "/" && base.indexOf("?") === -1) {
-      /* keep as-is for both root and project pages */
-    }
     return base + "#" + id;
   }
 
@@ -64,21 +61,130 @@
     link.title = "Copy or open this direct link";
   });
 
-  function scrollToHashTarget() {
-    var hash = window.location.hash;
-    if (!hash || hash.indexOf("#session-") === 0 || hash === "#workshops") {
-      return;
+  /* Sections open by default: only the active next steps for visitors. */
+  var OPEN_BY_DEFAULT = {
+    registration: true,
+    schedule: true,
+  };
+
+  function openFoldAncestors(node) {
+    var el = node;
+    while (el && el !== document.body) {
+      if (
+        el.tagName === "DETAILS" &&
+        (el.classList.contains("section-fold") ||
+          el.classList.contains("read-more-fold") ||
+          el.classList.contains("faq-item"))
+      ) {
+        el.open = true;
+      }
+      el = el.parentElement;
     }
-    var target = document.querySelector(hash);
+  }
+
+  function enhanceSectionFolds() {
+    document.querySelectorAll("main > section.section[id]").forEach(function (section) {
+      if (section.dataset.foldReady === "true") return;
+      var container = section.querySelector(":scope > .container");
+      if (!container) return;
+
+      var kids = Array.prototype.slice.call(container.children);
+      if (kids.length < 2) return;
+
+      var summarySource = kids[0];
+      var details = document.createElement("details");
+      details.className = "section-fold";
+      if (OPEN_BY_DEFAULT[section.id]) details.open = true;
+
+      var summary = document.createElement("summary");
+      summary.className = "section-fold-summary";
+      summary.appendChild(summarySource);
+
+      var hint = document.createElement("span");
+      hint.className = "section-fold-hint";
+      hint.setAttribute("aria-hidden", "true");
+      summary.appendChild(hint);
+
+      var body = document.createElement("div");
+      body.className = "section-fold-body";
+      kids.slice(1).forEach(function (child) {
+        body.appendChild(child);
+      });
+
+      details.appendChild(summary);
+      details.appendChild(body);
+      container.appendChild(details);
+      section.dataset.foldReady = "true";
+      section.classList.add("is-collapsible");
+    });
+
+    document.querySelectorAll(".read-more-fold").forEach(function (fold) {
+      var hint = fold.querySelector(".read-more-hint");
+      if (!hint) return;
+      function syncHint() {
+        hint.textContent = fold.open ? "Show less" : "Read more";
+      }
+      syncHint();
+      fold.addEventListener("toggle", syncHint);
+    });
+  }
+
+  function resolveHashTarget(hash) {
+    if (!hash || hash === "#") return null;
+    if (hash.indexOf("#session-") === 0 || hash === "#workshops") {
+      return document.getElementById("schedule");
+    }
+    if (hash.indexOf("#person-") === 0) {
+      return document.getElementById("people") || document.querySelector(hash);
+    }
+    if (hash === "#register" || hash === "#guidelines") {
+      return document.getElementById("registration") || document.querySelector(hash);
+    }
+    return document.querySelector(hash);
+  }
+
+  function openFromHash() {
+    var hash = window.location.hash;
+    var target = resolveHashTarget(hash);
+    if (!target) return null;
+    openFoldAncestors(target);
+    if (hash && hash !== "#" + target.id) {
+      var deep = document.querySelector(hash);
+      if (deep) openFoldAncestors(deep);
+    }
+    return target;
+  }
+
+  function scrollToHashTarget() {
+    var target = openFromHash();
     if (!target) return;
+    var hash = window.location.hash;
+    var deep =
+      hash && hash.indexOf("#session-") !== 0 ? document.querySelector(hash) : null;
+    var scrollEl = deep && deep !== target ? deep : target;
     window.setTimeout(function () {
-      target.scrollIntoView({ behavior: "smooth", block: "start" });
+      scrollEl.scrollIntoView({ behavior: "smooth", block: "start" });
     }, 60);
   }
 
+  enhanceSectionFolds();
+  openFromHash();
   window.addEventListener("load", scrollToHashTarget);
   window.addEventListener("hashchange", scrollToHashTarget);
   scrollToHashTarget();
+
+  document.querySelectorAll('a[href^="#"]').forEach(function (link) {
+    link.addEventListener("click", function () {
+      var href = link.getAttribute("href");
+      if (!href || href === "#") return;
+      window.setTimeout(function () {
+        var target = resolveHashTarget(href);
+        if (target) openFoldAncestors(target);
+        var deep = document.querySelector(href);
+        if (deep) openFoldAncestors(deep);
+      }, 0);
+    });
+  });
 
   var navLinks = document.querySelectorAll(".site-nav a");
   if (!("IntersectionObserver" in window)) return;
