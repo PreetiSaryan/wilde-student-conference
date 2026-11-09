@@ -8,6 +8,36 @@
 window.WILDE_PROGRAMME = {
   note:
     "Official programme for WILDE Student Conference 2026. Parallel sessions are grouped by room.",
+  expo: [
+    {
+      id: "expo-zed-tells",
+      organization: "Zed.tells",
+      logo: "assets/partners/zed-tells.png",
+      website: "https://www.zedtells.com/",
+      contacts: ["tanisha-negi", "pramiti-negi"],
+      booth:
+        "Sell magazines and website scanners, and interact with students at the booth.",
+    },
+    {
+      id: "expo-ncf",
+      organization: "Nature Conservation Foundation",
+      shortName: "NCF",
+      logo: "assets/partners/ncf.png",
+      website: "https://www.ncf-india.org/",
+      contacts: ["akshata-anand"],
+      booth:
+        "A brief overview of the research and conservation work that the High Altitude Program from NCF has been collaboratively doing with local communities in the trans-Himalayan region. Most of the work has been centred around snow leopards and local communities. The team hopes to build networks with students and other stakeholders at the conference, and will share material produced from this work. Students interested in such work or internships can write to NCF.",
+    },
+    {
+      id: "expo-healing-himalayas",
+      organization: "Healing Himalayas Foundation",
+      logo: "assets/partners/healing-himalayas.png",
+      website: "https://healinghimalayas.org/",
+      contacts: ["suman-singh-negi"],
+      booth:
+        "An interactive introduction to Healing Himalayas Foundation, its mission to protect the Himalayan environment, and its ongoing initiatives in waste management, community engagement, sustainable tourism, and the circular economy. A team member will share field experiences and the challenges and opportunities of working in the Himalayan region, and explore opportunities for young graduates through internships, field assignments, and volunteering. The booth aims to encourage local youth to explore meaningful career opportunities in their own regions and to interact informally with the team about contributing to more sustainable and resilient Himalayan communities.",
+    },
+  ],
   organizers: [
     {
       id: "saryan",
@@ -181,6 +211,16 @@ window.WILDE_PROGRAMME = {
         abstract:
           "The growing presence of free-ranging dogs in high-altitude landscapes like Spiti is not just a local issue - it reflects broader ecological, social, and public health challenges. As a species that lives at the intersection of human compassion and conflict, domestic dogs compel us to rethink how we coexist with animals in shared spaces. This project recognises the complex role dogs play and seeks to move beyond reactive measures toward long-term, community-driven solutions. By fostering collaboration among local communities, government departments, and conservation organisations, we hope to build a framework that balances compassion with control, and human needs with ecological integrity. The strength of this approach lies in collective responsibility, sustained engagement, and the belief that even the most complex challenges can be addressed through shared action and empathy.",
       },
+    },
+    {
+      id: "akshata-anand",
+      name: "Ms Akshata Anand",
+      role: "Expo lead",
+      affiliation: "Nature Conservation Foundation",
+      website: "https://www.ncf-india.org/",
+      profileUrl: "https://www.ncf-india.org/author/1929760/akshata-anand",
+      bio: "Project Assistant with the High Altitudes programme at Nature Conservation Foundation. Her work spans human–wildlife conflict mitigation, snow-leopard habitat conservation, and community collaboration in the Trans-Himalaya. She is drawn to the interactions between landscapes, wildlife, and people, and focuses on fostering conservation that works with local communities.",
+      photo: "",
     },
     {
       id: "akshima-dhadwal",

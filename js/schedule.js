@@ -4,6 +4,7 @@
 
   var scheduleRoot = document.getElementById("schedule-board");
   var peopleRoot = document.getElementById("people-board");
+  var expoRoot = document.getElementById("expo-booths");
   var dayTabs = document.getElementById("day-tabs");
   if (!scheduleRoot || !dayTabs) return;
 
@@ -547,7 +548,7 @@
   }
 
   function isResourcePerson(person) {
-    return /workshop\s*lead|invited speaker|resource person/i.test(
+    return /workshop\s*lead|invited speaker|resource person|expo\s*lead/i.test(
       person.role || ""
     );
   }
@@ -722,7 +723,7 @@
     peopleRoot.innerHTML =
       renderPeopleGroup(
         "Resource people",
-        "Workshop leads and invited speakers.",
+        "Workshop leads, invited speakers, and expo leads.",
         resources,
         true
       ) +
@@ -933,6 +934,83 @@
     });
   });
 
+  function renderExpoBooths() {
+    if (!expoRoot) return;
+    var booths = data.expo || [];
+    if (!booths.length) {
+      expoRoot.innerHTML = "";
+      return;
+    }
+
+    expoRoot.innerHTML =
+      '<div class="expo-booths-heading">' +
+      "<h3>Confirmed expo booths</h3>" +
+      "<p>Meet these organisations in the Science and Community Expo Zone.</p>" +
+      "</div>" +
+      '<div class="expo-booths">' +
+      booths
+        .map(function (booth) {
+          var contacts = (booth.contacts || [])
+            .map(function (id) {
+              return peopleById[id];
+            })
+            .filter(Boolean);
+          var contactHtml = contacts.length
+            ? '<p class="expo-booth-contacts">Point of contact: ' +
+              contacts
+                .map(function (person) {
+                  return (
+                    '<a href="#person-' +
+                    escapeHtml(person.id) +
+                    '">' +
+                    escapeHtml(person.name) +
+                    "</a>"
+                  );
+                })
+                .join(", ") +
+              "</p>"
+            : "";
+          var logoInner =
+            '<img class="expo-booth-logo" src="' +
+            escapeHtml(booth.logo) +
+            '" alt="' +
+            escapeHtml(booth.organization) +
+            ' logo" width="320" height="160" loading="lazy" />';
+          var logo = booth.website
+            ? '<a class="expo-booth-logo-link" href="' +
+              escapeHtml(booth.website) +
+              '" rel="noopener noreferrer" target="_blank">' +
+              logoInner +
+              "</a>"
+            : logoInner;
+          var name = booth.website
+            ? '<h4><a href="' +
+              escapeHtml(booth.website) +
+              '" rel="noopener noreferrer" target="_blank">' +
+              escapeHtml(booth.organization) +
+              "</a></h4>"
+            : "<h4>" + escapeHtml(booth.organization) + "</h4>";
+
+          return (
+            '<article class="expo-booth" id="' +
+            escapeHtml(booth.id) +
+            '">' +
+            '<div class="expo-booth-brand">' +
+            logo +
+            name +
+            "</div>" +
+            '<p class="expo-booth-copy">' +
+            escapeHtml(booth.booth || "") +
+            "</p>" +
+            contactHtml +
+            "</article>"
+          );
+        })
+        .join("") +
+      "</div>";
+  }
+
   renderPeople();
   renderOrganizers();
+  renderExpoBooths();
 })();
