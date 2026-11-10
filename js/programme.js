@@ -391,17 +391,43 @@ window.WILDE_PROGRAMME = {
       access: "registered",
     },
     {
-      id: "d1-unconferencing",
-      title: "Open discussion circle · Unconferencing",
-      type: "activity",
-      workshop: "Unconferencing",
+      id: "d1-talks-morning",
+      title: "Talks",
+      type: "talk",
+      workshop: null,
       date: "2026-11-17",
       start: "11:00",
       end: "12:30",
       room: "LH-35",
-      people: [],
-      summary: "Open discussion circle — unconferencing session.",
+      people: ["akshima-dhadwal", "suman-singh-negi", "amal-k-vyas"],
+      summary: "Student talks and an invited talk. Tap a title for the abstract.",
       access: "registered",
+      talks: [
+        {
+          id: "d1-talk-akshima",
+          title:
+            "Climatic Extremes and its aftermath in Mandi, Himachal Pradesh",
+          start: "11:00",
+          end: "11:20",
+          people: ["akshima-dhadwal"],
+        },
+        {
+          id: "d1-talk-suman",
+          title:
+            "Impact of Waste on the Ecology of the Western Himalayas: Building Decentralised and Community-Led Waste Management Systems",
+          start: "11:20",
+          end: "11:50",
+          people: ["suman-singh-negi"],
+        },
+        {
+          id: "d1-talk-amal",
+          title:
+            "Genetic and Morphological diversity of native honey bee; Apis cerana in Himalayas",
+          start: "11:50",
+          end: "12:10",
+          people: ["amal-k-vyas"],
+        },
+      ],
     },
     {
       id: "d1-lunch",
@@ -450,36 +476,17 @@ window.WILDE_PROGRAMME = {
       access: "registered",
     },
     {
-      id: "d1-talks-morning",
-      title: "Talks",
-      type: "talk",
-      workshop: null,
+      id: "d1-unconferencing",
+      title: "Open discussion circle · Unconferencing",
+      type: "activity",
+      workshop: "Unconferencing",
       date: "2026-11-17",
       start: "13:30",
       end: "15:30",
       room: "LH-35",
-      people: ["akshima-dhadwal", "suman-singh-negi"],
-      summary:
-        "Student talk and invited talk. Tap a title for the abstract.",
+      people: [],
+      summary: "Open discussion circle — unconferencing session.",
       access: "registered",
-      talks: [
-        {
-          id: "d1-talk-akshima",
-          title:
-            "Climatic Extremes and its aftermath in Mandi, Himachal Pradesh",
-          start: "13:30",
-          end: "13:50",
-          people: ["akshima-dhadwal"],
-        },
-        {
-          id: "d1-talk-suman",
-          title:
-            "Impact of Waste on the Ecology of the Western Himalayas: Building Decentralised and Community-Led Waste Management Systems",
-          start: "13:50",
-          end: "14:20",
-          people: ["suman-singh-negi"],
-        },
-      ],
     },
     {
       id: "d1-networking",
@@ -606,12 +613,7 @@ window.WILDE_PROGRAMME = {
       start: "10:00",
       end: "12:00",
       room: "LH-35",
-      people: [
-        "hemant-singh",
-        "sahil-thakur",
-        "kesang-chunit",
-        "amal-k-vyas",
-      ],
+      people: ["hemant-singh", "sahil-thakur", "kesang-chunit"],
       summary:
         "Student talks and an NCF discussion circle. Tap a title for the abstract.",
       access: "registered",
@@ -638,14 +640,6 @@ window.WILDE_PROGRAMME = {
           start: "10:40",
           end: "11:15",
           people: ["kesang-chunit"],
-        },
-        {
-          id: "d2-talk-amal",
-          title:
-            "Genetic and Morphological diversity of native honey bee; Apis cerana in Himalayas",
-          start: "11:15",
-          end: "11:35",
-          people: ["amal-k-vyas"],
         },
       ],
     },
