@@ -776,9 +776,16 @@
       if (!button || !peopleRoot.contains(button)) return;
       var bio = button.closest(".person-bio");
       if (!bio) return;
+      var text = bio.querySelector(".person-bio-text");
+      var anchorTop = (text || bio).getBoundingClientRect().top;
       var expanded = bio.classList.toggle("is-expanded");
       button.setAttribute("aria-expanded", expanded ? "true" : "false");
       button.textContent = expanded ? "Show less" : "Read more";
+      window.requestAnimationFrame(function () {
+        var delta = (text || bio).getBoundingClientRect().top - anchorTop;
+        if (delta !== 0) window.scrollBy(0, delta);
+        if (expanded) button.blur();
+      });
     });
   }
 

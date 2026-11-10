@@ -139,7 +139,16 @@
       toggle.textContent = "Read more";
       toggle.setAttribute("aria-expanded", "false");
       toggle.addEventListener("click", function () {
-        setPreviewExpanded(preview, !preview.classList.contains("is-expanded"));
+        var willExpand = !preview.classList.contains("is-expanded");
+        /* Keep the section where it is; expanding used to jump to the
+           button after it was pushed to the bottom of the full section. */
+        var anchorTop = clip.getBoundingClientRect().top;
+        setPreviewExpanded(preview, willExpand);
+        window.requestAnimationFrame(function () {
+          var delta = clip.getBoundingClientRect().top - anchorTop;
+          if (delta !== 0) window.scrollBy(0, delta);
+          if (willExpand) toggle.blur();
+        });
       });
 
       preview.appendChild(head);
