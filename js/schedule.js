@@ -253,7 +253,7 @@
           ? '<p class="talk-meta">' + metaBits.join(" · ") + "</p>"
           : "") +
         '<p class="talk-title">' +
-        escapeHtml(options.title) +
+        formatSciHtml(options.title) +
         "</p>" +
         close
       );
@@ -267,7 +267,7 @@
         ? '<span class="talk-meta">' + metaBits.join(" · ") + "</span>"
         : "") +
       '<span class="talk-title">' +
-      escapeHtml(options.title) +
+      formatSciHtml(options.title) +
       "</span>" +
       '<span class="talk-hint">Show abstract</span>' +
       "</summary>" +
