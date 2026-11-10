@@ -64,6 +64,28 @@
       .replace(/'/g, "&#39;");
   }
 
+  /* Escape text, then italicize known scientific names for display. */
+  var SCIENTIFIC_NAMES = [
+    "Vulpes vulpes montana",
+    "Vulpes vulpes",
+    "V. v. montana",
+    "Lepus nigricollis",
+    "Apis cerana",
+    "A. cerana",
+  ];
+
+  function formatSciHtml(value) {
+    var text = escapeHtml(value || "");
+    SCIENTIFIC_NAMES.forEach(function (name) {
+      var pattern = name.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+      text = text.replace(
+        new RegExp(pattern, "g"),
+        "<i>" + escapeHtml(name) + "</i>"
+      );
+    });
+    return text;
+  }
+
   function slugify(value) {
     return String(value)
       .toLowerCase()
@@ -210,7 +232,9 @@
     if (options.kind) metaBits.push(escapeHtml(options.kind));
 
     var abstract = options.abstract
-      ? '<p class="talk-abstract-body">' + escapeHtml(options.abstract) + "</p>"
+      ? '<p class="talk-abstract-body">' +
+        formatSciHtml(options.abstract) +
+        "</p>"
       : "";
     var open =
       "<" +
