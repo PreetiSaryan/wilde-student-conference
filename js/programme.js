@@ -361,8 +361,8 @@ window.WILDE_PROGRAMME = {
     },
     {
       id: "d1-ws-zine",
-      title: "Workshop 3 · Zine making for communication",
-      code: "Workshop 3",
+      title: "Workshop 1 · Zine making for communication",
+      code: "Workshop 1",
       type: "workshop",
       workshop: "Zine making for communication",
       date: "2026-11-17",
@@ -376,8 +376,8 @@ window.WILDE_PROGRAMME = {
     },
     {
       id: "d1-ws-ai-cost",
-      title: "Workshop 4 · Environmental costs of Artificial Intelligence",
-      code: "Workshop 4",
+      title: "Workshop 2 · Environmental costs of Artificial Intelligence",
+      code: "Workshop 2",
       type: "workshop",
       workshop: "Environmental costs of Artificial Intelligence",
       date: "2026-11-17",
@@ -445,8 +445,8 @@ window.WILDE_PROGRAMME = {
     },
     {
       id: "d1-ws-gis",
-      title: "Workshop 1 · GIS 101: Maps Made Easy",
-      code: "Workshop 1",
+      title: "Workshop 3 · GIS 101: Maps Made Easy",
+      code: "Workshop 3",
       type: "workshop",
       workshop: "GIS 101: Maps Made Easy",
       date: "2026-11-17",
@@ -461,8 +461,8 @@ window.WILDE_PROGRAMME = {
     },
     {
       id: "d1-ws-3d-printing",
-      title: "Workshop 2 · 3D printing for making science accessible to all",
-      code: "Workshop 2",
+      title: "Workshop 4 · 3D printing for making science accessible to all",
+      code: "Workshop 4",
       type: "workshop",
       workshop: "3D printing for making science accessible to all",
       date: "2026-11-17",
