@@ -75,7 +75,7 @@ window.WILDE_PROGRAMME = {
       affiliation: "Zed.tells",
       website: "https://www.zedtells.com/",
       profileUrl: "https://www.behance.net/nickzgnei",
-      bio: "Leads the workshop on zine making for communication.",
+      bio: "Tanisha Negi is an artist based in Kinnaur, Himachal Pradesh in India. Her work expands across various mediums including 3D modelling, graphic design, video editing, digital illustration and more. She is interested in learning from folk cultures and exploring diverse ways of storytelling. She wants to explore and understand traditional beliefs and indigenous practices in her community that promote sustainability and conservation and to be able to reflect these learnings in her art. She is one of the co-founders of community space www.zedtells.com where she and other like minded individuals work towards conserving and highlighting Himalayan ecology among several other ventures.",
       photo: "assets/people/tanisha-negi.jpg",
     },
     {
@@ -361,17 +361,18 @@ window.WILDE_PROGRAMME = {
     },
     {
       id: "d1-ws-zine",
-      title: "Workshop 1 · Zine making for communication",
+      title: "Workshop 1 · Let’s make a zine!",
       code: "Workshop 1",
       type: "workshop",
-      workshop: "Zine making for communication",
+      workshop: "Let’s make a zine!",
       date: "2026-11-17",
       start: "11:00",
       end: "12:30",
       room: "Conference Hall",
       people: ["tanisha-negi"],
       capacity: "8–12",
-      summary: "Workshop led by Ms Tanisha Negi.",
+      summary:
+        "How can we turn ideas, observations, research, and everyday experiences into something people can hold, read, and share? This hands-on zine-making workshop introduces participants to zines as accessible, creative forms of self-publishing and visual storytelling. Using simple materials such as paper, colours, and markers, participants will experiment with drawing, writing, and visual storytelling to transform information into engaging, imaginative outputs. The workshop encourages participants to think beyond conventional ways of presenting knowledge, using zines not only to share information but also to express their ideas, perspectives, and experiences. Through playful layouts and a mix of words and images, participants will explore how to make ideas accessible while developing their own creative voice. They can draw inspiration from research findings, environmental observations, local stories, or everyday curiosities. No prior artistic experience is needed, just curiosity and a willingness to experiment. Participants will leave with a handmade zine and new ideas for sharing creatively with others.",
       access: "registered",
     },
     {
