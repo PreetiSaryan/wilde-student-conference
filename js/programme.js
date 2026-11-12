@@ -288,6 +288,22 @@ window.WILDE_PROGRAMME = {
       },
     },
     {
+      id: "yogesh-sharma",
+      name: "Yogesh Sharma",
+      role: "Student speaker",
+      affiliation: "GB Pant Memorial Govt. College Rampur Bushahr",
+      bio: "B.A. Geography student at GB Pant Memorial Govt. College, Rampur Bushahr.",
+      photo: "",
+      presentation: {
+        kind: "talk",
+        title:
+          "Climate Change and Landscape Dynamics: Transforming Landscapes in a Changing Climate",
+        theme: "Theme 2: Climate Change & Landscape Dynamics",
+        abstract:
+          "Climate change is increasingly influencing the structure, functioning and spatial organization of landscapes. Rising temperatures, changing precipitation patterns, extreme weather events, glacier retreat and increasing droughts and floods are driving significant changes in vegetation, river systems, soils, land use and geomorphological processes. Mountain and other environmentally sensitive landscapes are particularly vulnerable to these transformations. This study examines how climate variability and long-term climate change influence landscape dynamics and asks: How do changing climatic conditions alter landscape patterns and processes, and which landscapes are most vulnerable to these changes? It is hypothesized that increasing climatic variability and the frequency of extreme events accelerate landscape transformation and intensify ecological and geomorphological vulnerability. The study adopts a secondary-data and geospatial approach, using published climate and environmental datasets, satellite imagery, GIS-based land-use/land-cover analysis and relevant scientific literature to examine temporal and spatial patterns of landscape change. Comparative analysis of selected landscape types is used to identify major climate-driven transformations.",
+      },
+    },
+    {
       id: "azlan-ahmad-khan",
       name: "Azlan Ahmad Khan",
       role: "Poster presenter",
@@ -633,7 +649,12 @@ window.WILDE_PROGRAMME = {
       start: "10:00",
       end: "12:00",
       room: "LH-35",
-      people: ["hemant-singh", "sahil-thakur", "kesang-chunit"],
+      people: [
+        "hemant-singh",
+        "sahil-thakur",
+        "kesang-chunit",
+        "yogesh-sharma",
+      ],
       summary:
         "Student talks and an NCF discussion circle. Tap a title for the abstract.",
       access: "registered",
@@ -660,6 +681,14 @@ window.WILDE_PROGRAMME = {
           start: "10:40",
           end: "11:15",
           people: ["kesang-chunit"],
+        },
+        {
+          id: "d2-talk-yogesh",
+          title:
+            "Climate Change and Landscape Dynamics: Transforming Landscapes in a Changing Climate",
+          start: "11:15",
+          end: "11:35",
+          people: ["yogesh-sharma"],
         },
       ],
     },
