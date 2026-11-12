@@ -69,6 +69,23 @@ window.WILDE_PROGRAMME = {
   ],
   people: [
     {
+      id: "viral-joshi",
+      name: "Mr Viral Joshi",
+      role: "Keynote speaker",
+      affiliation: "Bioacoustics researcher",
+      website: "https://www.skyisland.in/viral-joshi.html",
+      profileUrl: "https://www.ornithology.in/researchers-corner/viral-joshi/",
+      bio: "Viral Joshi is a bioacoustics researcher, avian ecologist, and wildlife sound recordist with experience in acoustic monitoring and wildlife research. He has worked on Jerdon’s Courser bioacoustic monitoring and research in collaboration with IISER Tirupati, along with several other acoustic projects on Asiatic lion, owl, and endemic Western Ghats birds focused on understanding ecology through sound. His work combines field-based sound recording, acoustic data analysis, and conservation research to explore and document avian and wildlife vocalizations.",
+      photo: "assets/people/viral-joshi.jpg",
+      presentation: {
+        kind: "talk",
+        title:
+          "Bioacoustic: listening to Wild From Sound Recording to Conservation science",
+        theme: "Keynote",
+        abstract: "",
+      },
+    },
+    {
       id: "tanisha-negi",
       name: "Ms Tanisha Negi",
       role: "Workshop lead",
@@ -333,7 +350,8 @@ window.WILDE_PROGRAMME = {
     },
     {
       id: "d1-keynote",
-      title: "Talk by keynote speaker",
+      title:
+        "Keynote · Bioacoustic: listening to Wild From Sound Recording to Conservation science",
       type: "talk",
       workshop: null,
       date: "2026-11-17",
@@ -341,8 +359,9 @@ window.WILDE_PROGRAMME = {
       end: "10:45",
       room: "Auditorium",
       span: "full",
-      people: [],
-      summary: "Keynote address for WILDE Student Conference 2026.",
+      people: ["viral-joshi"],
+      summary:
+        "Keynote by Mr Viral Joshi, bioacoustics researcher, avian ecologist, and wildlife sound recordist.",
       access: "registered",
     },
     {

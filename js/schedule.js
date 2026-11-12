@@ -572,7 +572,7 @@
   }
 
   function isResourcePerson(person) {
-    return /workshop\s*lead|invited speaker|resource person|expo\s*lead/i.test(
+    return /workshop\s*lead|invited speaker|keynote speaker|resource person|expo\s*lead/i.test(
       person.role || ""
     );
   }
@@ -747,7 +747,7 @@
     peopleRoot.innerHTML =
       renderPeopleGroup(
         "Resource people",
-        "Workshop leads, invited speakers, and expo leads.",
+        "Keynote speaker, workshop leads, invited speakers, and expo leads.",
         resources,
         true
       ) +
