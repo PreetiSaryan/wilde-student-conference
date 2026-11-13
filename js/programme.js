@@ -220,7 +220,7 @@ window.WILDE_PROGRAMME = {
       affiliation: "Nature Conservation Foundation",
       website: "https://www.ncf-india.org/",
       bio: "",
-      photo: "",
+      photo: "assets/people/kesang-chunit.jpg",
       presentation: {
         kind: "talk",
         title: "Project Khee : A Journey in Dog Population Management",
