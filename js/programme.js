@@ -237,7 +237,7 @@ window.WILDE_PROGRAMME = {
       website: "https://www.ncf-india.org/",
       profileUrl: "https://www.ncf-india.org/author/1929760/akshata-anand",
       bio: "Project Assistant with the High Altitudes programme at Nature Conservation Foundation. Her work spans human–wildlife conflict mitigation, snow-leopard habitat conservation, and community collaboration in the Trans-Himalaya. She is drawn to the interactions between landscapes, wildlife, and people, and focuses on fostering conservation that works with local communities.",
-      photo: "",
+      photo: "assets/people/akshata-anand.jpg",
     },
     {
       id: "akshima-dhadwal",
