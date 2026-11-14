@@ -71,7 +71,7 @@
     people: "18rem",
     expo: "14rem",
     registration: "15rem",
-    partners: "11rem",
+    partners: "18rem",
     faqs: "9rem",
     reach: "11rem",
     contact: "13rem",
