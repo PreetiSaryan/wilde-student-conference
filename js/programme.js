@@ -42,7 +42,6 @@ window.WILDE_PROGRAMME = {
       organization: "MOSAIC",
       shortName: "MOSAIC",
       logo: "assets/partners/mosaic.png",
-      logoDark: true,
       website: "https://mosaichq.org/",
       contacts: [],
       booth:
