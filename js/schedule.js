@@ -64,18 +64,6 @@
       .replace(/'/g, "&#39;");
   }
 
-  function pageBaseUrl() {
-    return window.location.href.split("#")[0].replace(/index\.html$/i, "");
-  }
-
-  function personShareHref(cardId) {
-    return "#person-" + cardId;
-  }
-
-  function personShareUrl(cardId) {
-    return pageBaseUrl() + personShareHref(cardId);
-  }
-
   /* Escape text, then italicize known scientific names for display. */
   var SCIENTIFIC_NAMES = [
     "Vulpes vulpes montana",
@@ -698,11 +686,6 @@
           links +
           "</ul></div>"
         : "") +
-      '<p class="person-share">Share profile: <a class="share-url" href="' +
-      escapeHtml(personShareHref(cardId)) +
-      '" title="Copy or open this direct link">' +
-      escapeHtml(personShareUrl(cardId)) +
-      "</a></p>" +
       "</div></article>"
     );
   }
@@ -719,12 +702,14 @@
     });
   }
 
-  function renderPeopleGroup(title, intro, people, featured, cardOptionsFor) {
+  function renderPeopleGroup(title, intro, people, featured, cardOptionsFor, groupId) {
     if (!people.length) return "";
     return (
       '<section class="people-group' +
       (featured ? " people-group-featured" : "") +
-      '">' +
+      '"' +
+      (groupId ? ' id="' + escapeHtml(groupId) + '"' : "") +
+      ">" +
       "<h3>" +
       escapeHtml(title) +
       "</h3>" +
@@ -766,7 +751,9 @@
         "Resource people",
         "Keynote speaker, workshop leads, invited speakers, and expo leads.",
         resources,
-        true
+        true,
+        null,
+        "resource-people"
       ) +
       renderPeopleGroup(
         "Student speakers and poster presenters",
@@ -965,7 +952,7 @@
       }
     }
 
-    if (hash.indexOf("#person-") === 0) {
+    if (hash.indexOf("#person-") === 0 || hash === "#resource-people") {
       flashSession(hash);
       return true;
     }

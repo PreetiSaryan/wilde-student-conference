@@ -184,7 +184,7 @@
     if (hash.indexOf("#session-") === 0 || hash === "#workshops") {
       return document.getElementById("schedule");
     }
-    if (hash.indexOf("#person-") === 0) {
+    if (hash.indexOf("#person-") === 0 || hash === "#resource-people") {
       return document.getElementById("people") || document.querySelector(hash);
     }
     if (hash === "#register" || hash === "#guidelines") {
