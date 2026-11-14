@@ -64,6 +64,18 @@
       .replace(/'/g, "&#39;");
   }
 
+  function pageBaseUrl() {
+    return window.location.href.split("#")[0].replace(/index\.html$/i, "");
+  }
+
+  function personShareHref(cardId) {
+    return "#person-" + cardId;
+  }
+
+  function personShareUrl(cardId) {
+    return pageBaseUrl() + personShareHref(cardId);
+  }
+
   /* Escape text, then italicize known scientific names for display. */
   var SCIENTIFIC_NAMES = [
     "Vulpes vulpes montana",
@@ -686,6 +698,11 @@
           links +
           "</ul></div>"
         : "") +
+      '<p class="person-share">Share profile: <a class="share-url" href="' +
+      escapeHtml(personShareHref(cardId)) +
+      '" title="Copy or open this direct link">' +
+      escapeHtml(personShareUrl(cardId)) +
+      "</a></p>" +
       "</div></article>"
     );
   }
@@ -946,6 +963,11 @@
         flashSession(hash);
         return true;
       }
+    }
+
+    if (hash.indexOf("#person-") === 0) {
+      flashSession(hash);
+      return true;
     }
 
     return false;

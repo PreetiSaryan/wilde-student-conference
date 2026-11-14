@@ -1181,6 +1181,19 @@ a {
   border-top: 1px solid var(--line);
 }
 
+.person-share {
+  margin-top: 0.75rem;
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+  overflow-wrap: anywhere;
+  word-break: break-all;
+}
+
+.person-share .share-url {
+  color: var(--pine);
+  font-weight: 600;
+}
+
 .person-sessions h4 {
   font-size: 0.7rem;
   font-weight: 700;
