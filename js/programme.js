@@ -43,7 +43,7 @@ window.WILDE_PROGRAMME = {
       shortName: "MOSAIC",
       logo: "assets/partners/mosaic.png",
       website: "https://mosaichq.org/",
-      contacts: [],
+      contacts: ["poruri-sai-rahul"],
       booth:
         "MOSAIC — Movement for Science Appreciation through Inclusion of Communities — is a community initiative built on the belief that society benefits when science is open, spirited, and inclusive of all: seasoned researchers, scientists, and educators, as well as tinkerers, students, and the simply curious. At the expo booth, meet the MOSAIC community and learn about informal, people-centric ways of sharing, tinkering, learning, and connecting around science — from meetups and unconferences to collaborations and creative projects.",
     },
