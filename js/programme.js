@@ -822,7 +822,7 @@ window.WILDE_PROGRAMME = {
       workshop: null,
       date: "2026-11-18",
       start: "16:45",
-      end: "17:30",
+      end: "",
       room: "",
       span: "full",
       people: [],

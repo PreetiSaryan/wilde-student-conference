@@ -112,12 +112,24 @@
   }
 
   function formatTime(value) {
+    if (!value) return "";
     var bits = value.split(":").map(Number);
     var hours = bits[0];
     var minutes = bits[1];
     var suffix = hours >= 12 ? "pm" : "am";
     var hour12 = hours % 12 || 12;
     return hour12 + ":" + String(minutes).padStart(2, "0") + " " + suffix;
+  }
+
+  function formatTimeRange(start, end) {
+    var startLabel = formatTime(start);
+    if (!startLabel) return "";
+    if (!end) return escapeHtml(startLabel + " onwards");
+    return (
+      escapeHtml(startLabel) +
+      '<span class="time-sep">–</span>' +
+      escapeHtml(formatTime(end))
+    );
   }
 
   function accessLabel() {
@@ -212,10 +224,7 @@
   function renderExpandableTitle(options) {
     var tag = options.tag || "li";
     var timeLabel = options.start
-      ? escapeHtml(formatTime(options.start)) +
-        (options.end
-          ? '<span class="time-sep">–</span>' + escapeHtml(formatTime(options.end))
-          : "")
+      ? formatTimeRange(options.start, options.end)
       : "";
     var speaker = options.speaker
       ? '<a class="talk-speaker" href="#person-' +
@@ -480,9 +489,7 @@
             '<li class="time-slot">' +
             '<div class="time-rail">' +
             '<p class="time-range">' +
-            escapeHtml(formatTime(slot.start)) +
-            '<span class="time-sep">–</span>' +
-            escapeHtml(formatTime(slot.end)) +
+            formatTimeRange(slot.start, slot.end) +
             "</p>" +
             "</div>" +
             renderSlotGrid(slot.sessions) +
@@ -526,9 +533,11 @@
             "<p>" +
             escapeHtml(formatDate(session.date).split(" ").slice(0, 3).join(" ")) +
             " · " +
-            escapeHtml(formatTime(session.start)) +
-            " – " +
-            escapeHtml(formatTime(session.end)) +
+            (session.end
+              ? escapeHtml(formatTime(session.start)) +
+                " – " +
+                escapeHtml(formatTime(session.end))
+              : escapeHtml(formatTime(session.start) + " onwards")) +
             "</p>" +
             (session.summary
               ? '<p class="workshop-abstract">' +
