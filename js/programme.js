@@ -106,16 +106,6 @@ window.WILDE_PROGRAMME = {
       },
     },
     {
-      id: "swati-saryan-negi",
-      name: "Ms Swati Saryan Negi",
-      role: "Expo lead",
-      affiliation: "Saryan Vigyan Foundation",
-      website: "https://www.saryanfoundation.org/",
-      profileUrl: "https://www.linkedin.com/in/swati-saryan",
-      bio: "Swati Saryan Negi is Director and Co-founder of Saryan Vigyan Foundation. She has a Bachelor’s and a Master’s in Electronics and Communication from IIT Roorkee. She works at the intersection of technology, community engagement, and Himalayan conservation, and is also Co-founder of SoftCircuits.",
-      photo: "assets/people/swati-saryan-negi.jpg",
-    },
-    {
       id: "tanisha-negi",
       name: "Ms Tanisha Negi",
       role: "Workshop lead",
@@ -268,6 +258,16 @@ window.WILDE_PROGRAMME = {
       profileUrl: "https://www.ncf-india.org/author/1929760/akshata-anand",
       bio: "Project Assistant with the High Altitudes programme at Nature Conservation Foundation. Her work spans human–wildlife conflict mitigation, snow-leopard habitat conservation, and community collaboration in the Trans-Himalaya. She is drawn to the interactions between landscapes, wildlife, and people, and focuses on fostering conservation that works with local communities.",
       photo: "assets/people/akshata-anand.jpg",
+    },
+    {
+      id: "swati-saryan-negi",
+      name: "Ms Swati Saryan Negi",
+      role: "Expo lead",
+      affiliation: "Saryan Vigyan Foundation",
+      website: "https://www.saryanfoundation.org/",
+      profileUrl: "https://www.linkedin.com/in/swati-saryan",
+      bio: "Swati Saryan Negi is Director and Co-founder of Saryan Vigyan Foundation. She has a Bachelor’s and a Master’s in Electronics and Communication from IIT Roorkee. She works at the intersection of technology, community engagement, and Himalayan conservation, and is also Co-founder of SoftCircuits.",
+      photo: "assets/people/swati-saryan-negi.jpg",
     },
     {
       id: "akshima-dhadwal",
