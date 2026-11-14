@@ -1002,7 +1002,9 @@
               "</p>"
             : "";
           var logoInner =
-            '<img class="expo-booth-logo" src="' +
+            '<img class="expo-booth-logo' +
+            (booth.logoDark ? " expo-booth-logo-dark" : "") +
+            '" src="' +
             escapeHtml(booth.logo) +
             '" alt="' +
             escapeHtml(booth.organization) +

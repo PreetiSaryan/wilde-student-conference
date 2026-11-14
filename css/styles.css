@@ -1416,6 +1416,10 @@ a {
   background: #fff;
 }
 
+.expo-booth-logo-dark {
+  background: #0b0b0b;
+}
+
 .expo-booth h4 {
   font-family: Fraunces, Georgia, serif;
   font-size: 1.15rem;

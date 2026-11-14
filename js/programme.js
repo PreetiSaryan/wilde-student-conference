@@ -37,6 +37,17 @@ window.WILDE_PROGRAMME = {
       booth:
         "An interactive introduction to Healing Himalayas Foundation, its mission to protect the Himalayan environment, and its ongoing initiatives in waste management, community engagement, sustainable tourism, and the circular economy. A team member will share field experiences and the challenges and opportunities of working in the Himalayan region, and explore opportunities for young graduates through internships, field assignments, and volunteering. The booth aims to encourage local youth to explore meaningful career opportunities in their own regions and to interact informally with the team about contributing to more sustainable and resilient Himalayan communities.",
     },
+    {
+      id: "expo-mosaic",
+      organization: "MOSAIC",
+      shortName: "MOSAIC",
+      logo: "assets/partners/mosaic.png",
+      logoDark: true,
+      website: "https://mosaichq.org/",
+      contacts: [],
+      booth:
+        "MOSAIC — Movement for Science Appreciation through Inclusion of Communities — is a community initiative built on the belief that society benefits when science is open, spirited, and inclusive of all: seasoned researchers, scientists, and educators, as well as tinkerers, students, and the simply curious. At the expo booth, meet the MOSAIC community and learn about informal, people-centric ways of sharing, tinkering, learning, and connecting around science — from meetups and unconferences to collaborations and creative projects.",
+    },
   ],
   organizers: [
     {
