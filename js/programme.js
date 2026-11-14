@@ -48,6 +48,16 @@ window.WILDE_PROGRAMME = {
       booth:
         "MOSAIC — Movement for Science Appreciation through Inclusion of Communities — is a community initiative built on the belief that society benefits when science is open, spirited, and inclusive of all: seasoned researchers, scientists, and educators, as well as tinkerers, students, and the simply curious. At the expo booth, meet the MOSAIC community and learn about informal, people-centric ways of sharing, tinkering, learning, and connecting around science — from meetups and unconferences to collaborations and creative projects.",
     },
+    {
+      id: "expo-svf",
+      organization: "Saryan Vigyan Foundation",
+      shortName: "SVF",
+      logo: "assets/organizers/saryan-logo.png",
+      website: "https://www.saryanfoundation.org/",
+      contacts: ["swati-saryan-negi"],
+      booth:
+        "We will be showcasing the work done by our organisation to promote scientific research and biodiversity awareness in the western Himalayan region. We will also talk about our internship programme and display the work done by our previous interns.",
+    },
   ],
   organizers: [
     {
@@ -95,6 +105,16 @@ window.WILDE_PROGRAMME = {
         theme: "Keynote",
         abstract: "",
       },
+    },
+    {
+      id: "swati-saryan-negi",
+      name: "Ms Swati Saryan Negi",
+      role: "Expo lead",
+      affiliation: "Saryan Vigyan Foundation",
+      website: "https://www.saryanfoundation.org/",
+      profileUrl: "https://www.linkedin.com/in/swati-saryan",
+      bio: "Swati Saryan Negi is Director and Co-founder of Saryan Vigyan Foundation. She has a Bachelor’s and a Master’s in Electronics and Communication from IIT Roorkee. She works at the intersection of technology, community engagement, and Himalayan conservation, and is also Co-founder of SoftCircuits.",
+      photo: "assets/people/swati-saryan-negi.jpg",
     },
     {
       id: "tanisha-negi",
